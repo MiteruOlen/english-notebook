@@ -1,0 +1,107 @@
+# English Notebook: lesson file (the format is described in lesson-01.yaml)
+
+learn: en
+native: uk
+lesson: 7
+title: однина й множина · to be · like
+video: ""
+
+rule: |
+  **Множина.** Зазвичай додаємо **-s**: a book → book**s**, a holiday → holiday**s**.
+  Після ch, sh, s, ss, x — **-es**: a watch → watch**es**. Приголосна + y → **-ies**: a dictionary → dictionar**ies**.
+  Особливі слова: man → **men**, woman → **women**, person → **people**, tooth → **teeth**. Sheep, fish, deer, bison у множині не змінюються.
+  **a / an** — один предмет, будь-який: It's **a** bag. It's **an** apple.
+  **the** — конкретний предмет, про який уже знаємо: I see a cat. **The** cat is white. А також те, що існує одне: **the** sun, **the** moon, **the** sky, **the** world.
+  **to be** у запитанні стоїть на початку: **Am** I…? **Is** he / she / it…? **Are** you / we / they…?
+  Заперечення: I **am not**, he / she / it **is not (isn't)**, you / we / they **are not (aren't)**.
+  **like** — подобатися: I like it, але he / she like**s** it.
+  **I'd like** (= I would like) — ввічливе «я б хотів»: I'd like a cup of coffee. I'd like **to** + дієслово: I'd like to drink tea.
+
+words:
+  - a method: метод
+  - a channel: канал
+  - become: ставати
+  - like: подобатися, любити
+    also: [love]
+  - too: теж (у кінці речення)
+    also: [also]
+  - I'd like: я б хотів (ввічливо)
+    also: [I want]
+  - drink: пити
+  - a cup of coffee: чашка кави
+  - a cup of tea: чашка чаю
+  - a teacher: учитель
+  - a doctor: лікар
+  - a manager: менеджер
+  - a businessman: бізнесмен
+  - a hotel: готель
+
+phrases:
+  - Am I right?: Я маю рацію?
+  - Are you our new teacher?: Ви наш новий учитель?
+  - Are the books on the table?: Книги на столі?
+  - Is your brother 12?: Твоєму братові 12?
+    also: ["Is your brother twelve?"]
+  - He is 15.: Йому 15.
+    also: ["He is fifteen."]
+  - Are the computers old?: Комп'ютери старі?
+  - They aren't old.: Вони не старі.
+  - They are new.: Вони нові.
+  - I like it.: Мені це подобається.
+  - I like English.: Мені подобається англійська.
+  - I like your lessons.: Мені подобаються твої уроки.
+  - I like this idea.: Мені подобається ця ідея.
+  - I like this video.: Мені подобається це відео.
+  - I like this playlist.: Мені подобається цей плейлист.
+  - I like this method.: Мені подобається цей метод.
+  - I like this channel.: Мені подобається цей канал.
+  - I really like it.: Мені це дуже подобається.
+  - I really like these lessons.: Мені дуже подобаються ці уроки.
+  - I also like this channel.: Мені теж подобається цей канал.
+    also: ["I like this channel, too."]
+  - I like this channel, too.: Мені цей канал теж подобається.
+    also: ["I also like this channel."]
+  - She likes it.: Їй це подобається.
+  - They like it.: Їм це подобається.
+  - I see you like it.: Я бачу, тобі це подобається.
+  - I know they like it.: Я знаю, що їм це подобається.
+  - She likes this place.: Їй подобається це місце.
+  - He likes this dress.: Йому подобається ця сукня.
+  - My friend likes this hotel.: Моєму другові подобається цей готель.
+  - I'd like a cup of coffee.: Я б хотів чашку кави.
+  - I'd like to drink a cup of tea.: Я б хотів випити чашку чаю.
+  - I'd like to become a teacher.: Я б хотів стати вчителем.
+  - I'd like to become a doctor.: Я б хотів стати лікарем.
+  - I'd like to know English very well.: Я б хотів знати англійську дуже добре.
+
+grammar:
+  - "It is a book. They are [books|book]."
+  - "two [umbrellas|umbrella]"
+  - "two [holidays|holidaies|holiday]"
+  - "two [watches|watchs|watch]"
+  - "two [dictionaries|dictionarys|dictionary]"
+  - "two [men|mans|man]"
+  - "two [women|womans|woman]"
+  - "three [people|person]"
+  - "two [teeth|tooths|tooth]"
+  - "two [sheep|sheeps]"
+  - "two [fish|fishs]"
+  - "two [deer|deers]"
+  - "It's [a|an] bag."
+  - "It's [an|a] apple."
+  - "[The|A] dog is black."
+  - "I see [a|the] cat. The cat is white."
+  - "I see a cat. [The|A] cat is white."
+  - "[The|A] sun, the moon, the sky, the world"
+  - "[Am|Is|Are] I right?"
+  - "Am I right? — Yes, you [are|is|am]."
+  - "[Are|Is|Am] you our new teacher?"
+  - "Are you our new teacher? — Yes, I [am|is|are]."
+  - "[Is|Are|Am] your brother 12?"
+  - "Is your brother 12? — No, he [isn't|aren't]."
+  - "Are the books on the table? — No, they [are|is] not."
+  - "Are the computers old? — No, they [aren't|isn't]."
+  - "She [likes|like] this place."
+  - "They [like|likes] it."
+  - "I like this channel, [too|also]."
+  - "I'd like [to drink|drink] a cup of tea."

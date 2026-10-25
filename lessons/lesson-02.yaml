@@ -1,0 +1,76 @@
+# English Notebook: lesson file (the format is described in lesson-01.yaml)
+
+learn: en
+native: uk
+lesson: 2
+title: -s після he / she / it
+video: ""
+
+rule: |
+  Після **he / she / it** до дієслова додаємо **-s**: I work → he work**s**, I read → she read**s**.
+  Після I, you, we, they — без -s: they study, we live.
+
+words:
+  - love: любити
+    also: [like]
+  - hard: старанно; важко
+    also: [difficult]
+  - feel: відчувати
+  - plus: плюс
+  - en: also
+    ru: також, теж
+    also: [too]
+  - a house: будинок, дім
+    also: [a home, home]
+  - a place: місце
+  - that: той, та, те
+  - this: цей, ця, це
+  - really: дійсно, справді
+    also: [truly]
+  - look: дивитися; виглядати (на щось)
+    also: [watch, see]
+  - seem: здаватися
+  - interesting: цікавий
+  - in English: англійською
+  - read: читати
+  - a book: книга
+  - strange: дивний
+    also: [weird]
+  - a mistake: помилка
+    also: [an error]
+  - happen: траплятися
+  - more: більше
+  - practice: практика
+  - happy: щасливий
+    also: [glad]
+
+phrases:
+  - She feels happy.: Вона почувається щасливою.
+  - They study very hard.: Вони вчаться дуже старанно.
+  - He also works here.: Він теж працює тут.
+  - He lives in this house.: Він живе в цьому будинку.
+  - She lives in that place.: Вона живе в тому місці.
+  - It really helps me.: Це справді мені допомагає.
+  - It seems interesting.: Це здається цікавим.
+  - He reads in English.: Він читає англійською.
+  - She reads English books.: Вона читає англійські книги.
+  - She sees this mistake.: Вона бачить цю помилку.
+  - It happens.: Таке трапляється.
+  - He wants more practice.: Він хоче більше практики.
+  - It really happens.: Це справді трапляється.
+  - She also thinks so.: Вона теж так думає.
+
+grammar:
+  - "She [feels|feel] happy."
+  - "They [study|studies] very hard."
+  - "He also [works|work] here."
+  - "He [lives|live] in this house."
+  - "It really [helps|help] me."
+  - "It [seems|seem] interesting."
+  - "He [reads|read] in English."
+  - "She [sees|see] this mistake."
+  - "He [wants|want] more practice."
+  - "She also [thinks|think] so."
+  - "I [work|works] here."
+  - "We [live|lives] in Ukraine."
+  - "They [live|lives] in this country."

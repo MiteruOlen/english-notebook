@@ -1,0 +1,20 @@
+# English Notebook: test file
+#
+# A test has no words of its own. It asks questions from the lessons it covers.
+#   test:      test number; it's sorted among the lessons by this number
+#   title:     short title (optional)
+#   covers:    the lessons the questions come from
+#   minutes:   time limit; when it runs out, the test ends and gets graded
+#   questions: how many questions (a mix of typing words, phrases and grammar)
+#   code:      the teacher's code in scrambled form (made together with the file).
+#              The test can be taken only once. It can't be retaken.
+#   grades:    optional: the percent needed for a 5, 4, 3 and 2. Default: [90, 75, 50, 25]
+
+learn: en
+native: uk
+test: 5
+title: Контрольна 1
+covers: [1, 2, 3, 4]
+minutes: 15
+questions: 30
+code: "155e82666f05155a4208"

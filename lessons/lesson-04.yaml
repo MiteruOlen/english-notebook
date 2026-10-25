@@ -1,0 +1,84 @@
+# English Notebook: lesson file (the format is described in lesson-01.yaml)
+
+learn: en
+native: uk
+lesson: 4
+title: my, our, their, his, her, its
+video: ""
+
+rule: |
+  Чий? — присвійні слова:
+  I → **my** · you → **your** · we → **our** · they → **their**
+  he → **his** · she → **her** · it → **its**
+  this → **these** (цей → ці).
+
+words:
+  - these: ці
+  - useful: корисний
+  - parents: батьки
+  - a friend: друг
+  - my: мій
+    also: [mine]
+  - a boss: начальник
+    also: [a chief]
+  - all: усі, увесь
+  - everything: усе
+  - the same: те саме
+  - our: наш
+    also: [ours]
+  - their: їхній
+    also: [theirs]
+  - say: сказати, говорити (щось)
+    also: [tell, speak, talk]
+  - profit: прибуток
+  - big: великий
+    also: [large]
+  - its: його, її (про предмет)
+  - a girlfriend: дівчина
+  - a boyfriend: хлопець
+  - very much: дуже сильно
+  - support: підтримувати
+  - best friend: найкращий друг
+  - come: приходити
+  - come late: запізнюватися, приходити пізно
+    also: [be late]
+
+phrases:
+  - This lesson seems interesting.: Цей урок здається цікавим.
+  - These lessons seem very useful.: Ці уроки здаються дуже корисними.
+  - This lesson helps me.: Цей урок мені допомагає.
+  - These lessons help me.: Ці уроки мені допомагають.
+  - Your lessons really help.: Твої уроки справді допомагають.
+  - My brother wants it.: Мій брат хоче цього.
+  - My sister lives there.: Моя сестра живе там.
+  - My parents know it.: Мої батьки знають це.
+  - My friend has a car.: У мого друга є машина.
+  - My boss knows everything.: Мій начальник знає все.
+  - My boss usually reads all the documents.: Мій начальник зазвичай читає всі документи.
+  - My boss usually checks all the information.: Мій начальник зазвичай перевіряє всю інформацію.
+  - I understand everything.: Я розумію все.
+  - Our mother thinks the same.: Наша мама думає так само.
+    also: [Our mom thinks the same., Our mum thinks the same.]
+  - Their ideas seem so interesting.: Їхні ідеї здаються такими цікавими.
+  - His father has a car.: У його батька є машина.
+  - Her brother often says it.: Її брат часто це каже.
+  - Its profit seems so big.: Його прибуток здається таким великим.
+  - My girlfriend feels happy.: Моя дівчина почувається щасливою.
+  - My boyfriend loves me very much.: Мій хлопець дуже сильно мене любить.
+  - My friend always supports me.: Мій друг завжди мене підтримує.
+  - My best friend always helps me.: Мій найкращий друг завжди мені допомагає.
+  - My father usually comes home late.: Мій батько зазвичай пізно приходить додому.
+
+grammar:
+  - "[My|I] brother wants it."
+  - "[Our|We] mother thinks the same."
+  - "[Their|They] ideas seem so interesting."
+  - "[His|He] father has a car."
+  - "[Her|She] brother often says it."
+  - "[Its|It] profit seems so big."
+  - "[These|This] lessons seem very useful."
+  - "[This|These] lesson helps me."
+  - "[Your|You] lessons really help."
+  - "My best friend always [helps|help] me."
+  - "My father usually [comes|come] home late."
+  - "My friend always [supports|support] me."

@@ -1,0 +1,98 @@
+# English Notebook: lesson file
+#
+# How to write a lesson:
+#   learn:    language being learned, two-letter code (default: en). Examples: en, es, de, fr, uk
+#   native:   language of the translations (default: ru). Lessons of one course may use different translation
+#             languages; the app's interface follows the newest lesson. Spanish for English speakers: learn: es, native: en
+#   lesson:   lesson number; lessons are sorted by it (a lesson with the same number and the same "learn" language gets replaced)
+#   title:    short title (optional)
+#   video:    link to the video lesson (optional)
+#   rule:     the lesson's rule; each line is a separate paragraph, **text** is bold
+#   words:    "word: translation"; add a hint in parentheses at the end: speak: говорити (мовою)
+#   also:     other correct answers that are NOT what this lesson teaches (optional, on the next line).
+#             Typing one of them shows "almost" and names the lesson's word; it doesn't count as correct,
+#             and it isn't counted as a mistake either:
+#               - make: робити, створювати
+#                 also: [do]
+#   phrases:  same format as words
+#   grammar:  a sentence with a choice in square brackets, CORRECT OPTION FIRST:
+#             "She [watches|watch] TV."   Always wrap it in quotes.
+#
+# If a line has a second colon or starts with [ { * & ! # " ', wrap the text in quotes.
+# If the word itself is "also" or "hint", use the long form:  - en: also
+#                                                             ru: також, теж
+#
+# Style rules, so all lesson files work the same way:
+#   verbs:    base form without "to": work, go to school, come late
+#   nouns:    a/an for countable nouns in the singular: a car, an idea, a house
+#             no article for uncountable or plural ones: money, practice, parents, computer games
+#             fixed expressions stay as they're used: the same, best friend, go to the cinema
+#             (typing a noun without its article still counts, with a reminder)
+#   phrases:  a full sentence with a capital letter and a period: I work here.
+#             contractions don't matter: "I'm" and "I am" are both accepted
+#   hints:    when the translation could mean several words, add a hint: watch: дивитися (телевізор, фільм)
+#   also:     for common synonyms the learner might type instead (do/make, study/learn, well/good)
+
+learn: en
+native: uk
+lesson: 1
+title: a / an
+video: ""
+
+rule: |
+  **a / an** ставиться перед предметом, коли він один.
+  **a** — перед приголосним звуком: a car, a brother.
+  **an** — перед голосним звуком: an idea, an apple.
+
+words:
+  - work: працювати
+  - here: тут
+  - study: вчитися
+    also: [learn]
+  - understand: розуміти
+  - it: це; він/вона (про предмет)
+  - very: дуже
+  - well: добре
+    also: [good]
+  - live: жити
+  - speak: говорити (мовою)
+    also: [talk, say]
+  - go to school: ходити до школи
+  - have: мати, у мене є
+  - an idea: ідея
+  - a car: машина
+  - think: думати
+    also: [believe]
+  - see: бачити
+    also: [watch, look]
+  - want: хотіти
+  - remember: пам'ятати
+  - I: я
+  - you: ти, ви
+  - we: ми
+  - they: вони
+  - so: так
+
+phrases:
+  - I work here.: Я працюю тут.
+  - I study.: Я вчуся.
+    also: [I learn.]
+  - I understand you.: Я розумію тебе.
+  - I know it very well.: Я знаю це дуже добре.
+  - I speak English.: Я говорю англійською.
+  - I have a brother.: У мене є брат.
+  - I have an idea.: У мене є ідея.
+  - I think so.: Я так думаю.
+  - I want it.: Я хочу це.
+  - I remember it very well.: Я пам'ятаю це дуже добре.
+  - We live in Ukraine.: Ми живемо в Україні.
+  - I go to school.: Я ходжу до школи.
+  - They live in this country.: Вони живуть у цій країні.
+  - I buy a car.: Я купую машину.
+
+grammar:
+  - "I have [an|a] idea."
+  - "I have [a|an] brother."
+  - "I buy [a|an] car."
+  - "[an|a] idea"
+  - "[a|an] car"

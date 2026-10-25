@@ -1,0 +1,69 @@
+# English Notebook: lesson file (the format is described in lesson-01.yaml)
+
+learn: en
+native: uk
+lesson: 3
+title: does, goes, has, -es, -ies
+video: ""
+
+rule: |
+  Особливі форми після **he / she / it**: do → **does**, go → **goes**, have → **has**.
+  На ch, sh, ss, x додаємо **-es**: watch → watch**es**, miss → miss**es**.
+  Приголосна + y → **-ies**: try → tr**ies**. Але голосна + y → просто -s: play → play**s**.
+
+words:
+  - an offer: пропозиція
+    also: [a suggestion, a proposal]
+  - go to the park: ходити в парк
+  - often: часто
+  - play: грати
+  - know: знати
+  - make: робити, створювати
+    also: [do, create]
+  - go to the cinema: ходити в кіно
+    also: [go to the movies]
+  - every day: щодня, кожного дня
+  - an apple: яблуко
+  - watch: дивитися (телевізор, фільм)
+    also: [look, see]
+  - TV: телевізор
+  - try: намагатися, пробувати
+    also: [attempt]
+  - always: завжди
+  - miss: сумувати
+  - sometimes: іноді
+  - computer games: комп'ютерні ігри
+  - money: гроші
+  - help: допомагати
+
+phrases:
+  - I speak English.: Я говорю англійською.
+  - She knows it.: Вона знає це.
+  - He does it every day.: Він робить це щодня.
+  - She often goes to the cinema.: Вона часто ходить у кіно.
+  - He has a house.: У нього є будинок.
+  - She has an apple.: У неї є яблуко.
+  - She has interesting ideas.: У неї є цікаві ідеї.
+  - He has an offer.: У нього є пропозиція.
+  - She watches TV.: Вона дивиться телевізор.
+  - He tries to do it.: Він намагається це зробити.
+  - She tries to find a job.: Вона намагається знайти роботу.
+  - She always does it on time.: Вона завжди робить це вчасно.
+  - He misses you.: Він сумує за тобою.
+  - She sometimes plays computer games.: Вона іноді грає в комп'ютерні ігри.
+  - He has money.: У нього є гроші.
+  - She tries to help me.: Вона намагається мені допомогти.
+
+grammar:
+  - "She [watches|watchs|watch] TV."
+  - "He [does|dos|do] it every day."
+  - "She often [goes|gos|go] to the cinema."
+  - "He [has|haves|have] a house."
+  - "She [has|have] an apple."
+  - "He [tries|trys|try] to do it."
+  - "He [misses|miss|misss] you."
+  - "She sometimes [plays|plaies|play] computer games."
+  - "She always [does|do] it on time."
+  - "She [knows|know] it."
+  - "She [tries|trys] to help me."
+  - "He [has|have] money."

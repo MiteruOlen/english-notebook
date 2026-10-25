@@ -1,0 +1,97 @@
+# English Notebook: lesson file (the format is described in lesson-01.yaml)
+
+learn: en
+native: uk
+lesson: 6
+title: want / want to + дієслово
+video: ""
+
+rule: |
+  **want** + предмет: I want it. I want this dress.
+  Перед прикметником з іменником в однині теж потрібен **a / an**: **a** new computer, **a** good car.
+  **want to** + дієслово: I want **to** know it. She want**s to** do it.
+  **to** + дієслово — це інфінітив: to know — знати, to speak — говорити.
+
+words:
+  - a flat: квартира
+    also: [an apartment]
+  - a dress: сукня
+  - a thing: річ
+  - good: хороший, добрий
+  - new: новий
+  - improve: покращувати
+  - better: краще; кращий
+  - without: без
+  - grammar: граматика
+  - correctly: правильно
+    also: [rightly, right]
+  - fast: швидко
+    also: [quickly]
+  - fluently: вільно (говорити мовою)
+  - again: знову
+    also: [one more time, once more]
+  - one more: ще один
+  - one more time: ще раз
+    also: [again, once more]
+  - time: час
+  - abroad: за кордоном
+  - another: інший
+    also: [other]
+  - thank: дякувати
+  - very much: дуже сильно
+
+phrases:
+  - I want it.: Я хочу це.
+  - I want this thing.: Я хочу цю річ.
+  - I want this computer.: Я хочу цей комп'ютер.
+  - I want this dress.: Я хочу цю сукню.
+  - I want a new computer.: Я хочу новий комп'ютер.
+  - I want a good car.: Я хочу хорошу машину.
+  - I want a new flat.: Я хочу нову квартиру.
+    also: [I want a new apartment.]
+  - I really want it.: Я справді хочу це.
+  - I want to do it.: Я хочу це зробити.
+  - She wants to do it.: Вона хоче це зробити.
+  - I want to know it.: Я хочу це знати.
+  - I really want to know it.: Я справді хочу це знати.
+  - I want to improve my English.: Я хочу покращити свою англійську.
+  - I want to speak English better.: Я хочу говорити англійською краще.
+  - I want to speak English without mistakes.: Я хочу говорити англійською без помилок.
+  - I want to improve my grammar.: Я хочу покращити свою граматику.
+  - I want to speak English correctly.: Я хочу говорити англійською правильно.
+    also: [I want to speak English rightly.]
+  - I want to learn English fast.: Я хочу вивчити англійську швидко.
+    also: [I want to learn English quickly.]
+  - I want to have a good job.: Я хочу мати хорошу роботу.
+  - I want to have a good car.: Я хочу мати хорошу машину.
+  - I want to be happy.: Я хочу бути щасливим.
+  - She wants to do it right now.: Вона хоче зробити це прямо зараз.
+  - He wants to buy this thing.: Він хоче купити цю річ.
+  - I want to speak English fluently and correctly.: Я хочу говорити англійською вільно і правильно.
+  - My friend wants to check it one more time.: Мій друг хоче перевірити це ще раз.
+    also: [My friend wants to check it again.]
+  - My friend wants to live abroad.: Мій друг хоче жити за кордоном.
+  - My parents want to live in another place.: Мої батьки хочуть жити в іншому місці.
+  - I really want to thank you.: Я справді хочу подякувати тобі.
+  - Thank you!: Дякую тобі!
+    also: [Thanks!]
+  - Thanks a lot!: Дуже дякую!
+    also: [Thank you very much!, Thanks a million!]
+  - Thank you very much!: Дуже тобі дякую!
+    also: [Thanks a lot!, Thank you so much!]
+  - Thanks a million!: Величезне дякую!
+    also: [Thanks a lot!, Thank you very much!]
+
+grammar:
+  - "I want [a|an] new computer."
+  - "I want [a|an] good car."
+  - "I want [a|an] new flat."
+  - "I want [to know|know] it."
+  - "She [wants|want] to do it."
+  - "I want [to improve|improve] my English."
+  - "I want [to speak|speak] English better."
+  - "He [wants|want] to buy this thing."
+  - "My friend [wants|want] to live abroad."
+  - "My parents [want|wants] to live in another place."
+  - "I want to [be|am] happy."
+  - "I really want [to thank|thank] you."
