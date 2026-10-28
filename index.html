@@ -306,7 +306,7 @@ input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.6.2";
+const APP_VERSION = "1.6.3";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -354,7 +354,7 @@ ru:{
   pickTr:"Выбери перевод", pickIn:l=>`Выбери слово · ${l}`, correct:"Верно!", notThat:"Не то.",
   typeIn:l=>`Напиши · ${l}`, typeHere:"Пиши здесь…", dontKnow:"Не знаю", check:"Проверить", great:"Отлично!",
   alt:"Так тоже можно, но в этом уроке учим:",
-  artOk:"Засчитано. Не забудь артикль:", artExtra:"Засчитано. Здесь артикль не нужен:", regraded:"Оценка пересчитана после исправления проверки ответов.", typo:"Почти! Опечатка.", accents:"Почти! Проверь знаки над буквами.", answerIs:"Правильный ответ:", notQuite:"Не совсем.",
+  artOk:"Засчитано. Не забудь артикль:", artExtra:"Засчитано. Здесь артикль не нужен:", regraded:"Оценка пересчитана после исправления проверки ответов.", typo:"Почти! Опечатка.", accents:"Засчитано. Обрати внимание на знаки над буквами:", answerIs:"Правильный ответ:", notQuite:"Не совсем.",
   yours:x=>`Твой ответ: ${x}`, iWasRight:"Мой ответ верный",
   buildIt:"Собери фразу", clear:"Сбросить", wrongOrder:"Порядок другой:", pickForm:"Выбери правильную форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Идеально, без единой ошибки!", m80:"Очень хорошо!", m50:"Неплохо. Ещё круг, и будет лучше.", mLow:"Для начала это нормально. Повтори ошибки ещё раз.", mCards:"Все карточки пройдены.",
@@ -410,7 +410,7 @@ uk:{
   pickTr:"Обери переклад", pickIn:l=>`Обери слово · ${l}`, correct:"Правильно!", notThat:"Не те.",
   typeIn:l=>`Напиши · ${l}`, typeHere:"Пиши тут…", dontKnow:"Не знаю", check:"Перевірити", great:"Чудово!",
   alt:"Так теж можна, але в цьому уроці вчимо:",
-  artOk:"Зараховано. Не забудь артикль:", artExtra:"Зараховано. Тут артикль не потрібен:", regraded:"Оцінку перераховано після виправлення перевірки відповідей.", typo:"Майже! Помилка в написанні.", accents:"Майже! Перевір знаки над літерами.", answerIs:"Правильна відповідь:", notQuite:"Не зовсім.",
+  artOk:"Зараховано. Не забудь артикль:", artExtra:"Зараховано. Тут артикль не потрібен:", regraded:"Оцінку перераховано після виправлення перевірки відповідей.", typo:"Майже! Помилка в написанні.", accents:"Зараховано. Зверни увагу на знаки над літерами:", answerIs:"Правильна відповідь:", notQuite:"Не зовсім.",
   yours:x=>`Твоя відповідь: ${x}`, iWasRight:"Моя відповідь правильна",
   buildIt:"Склади фразу", clear:"Очистити", wrongOrder:"Інший порядок:", pickForm:"Обери правильну форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Ідеально, без жодної помилки!", m80:"Дуже добре!", m50:"Непогано. Ще одне коло, і буде краще.", mLow:"Для початку це нормально. Повтори помилки ще раз.", mCards:"Усі картки пройдено.",
@@ -466,7 +466,7 @@ en:{
   pickTr:"Pick the translation", pickIn:l=>`Pick the word · ${l}`, correct:"Correct!", notThat:"Not that one.",
   typeIn:l=>`Type it · ${l}`, typeHere:"Type here…", dontKnow:"I don't know", check:"Check", great:"Great!",
   alt:"That works too, but this lesson teaches:",
-  artOk:"Counted. Don't forget the article:", artExtra:"Counted. No article needed here:", regraded:"Regraded after a fix to how answers are checked.", typo:"Almost! Small typo.", accents:"Almost! Check the accents.", answerIs:"The answer is:", notQuite:"Not quite.",
+  artOk:"Counted. Don't forget the article:", artExtra:"Counted. No article needed here:", regraded:"Regraded after a fix to how answers are checked.", typo:"Almost! Small typo.", accents:"Counted. Mind the accents:", answerIs:"The answer is:", notQuite:"Not quite.",
   yours:x=>`You wrote: ${x}`, iWasRight:"I was right",
   buildIt:"Build the phrase", clear:"Clear", wrongOrder:"Different order:", pickForm:"Pick the right form", shouldBe:"It should be:",
   done:"Done", m100:"Perfect, not a single mistake!", m80:"Very good!", m50:"Not bad. One more round and it'll be better.", mLow:"That's normal at the start. Go over the mistakes again.", mCards:"All cards done.",
@@ -995,7 +995,7 @@ function qType(q){
     const val=inp.value; if(!giveUp && !val.trim()){ inp.focus(); return }
     Q.answered=true; inp.readOnly=true;
     let kind = giveUp ? "no" : checkTyped(it,val,Q.learn); if(kind==="empty") kind="no";
-    const ok=kind==="ok"||kind==="art"||kind==="artx";
+    const ok=kind==="ok"||kind==="art"||kind==="artx"||kind==="accent";
     answer(ok,{typed:true,soft:kind==="alt"}); inp.classList.add(ok?"ok":"no");
     let h;
     if(kind==="ok") h=`<div class="fb ok"><b>${t("great")}</b></div>`;
@@ -1134,7 +1134,7 @@ const mmss = ms => { const s=Math.max(0,Math.ceil(ms/1000)); return Math.floor(s
 const coveredLessons = test => test.covers.map(n=>ALL.find(d=>d.type!=="test"&&d.course===test.course&&d.day===n));
 const coversLabel = test => { const c=test.covers; return c.length>2&&c.every((x,i)=>i===0||x===c[i-1]+1)?c[0]+"–"+c[c.length-1]:c.join(", ") };
 
-const passes = k => k==="ok"||k==="art"||k==="artx"||k==="alt";   // what counts as correct in a test
+const passes = k => k==="ok"||k==="art"||k==="artx"||k==="alt"||k==="accent";   // what counts as correct in a test
 function regradeTests(){
   let changed=false;
   ALL.filter(d=>d.type==="test").forEach(test=>{
@@ -1159,7 +1159,7 @@ function checkTyped(it, val, learn){
   if(it.kind==="w" && accepted.some(x=>stripArt(x,learn)===a && x!==a)) return "art";
   if(it.kind==="w" && accepted.some(x=>stripArt(a,learn)===x && x!==a)) return "artx";
   if(alts.includes(a) || (it.kind==="w" && alts.some(x=>stripArt(x,learn)===stripArt(a,learn)))) return "alt";
-  if(accepted.some(x=>deacc(x)===deacc(a))) return "accent";
+  if(accepted.some(x=>deacc(x)===deacc(a) || (it.kind==="w" && deacc(stripArt(x,learn))===deacc(stripArt(a,learn))))) return "accent";   // missing accents count, with a reminder
   const x=norm(it.en), near=(u,v)=>v.length>3 && lev(deacc(u),deacc(v))<=Math.max(1,Math.floor(v.length/12));
   if(near(a,x) || (it.kind==="w" && near(stripArt(a,learn),stripArt(x,learn)))) return "typo";
   return "no";
