@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 1.6.3**
+**Version 1.7.0**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -137,6 +137,17 @@ grammar:
 
 Full rules and style conventions are written at the top of `lesson-01.yaml`. If a file has a mistake, the app says which file and which line.
 
+## Keyboard
+
+In lessons and tests the keyboard can do everything:
+
+- **Tab** moves only between the answer box and the buttons of the exercise, in a loop (it never jumps to the browser). After you check a typed answer the cursor stays in the box: **Enter** goes on, **Tab** goes to *I was right*, then *Next*, then back to the box.
+- **1–4** pick an option in multiple choice and grammar.
+- **Build the phrase:** every word shows its key. **1–9, 0, Q–P** pick a word, **Backspace** takes the last one back, **Enter** checks and then goes on.
+- **Flashcards:** **Space** flips the card, then **1** = still learning, **2** = I know.
+
+The key labels and hints are hidden on phones and tablets.
+
 ## Versions
 
 The version number is at the bottom of the home screen and in Settings.
@@ -145,6 +156,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 1.7.0 | Keyboard: Tab stays inside the exercise, number keys for building phrases and flashcards |
 | 1.6.3 | Missing accents count as correct, with a reminder |
 | 1.6.2 | Lessons published at the link win over hand-added copies |
 | 1.6.1 | A mistake costs two review steps instead of resetting the word |

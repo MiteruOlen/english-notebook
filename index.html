@@ -205,6 +205,9 @@ details.list summary{cursor:pointer;font-weight:600}
 .w{border:1.5px solid var(--line);background:var(--sheet);border-radius:10px;padding:8px 12px;font-size:17px;font-weight:500}
 .slots .w{background:var(--accent-soft);border-color:transparent}
 .w.used{visibility:hidden}
+.bank .w .k{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-right:7px;padding:0 4px;border-radius:5px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;vertical-align:2px}
+.keyhint{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
+@media (hover:none){.bank .w .k,.keyhint{display:none}}
 
 /* finish */
 .done{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center}
@@ -306,7 +309,7 @@ input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.6.3";
+const APP_VERSION = "1.7.0";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -356,7 +359,7 @@ ru:{
   alt:"Так тоже можно, но в этом уроке учим:",
   artOk:"Засчитано. Не забудь артикль:", artExtra:"Засчитано. Здесь артикль не нужен:", regraded:"Оценка пересчитана после исправления проверки ответов.", typo:"Почти! Опечатка.", accents:"Засчитано. Обрати внимание на знаки над буквами:", answerIs:"Правильный ответ:", notQuite:"Не совсем.",
   yours:x=>`Твой ответ: ${x}`, iWasRight:"Мой ответ верный",
-  buildIt:"Собери фразу", clear:"Сбросить", wrongOrder:"Порядок другой:", pickForm:"Выбери правильную форму", shouldBe:"Правильно так:",
+  buildIt:"Собери фразу", clear:"Сбросить",buildKeys:"Клавиши: 1–9, 0, Q–P — выбрать слово · Backspace — убрать · Enter — проверить",cardKeys:"Клавиши: пробел — перевернуть · 1 — ещё учу · 2 — знаю", wrongOrder:"Порядок другой:", pickForm:"Выбери правильную форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Идеально, без единой ошибки!", m80:"Очень хорошо!", m50:"Неплохо. Ещё круг, и будет лучше.", mLow:"Для начала это нормально. Повтори ошибки ещё раз.", mCards:"Все карточки пройдены.",
   firstTry:(a,b)=>`С первой попытки: ${a} из ${b}`, knewIt:(a,b)=>`Сразу знаешь: ${a} из ${b}`, newRec:"новый рекорд!", nextStep:n=>`Дальше: ${n}`,
   retry:n=>`Повторить ошибки (${n})`, again:"Ещё раз", toDay:n=>`К уроку ${n}`, toHome:"На главную", mistakesWhere:"Где были ошибки", mistakes:"Ошибки", dayReview:"Повтор урока",
@@ -412,7 +415,7 @@ uk:{
   alt:"Так теж можна, але в цьому уроці вчимо:",
   artOk:"Зараховано. Не забудь артикль:", artExtra:"Зараховано. Тут артикль не потрібен:", regraded:"Оцінку перераховано після виправлення перевірки відповідей.", typo:"Майже! Помилка в написанні.", accents:"Зараховано. Зверни увагу на знаки над літерами:", answerIs:"Правильна відповідь:", notQuite:"Не зовсім.",
   yours:x=>`Твоя відповідь: ${x}`, iWasRight:"Моя відповідь правильна",
-  buildIt:"Склади фразу", clear:"Очистити", wrongOrder:"Інший порядок:", pickForm:"Обери правильну форму", shouldBe:"Правильно так:",
+  buildIt:"Склади фразу", clear:"Очистити",buildKeys:"Клавіші: 1–9, 0, Q–P — вибрати слово · Backspace — прибрати · Enter — перевірити",cardKeys:"Клавіші: пробіл — перевернути · 1 — ще вчу · 2 — знаю", wrongOrder:"Інший порядок:", pickForm:"Обери правильну форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Ідеально, без жодної помилки!", m80:"Дуже добре!", m50:"Непогано. Ще одне коло, і буде краще.", mLow:"Для початку це нормально. Повтори помилки ще раз.", mCards:"Усі картки пройдено.",
   firstTry:(a,b)=>`З першої спроби: ${a} з ${b}`, knewIt:(a,b)=>`Одразу знаєш: ${a} з ${b}`, newRec:"новий рекорд!", nextStep:n=>`Далі: ${n}`,
   retry:n=>`Повторити помилки (${n})`, again:"Ще раз", toDay:n=>`До уроку ${n}`, toHome:"На головну", mistakesWhere:"Де були помилки", mistakes:"Помилки", dayReview:"Повтор уроку",
@@ -468,7 +471,7 @@ en:{
   alt:"That works too, but this lesson teaches:",
   artOk:"Counted. Don't forget the article:", artExtra:"Counted. No article needed here:", regraded:"Regraded after a fix to how answers are checked.", typo:"Almost! Small typo.", accents:"Counted. Mind the accents:", answerIs:"The answer is:", notQuite:"Not quite.",
   yours:x=>`You wrote: ${x}`, iWasRight:"I was right",
-  buildIt:"Build the phrase", clear:"Clear", wrongOrder:"Different order:", pickForm:"Pick the right form", shouldBe:"It should be:",
+  buildIt:"Build the phrase", clear:"Clear",buildKeys:"Keys: 1–9, 0, Q–P pick a word · Backspace undo · Enter check",cardKeys:"Keys: Space flip · 1 still learning · 2 I know", wrongOrder:"Different order:", pickForm:"Pick the right form", shouldBe:"It should be:",
   done:"Done", m100:"Perfect, not a single mistake!", m80:"Very good!", m50:"Not bad. One more round and it'll be better.", mLow:"That's normal at the start. Go over the mistakes again.", mCards:"All cards done.",
   firstTry:(a,b)=>`First try: ${a} of ${b}`, knewIt:(a,b)=>`Known right away: ${a} of ${b}`, newRec:"new record!", nextStep:n=>`Next: ${n}`,
   retry:n=>`Retry mistakes (${n})`, again:"Again", toDay:n=>`Back to lesson ${n}`, toHome:"Home", mistakesWhere:"Mistakes", mistakes:"Mistakes", dayReview:"Lesson review",
@@ -955,7 +958,7 @@ function qCard(q){
       <div class="face back"><span class="kind">${esc(langSelf(c.native))}</span><div class="q${it.ru.length>28?" long":""}">${esc(it.ru)}</div>${it.hint?`<div class="hint">(${esc(it.hint)})</div>`:""}</div>
     </div>
   </div>
-  <div class="row" id="cb" hidden><button class="btn sec" type="button" id="learn">${t("stillLearning")}</button><button class="btn" type="button" id="know">${t("know")}</button></div>`;
+  <div class="row" id="cb" hidden><button class="btn sec" type="button" id="learn">${t("stillLearning")}</button><button class="btn" type="button" id="know">${t("know")}</button></div><div class="keyhint">${t("cardKeys")}</div>`;
   const cd=$("#card"), flip=()=>{ cd.classList.toggle("on"); $("#cb").hidden=false; sfx.tap() };
   cd.onclick=flip; cd.onkeydown=e=>{ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); flip() } };
   $("#know").onclick=()=>{ answer(true,{silent:true}); nextQ() };
@@ -1008,12 +1011,14 @@ function qType(q){
     $("#tb").innerHTML = !ok&&!giveUp&&kind!=="alt" ? `<button class="btn sec tiny" type="button" id="ovr">${t("iWasRight")}</button>` : "";
     const o=$("#ovr"); if(o) o.onclick=()=>{ overrideRight(); nextQ() };
     nextBtn($("#fb"), ok?1000:0);
+    inp.focus({preventScroll:true});
   };
   $("#chk").onclick=()=>check(false);
   $("#idk").onclick=()=>check(true);
   inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); if(!Q.answered) check(false); else nextQ() } };
 }
 
+const BUILD_KEYS = "1234567890qwertyuiop";   // keys for the word chips, in screen order
 function qBuild(q){
   const it=q.it;
   const tokens=it.en.replace(/[.!?]$/,"").replace(/^[¿¡]/,"").split(/\s+/).map((w,i)=>i===0&&!PROPER.has(w)?w.toLowerCase():w);
@@ -1022,10 +1027,10 @@ function qBuild(q){
   const picked=[];
   $("#stage").innerHTML=promptHTML(t("buildIt"), it.ru, "")
    +`<div class="slots" id="slots"></div><div class="bank" id="bank"></div><div id="fb"></div>
-     <div class="row" id="bb"><button class="btn sec" type="button" id="clr">${t("clear")}</button><button class="btn" type="button" id="chk" disabled>${t("check")}</button></div>`;
+     <div class="row" id="bb"><button class="btn sec" type="button" id="clr">${t("clear")}</button><button class="btn" type="button" id="chk" disabled>${t("check")}</button></div><div class="keyhint">${t("buildKeys")}</div>`;
   const draw=()=>{
     $("#slots").innerHTML=picked.map((ti,k)=>`<button class="w" type="button" data-k="${k}">${esc(tokens[ti])}</button>`).join("");
-    $("#bank").innerHTML=order.map(ti=>`<button class="w${picked.includes(ti)?" used":""}" type="button" data-t="${ti}" ${picked.includes(ti)?'tabindex="-1" aria-hidden="true"':""}>${esc(tokens[ti])}</button>`).join("");
+    $("#bank").innerHTML=order.map((ti,pos)=>`<button class="w${picked.includes(ti)?" used":""}" type="button" data-t="${ti}" ${picked.includes(ti)?'tabindex="-1" aria-hidden="true"':""}>${pos<BUILD_KEYS.length?`<span class="k" aria-hidden="true">${BUILD_KEYS[pos].toUpperCase()}</span>`:""}${esc(tokens[ti])}</button>`).join("");
     $("#chk").disabled=picked.length!==tokens.length;
     if(Q.answered) return;
     $$("#slots .w").forEach(b=>b.onclick=()=>{ picked.splice(+b.dataset.k,1); draw() });
@@ -1289,10 +1294,10 @@ function runTest(test){
       const it=q.it, tokens=it.en.replace(/[.!?]$/,"").replace(/^[¿¡]/,"").split(/\s+/).map((w,i)=>i===0&&!PROPER.has(w)?w.toLowerCase():w), order=tokens.map((_,i)=>i), picked=[];
       if(tokens.length>1){ let n=0; do{ shuffle(order); n++ }while(order.every((v,i)=>v===i)&&n<10) }
       stage.innerHTML=promptHTML(t("buildIt"),it.ru,"")+`<div class="slots" id="slots"></div><div class="bank" id="bank"></div>
-        <div class="row"><button class="btn sec" type="button" id="skip">${t("skip")}</button><button class="btn" type="button" id="send" disabled>${t("answerBtn")}</button></div>`;
+        <div class="row"><button class="btn sec" type="button" id="skip">${t("skip")}</button><button class="btn" type="button" id="send" disabled>${t("answerBtn")}</button></div><div class="keyhint">${t("buildKeys")}</div>`;
       const draw=()=>{
         $("#slots").innerHTML=picked.map((ti,k)=>`<button class="w" type="button" data-k="${k}">${esc(tokens[ti])}</button>`).join("");
-        $("#bank").innerHTML=order.map(ti=>`<button class="w${picked.includes(ti)?" used":""}" type="button" data-t="${ti}" ${picked.includes(ti)?'tabindex="-1" aria-hidden="true"':""}>${esc(tokens[ti])}</button>`).join("");
+        $("#bank").innerHTML=order.map((ti,pos)=>`<button class="w${picked.includes(ti)?" used":""}" type="button" data-t="${ti}" ${picked.includes(ti)?'tabindex="-1" aria-hidden="true"':""}>${pos<BUILD_KEYS.length?`<span class="k" aria-hidden="true">${BUILD_KEYS[pos].toUpperCase()}</span>`:""}${esc(tokens[ti])}</button>`).join("");
         $("#send").disabled=picked.length!==tokens.length;
         $$("#slots .w").forEach(b=>b.onclick=()=>{ picked.splice(+b.dataset.k,1); draw() });
         $$("#bank .w").forEach(b=>b.onclick=()=>{ const x=+b.dataset.t; if(!picked.includes(x)){ picked.push(x); sfx.tap(); draw() } });
@@ -1610,10 +1615,49 @@ function renderSettings(){
 }
 
 /* ================= keyboard shortcuts ================= */
+// Works in lessons (#stage) and tests (#tstage); other screens keep normal browser keys.
+const playStage = () => document.getElementById("stage") || document.getElementById("tstage");
+const typingNow = () => { const a=document.activeElement; return !!a && (a.tagName==="INPUT"||a.tagName==="TEXTAREA") && !a.readOnly };
+const inside = (el,sel) => !!el && el!==document.body && !!el.closest && !!el.closest(sel);
 document.addEventListener("keydown",e=>{
-  if(!Q||!Q.cur||Q.answered||!document.getElementById("stage")) return;
-  if(Q.cur.t!=="choice"&&Q.cur.t!=="gram") return;
-  const n=+e.key; if(n>=1&&n<=4){ const b=$$(".opt")[n-1]; if(b) b.click() }
+  if(e.ctrlKey||e.metaKey||e.altKey) return;
+  const st=playStage(); if(!st) return;
+  const a=document.activeElement;
+  // Tab moves only between the buttons and the answer box of the exercise, in a loop
+  if(e.key==="Tab"){
+    const f=[...st.querySelectorAll("button,input,[tabindex]")].filter(x=>!x.disabled && x.tabIndex>=0 && x.getClientRects().length && !x.closest("[hidden],.used"));
+    if(!f.length) return;
+    e.preventDefault();
+    let i=f.indexOf(a);
+    i = i<0 ? (e.shiftKey?f.length-1:0) : (i+(e.shiftKey?-1:1)+f.length)%f.length;
+    f[i].focus({preventScroll:true});
+    return;
+  }
+  if(typingNow()) return;
+  const lessonDone = st.id==="stage" && Q && Q.answered;
+  // choose an option: 1–9
+  const opts=st.querySelectorAll(".opt");
+  if(opts.length && /^[1-9]$/.test(e.key)){ const b=opts[+e.key-1]; if(b && !b.disabled){ e.preventDefault(); b.click() } return }
+  // build a phrase: 1–9, 0, Q–P pick a word, Backspace takes the last one back, Enter checks / goes on
+  const bank=st.querySelector("#bank");
+  if(bank){
+    if(e.key==="Enter" && !inside(a,"button:not(.w)")){
+      const go=$("#nx")||[$("#chk"),$("#send")].find(b=>b&&!b.disabled);
+      if(go){ e.preventDefault(); go.click() }
+      return;
+    }
+    if(lessonDone) return;
+    const i=e.key.length===1 ? BUILD_KEYS.indexOf(e.key.toLowerCase()) : -1;
+    if(i>=0){ const b=bank.querySelectorAll(".w")[i]; if(b && !b.classList.contains("used")){ e.preventDefault(); b.click() } return }
+    if(e.key==="Backspace"){ const s=st.querySelectorAll("#slots .w"); if(s.length){ e.preventDefault(); s[s.length-1].click() } return }
+    return;
+  }
+  // flashcards: Space/Enter flip, then 1 = still learning, 2 = I know
+  const card=st.querySelector("#card");
+  if(card){
+    if((e.key===" "||e.key==="Enter") && a!==card && !inside(a,"button")){ e.preventDefault(); card.click(); return }
+    if(!$("#cb").hidden){ if(e.key==="1"){ e.preventDefault(); $("#learn").click() } else if(e.key==="2"){ e.preventDefault(); $("#know").click() } }
+  }
 });
 
 rebuild();
