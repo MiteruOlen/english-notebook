@@ -309,7 +309,7 @@ input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.7.0";
+const APP_VERSION = "1.7.1";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -374,7 +374,7 @@ ru:{
   backup:"Резервная копия", backupText:"Прогресс и добавленные уроки хранятся в этом браузере. Чтобы перенести их на другое устройство или не потерять, скопируй код и сохрани его, например, в заметках или отправь себе в мессенджер.",
   copyCode:"Скопировать код прогресса", copied:"Код скопирован.", selected:"Код выделен, скопируй его вручную.", restoreSum:"Восстановить из кода", restorePh:"Вставь код прогресса", restore:"Восстановить", restored:"Прогресс восстановлен.", badCode:"Код не подошёл. Проверь, что он скопирован целиком.",
   resetH:"Сбросить прогресс", resetText:"Удалит все звёзды, рекорды, серию дней и статистику слов. Сами уроки и результаты тестов останутся. Сбросить только один урок можно внизу страницы урока.", resetAll:"Сбросить весь прогресс", resetQ:"Точно сбросить весь прогресс? Это нельзя отменить.", yesReset:"Да, сбросить",
-  cards:["карточка","карточки","карточек"], revToday:"Повторение на сегодня", revCount:c=>`Сегодня: ${c}`, revAllDone:"На сегодня всё повторено", revTomorrow:c=>`Завтра: ${c}`, revNone:"Завтра будет что повторить", review:"Повторение", revHint:"Слова возвращаются через 1, 3, 7, 14 и 30 дней. Ошибка — минус две ступени, и слово снова завтра.",
+  cards:["карточка","карточки","карточек"], revToday:"Повторение на сегодня", revCount:c=>`Сегодня: ${c}`, revAllDone:"На сегодня всё повторено",revNext:(n,left)=>`Следующие ${nw(n,"cards")} · осталось ${left}`, revTomorrow:c=>`Завтра: ${c}`, revNone:"Завтра будет что повторить", review:"Повторение", revHint:"Слова возвращаются через 1, 3, 7, 14 и 30 дней. Ошибка — минус две ступени, и слово снова завтра.",
   questions:["вопрос","вопроса","вопросов"], min:"мин", testN:n=>`Тест ${n}`, testPill:"Тест", testCovers:x=>`По урокам ${x}`, notTaken:"Ещё не написан",
   testRules:["Тест пишется один раз. Пересдать его нельзя.","Каждый вопрос задаётся один раз, без подсказок. Правильные ответы покажем в конце.","Таймер идёт без пауз. Когда время выйдет, тест закончится сам.","Если закрыть тест крестиком, он закончится и будет оценён."],
   codeLabel:"Код от учителя", startTest:"Начать тест", wrongCode:"Код не подходит.", needNewCode:"Этот тест уже написан. Пересдать его нельзя.", copyResult:"Скопировать результат для учителя", resultCopied:"Результат скопирован. Отправь его учителю.", resultSelected:"Результат выделен, скопируй его вручную.",
@@ -430,7 +430,7 @@ uk:{
   backup:"Резервна копія", backupText:"Прогрес і додані уроки зберігаються в цьому браузері. Щоб перенести їх на інший пристрій або не втратити, скопіюй код і збережи його, наприклад, у нотатках або надішли собі в месенджер.",
   copyCode:"Скопіювати код прогресу", copied:"Код скопійовано.", selected:"Код виділено, скопіюй його вручну.", restoreSum:"Відновити з коду", restorePh:"Встав код прогресу", restore:"Відновити", restored:"Прогрес відновлено.", badCode:"Код не підійшов. Перевір, що його скопійовано повністю.",
   resetH:"Скинути прогрес", resetText:"Видалить усі зірки, рекорди, серію днів і статистику слів. Самі уроки й результати тестів залишаться. Скинути лише один урок можна внизу сторінки уроку.", resetAll:"Скинути весь прогрес", resetQ:"Точно скинути весь прогрес? Це не можна скасувати.", yesReset:"Так, скинути",
-  cards:["картка","картки","карток"], revToday:"Повторення на сьогодні", revCount:c=>`Сьогодні: ${c}`, revAllDone:"На сьогодні все повторено", revTomorrow:c=>`Завтра: ${c}`, revNone:"Завтра буде що повторити", review:"Повторення", revHint:"Слова повертаються через 1, 3, 7, 14 і 30 днів. Помилка — мінус два щаблі, і слово знову завтра.",
+  cards:["картка","картки","карток"], revToday:"Повторення на сьогодні", revCount:c=>`Сьогодні: ${c}`, revAllDone:"На сьогодні все повторено",revNext:(n,left)=>`Наступні ${nw(n,"cards")} · залишилось ${left}`, revTomorrow:c=>`Завтра: ${c}`, revNone:"Завтра буде що повторити", review:"Повторення", revHint:"Слова повертаються через 1, 3, 7, 14 і 30 днів. Помилка — мінус два щаблі, і слово знову завтра.",
   questions:["запитання","запитання","запитань"], min:"хв", testN:n=>`Тест ${n}`, testPill:"Тест", testCovers:x=>`За уроками ${x}`, notTaken:"Ще не написано",
   testRules:["Тест пишеться один раз. Перескласти його не можна.","Кожне запитання ставиться один раз, без підказок. Правильні відповіді покажемо наприкінці.","Таймер іде без пауз. Коли час вийде, тест закінчиться сам.","Якщо закрити тест хрестиком, він закінчиться й буде оцінений."],
   codeLabel:"Код від учителя", startTest:"Почати тест", wrongCode:"Код не підходить.", needNewCode:"Цей тест уже написано. Перескласти його не можна.", copyResult:"Скопіювати результат для вчителя", resultCopied:"Результат скопійовано. Надішли його вчителю.", resultSelected:"Результат виділено, скопіюй його вручну.",
@@ -486,7 +486,7 @@ en:{
   backup:"Backup", backupText:"Progress and added lessons are stored in this browser. To move them to another device or keep them safe, copy the code and save it somewhere, like your notes or a message to yourself.",
   copyCode:"Copy progress code", copied:"Code copied.", selected:"The code is selected. Copy it by hand.", restoreSum:"Restore from code", restorePh:"Paste your progress code", restore:"Restore", restored:"Progress restored.", badCode:"That code didn't work. Check that you copied all of it.",
   resetH:"Reset progress", resetText:"Deletes all stars, records, the day streak and word stats. The lessons themselves and test results stay. To reset a single lesson, use the link at the bottom of that lesson's page.", resetAll:"Reset all progress", resetQ:"Reset all progress? This can't be undone.", yesReset:"Yes, reset",
-  cards:["card","cards"], revToday:"Today's review", revCount:c=>`Today: ${c}`, revAllDone:"All reviewed for today", revTomorrow:c=>`Tomorrow: ${c}`, revNone:"More to review tomorrow", review:"Review", revHint:"Words come back after 1, 3, 7, 14 and 30 days. A mistake moves a word two steps back, and it comes back tomorrow.",
+  cards:["card","cards"], revToday:"Today's review", revCount:c=>`Today: ${c}`, revAllDone:"All reviewed for today",revNext:(n,left)=>`Next ${nw(n,"cards")} · ${left} left`, revTomorrow:c=>`Tomorrow: ${c}`, revNone:"More to review tomorrow", review:"Review", revHint:"Words come back after 1, 3, 7, 14 and 30 days. A mistake moves a word two steps back, and it comes back tomorrow.",
   questions:["question","questions"], min:"min", testN:n=>`Test ${n}`, testPill:"Test", testCovers:x=>`Covers lessons ${x}`, notTaken:"Not taken yet",
   testRules:["The test is taken once. It can't be retaken.","Each question is asked once, with no hints. The right answers are shown at the end.","The timer doesn't pause. When time runs out, the test ends on its own.","Closing the test with the cross ends it, and it gets graded."],
   codeLabel:"Teacher's code", startTest:"Start the test", wrongCode:"That code doesn't match.", needNewCode:"This test has already been taken. It can't be retaken.", copyResult:"Copy the result for your teacher", resultCopied:"Result copied. Send it to your teacher.", resultSelected:"The result is selected. Copy it by hand.",
@@ -1075,6 +1075,7 @@ function finishQuiz(){
   sfx.win();
   const msg = cfg.noStars?t("mCards"):pct===100?t("m100"):pct>=80?t("m80"):pct>=50?t("m50"):t("mLow");
   const nx = cfg.day&&cfg.stepKey ? nextStepAfter(cfg.day,cfg.stepKey) : null;
+  const revLeft = cfg.review ? dueItems().length : 0;   // answered words have left today's list, so these are the next ones
   const record = prevBest!=null && pct>prevBest;
   $("#pb").innerHTML="";
   $("#stage").innerHTML=`<div class="done">
@@ -1082,16 +1083,18 @@ function finishQuiz(){
     ${cfg.noStars?`<div class="big">${Q.total}</div>`:`<div class="bigstars" aria-label="${esc(t("starsAria",stars,3))}">${"<b>★</b>".repeat(stars)}${"★".repeat(3-stars)}</div><div class="big">${pct}%</div>`}
     <div>${msg}<br><span class="muted small">${cfg.noStars?t("knewIt",Q.first,Q.total):t("firstTry",Q.first,Q.total)}${record?" · "+t("newRec"):prevBest!=null&&!cfg.noStars?" · "+t("bestPct",Math.max(prevBest,pct)):""}</span></div>
     ${nx?`<button class="btn" type="button" id="nxs" style="width:100%">${esc(t("nextStep",nx.name))} ${ICON.arrow}</button>`:""}
+    ${revLeft?`<button class="btn" type="button" id="nxr" style="width:100%">${esc(t("revNext",Math.min(REVIEW_BATCH,revLeft),revLeft))} ${ICON.arrow}</button>`:cfg.review?`<div class="muted small">${t("revAllDone")}</div>`:""}
     <div class="row" style="width:100%">
-      ${wrong.length?`<button class="btn ${nx?"sec":""}" type="button" id="rw">${t("retry",wrong.length)}</button>`:""}
-      <button class="btn sec" type="button" id="again">${t("again")}</button>
+      ${wrong.length?`<button class="btn ${nx||revLeft?"sec":""}" type="button" id="rw">${t("retry",wrong.length)}</button>`:""}
+      ${cfg.review?"":`<button class="btn sec" type="button" id="again">${t("again")}</button>`}
     </div>
     <button class="linkbtn" type="button" id="toDay">${cfg.day?esc(t("toDay",cfg.day.day)):t("toHome")}</button>
     ${wrong.length?`<div class="mist"><span class="kind">${t("mistakesWhere")}</span>${wrong.map(q=>q.it?`<div><span>${esc(q.it.en)}</span><span>${esc(q.it.ru)}</span></div>`:`<div><span>${esc(q.g.full)}</span><span></span></div>`).join("")}</div>`:""}
   </div>`;
   const d=cfg.day;
   const rw=$("#rw"); if(rw) rw.onclick=()=>runQuiz({...cfg,stepKey:null,bestKey:null,title:t("mistakes"),qs:wrong},true);
-  $("#again").onclick=()=>runQuiz(cfg,true);
+  const ag=$("#again"); if(ag) ag.onclick=()=>runQuiz(cfg,true);
+  const nr=$("#nxr"); if(nr){ nr.onclick=()=>startReview(true); nr.focus({preventScroll:true}) }
   $("#toDay").onclick=()=>leavePlay(d);
   const n=$("#nxs"); if(n) n.onclick=()=>{ Q=null; startStep(d,nx.k) };
 }
@@ -1383,12 +1386,13 @@ function startRepeat(d){
   sample(d.grammar,5).forEach(g=>qs.push({t:"gram",g}));
   runQuiz({day:d,title:t("dayReview"),qs,bestKey:"rep:"+d.id});
 }
-function startReview(){
-  const items=dueItems().slice(0,20); if(!items.length) return;
+const REVIEW_BATCH = 20;
+function startReview(replay){
+  const items=dueItems().slice(0,REVIEW_BATCH); if(!items.length) return;
   const qs=items.map(it=>{ const typed=P.items[it.key]&&P.items[it.key].typed;
     if(it.kind==="p") return typed&&Math.random()<.5?{t:"type",it}:{t:"build",it};
     return typed&&Math.random()<.6?{t:"type",it}:{t:"choice",it,dir:Math.random()<.5?"en":"ru"} });
-  runQuiz({title:t("review"),qs});
+  runQuiz({title:t("review"),qs,review:true},replay);
 }
 function startHard(){
   const items=sample(hardItems(),15); if(!items.length) return;

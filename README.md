@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 1.7.0**
+**Version 1.7.1**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -59,7 +59,7 @@ When you type an answer, the app is strict but fair:
 
 Everything you've answered goes into your daily review. Words come back after **1 day**, then **3, 7, 14, 30 and 60 days**, as long as you keep getting them right. A mistake moves a word **two steps back** (for example from the 30-day stage to the 7-day stage), and it comes back tomorrow. A word only loses steps once a day, however often it's missed that day.
 
-The orange card on the home screen shows how many cards are waiting today (up to 20 per session). Once you're done, it turns green and shows how many are waiting tomorrow. Ten minutes of review a day is the best way to not forget old words while learning new ones.
+The orange card on the home screen shows how many cards are waiting today. A session has up to 20; when it ends, **Next 20** carries on with the rest (there's no point replaying the same 20: they're done for today). Once you're done, it turns green and shows how many are waiting tomorrow. Ten minutes of review a day is the best way to not forget old words while learning new ones.
 
 ## Vocabulary
 
@@ -156,6 +156,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 1.7.1 | Daily review: "Next 20" continues with the remaining words instead of replaying the same 20 |
 | 1.7.0 | Keyboard: Tab stays inside the exercise, number keys for building phrases and flashcards |
 | 1.6.3 | Missing accents count as correct, with a reminder |
 | 1.6.2 | Lessons published at the link win over hand-added copies |
