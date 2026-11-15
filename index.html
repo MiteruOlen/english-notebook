@@ -309,7 +309,7 @@ input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.7.1";
+const APP_VERSION = "1.7.2";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -357,7 +357,7 @@ ru:{
   pickTr:"Выбери перевод", pickIn:l=>`Выбери слово · ${l}`, correct:"Верно!", notThat:"Не то.",
   typeIn:l=>`Напиши · ${l}`, typeHere:"Пиши здесь…", dontKnow:"Не знаю", check:"Проверить", great:"Отлично!",
   alt:"Так тоже можно, но в этом уроке учим:",
-  artOk:"Засчитано. Не забудь артикль:", artExtra:"Засчитано. Здесь артикль не нужен:", regraded:"Оценка пересчитана после исправления проверки ответов.", typo:"Почти! Опечатка.", accents:"Засчитано. Обрати внимание на знаки над буквами:", answerIs:"Правильный ответ:", notQuite:"Не совсем.",
+  artOk:"Засчитано. Не забудь артикль:", artExtra:"Засчитано. Здесь артикль не нужен:", regraded:"Оценка пересчитана после исправления проверки ответов.", typo:"Почти! Опечатка — не считается ошибкой.", accents:"Засчитано. Обрати внимание на знаки над буквами:", answerIs:"Правильный ответ:", notQuite:"Не совсем.",
   yours:x=>`Твой ответ: ${x}`, iWasRight:"Мой ответ верный",
   buildIt:"Собери фразу", clear:"Сбросить",buildKeys:"Клавиши: 1–9, 0, Q–P — выбрать слово · Backspace — убрать · Enter — проверить",cardKeys:"Клавиши: пробел — перевернуть · 1 — ещё учу · 2 — знаю", wrongOrder:"Порядок другой:", pickForm:"Выбери правильную форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Идеально, без единой ошибки!", m80:"Очень хорошо!", m50:"Неплохо. Ещё круг, и будет лучше.", mLow:"Для начала это нормально. Повтори ошибки ещё раз.", mCards:"Все карточки пройдены.",
@@ -413,7 +413,7 @@ uk:{
   pickTr:"Обери переклад", pickIn:l=>`Обери слово · ${l}`, correct:"Правильно!", notThat:"Не те.",
   typeIn:l=>`Напиши · ${l}`, typeHere:"Пиши тут…", dontKnow:"Не знаю", check:"Перевірити", great:"Чудово!",
   alt:"Так теж можна, але в цьому уроці вчимо:",
-  artOk:"Зараховано. Не забудь артикль:", artExtra:"Зараховано. Тут артикль не потрібен:", regraded:"Оцінку перераховано після виправлення перевірки відповідей.", typo:"Майже! Помилка в написанні.", accents:"Зараховано. Зверни увагу на знаки над літерами:", answerIs:"Правильна відповідь:", notQuite:"Не зовсім.",
+  artOk:"Зараховано. Не забудь артикль:", artExtra:"Зараховано. Тут артикль не потрібен:", regraded:"Оцінку перераховано після виправлення перевірки відповідей.", typo:"Майже! Помилка в написанні — не рахується як помилка.", accents:"Зараховано. Зверни увагу на знаки над літерами:", answerIs:"Правильна відповідь:", notQuite:"Не зовсім.",
   yours:x=>`Твоя відповідь: ${x}`, iWasRight:"Моя відповідь правильна",
   buildIt:"Склади фразу", clear:"Очистити",buildKeys:"Клавіші: 1–9, 0, Q–P — вибрати слово · Backspace — прибрати · Enter — перевірити",cardKeys:"Клавіші: пробіл — перевернути · 1 — ще вчу · 2 — знаю", wrongOrder:"Інший порядок:", pickForm:"Обери правильну форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Ідеально, без жодної помилки!", m80:"Дуже добре!", m50:"Непогано. Ще одне коло, і буде краще.", mLow:"Для початку це нормально. Повтори помилки ще раз.", mCards:"Усі картки пройдено.",
@@ -469,7 +469,7 @@ en:{
   pickTr:"Pick the translation", pickIn:l=>`Pick the word · ${l}`, correct:"Correct!", notThat:"Not that one.",
   typeIn:l=>`Type it · ${l}`, typeHere:"Type here…", dontKnow:"I don't know", check:"Check", great:"Great!",
   alt:"That works too, but this lesson teaches:",
-  artOk:"Counted. Don't forget the article:", artExtra:"Counted. No article needed here:", regraded:"Regraded after a fix to how answers are checked.", typo:"Almost! Small typo.", accents:"Counted. Mind the accents:", answerIs:"The answer is:", notQuite:"Not quite.",
+  artOk:"Counted. Don't forget the article:", artExtra:"Counted. No article needed here:", regraded:"Regraded after a fix to how answers are checked.", typo:"Almost! Small typo — not counted as a mistake.", accents:"Counted. Mind the accents:", answerIs:"The answer is:", notQuite:"Not quite.",
   yours:x=>`You wrote: ${x}`, iWasRight:"I was right",
   buildIt:"Build the phrase", clear:"Clear",buildKeys:"Keys: 1–9, 0, Q–P pick a word · Backspace undo · Enter check",cardKeys:"Keys: Space flip · 1 still learning · 2 I know", wrongOrder:"Different order:", pickForm:"Pick the right form", shouldBe:"It should be:",
   done:"Done", m100:"Perfect, not a single mistake!", m80:"Very good!", m50:"Not bad. One more round and it'll be better.", mLow:"That's normal at the start. Go over the mistakes again.", mCards:"All cards done.",
@@ -999,7 +999,7 @@ function qType(q){
     Q.answered=true; inp.readOnly=true;
     let kind = giveUp ? "no" : checkTyped(it,val,Q.learn); if(kind==="empty") kind="no";
     const ok=kind==="ok"||kind==="art"||kind==="artx"||kind==="accent";
-    answer(ok,{typed:true,soft:kind==="alt"}); inp.classList.add(ok?"ok":"no");
+    answer(ok,{typed:true,soft:kind==="alt"||kind==="typo"});   // "almost" and small typos: no penalty, the word comes back this session inp.classList.add(ok?"ok":"no");
     let h;
     if(kind==="ok") h=`<div class="fb ok"><b>${t("great")}</b></div>`;
     else if(kind==="alt") h=`<div class="fb warn"><b>${t("alt")}</b><span class="ans">${esc(it.en)}</span></div>`;
@@ -1320,7 +1320,8 @@ function finishTest(test,timeout,silent){
   run.qs.forEach((sq,i)=>{
     const q=resolveQ(sq), a=run.ans[i]; if(!q) return;
     const ok=!!(a&&a.ok); if(ok) correct++;
-    if(q.it) stat(q.it,ok,q.t==="type");
+    const typo = !ok && q.t==="type" && a && a.v && checkTyped(q.it,a.v,test.learn)==="typo";   // wrong for the score, but no review penalty
+    if(q.it && !typo) stat(q.it,ok,q.t==="type");
     if(!ok) wrong.push(q.t==="gram"?{q:q.g.before+"___"+q.g.after,your:a?a.v:"",right:q.g.answer}:{q:q.it.ru,your:a?a.v:"",right:q.it.en});
   });
   const total=run.qs.length, pct=total?Math.round(correct/total*100):0;

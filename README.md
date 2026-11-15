@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 1.7.1**
+**Version 1.7.2**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -48,7 +48,7 @@ A lesson only has the steps it has material for: no phrases means no phrase step
 
 When you type an answer, the app is strict but fair:
 
-- **Small typo** ("frend" for "friend") → *Almost!* You see the correct spelling.
+- **Small typo** ("frend" for "friend") → *Almost!* You see the correct spelling. It isn't counted as a mistake: the word comes back later in the same round, and getting it right then counts. (In a test a typo is still wrong for the score, but it doesn't cost the word any review steps.)
 - **Missing accent** ("adios" for "adiós", "mas" for "más") → counts as correct, with a reminder about the accents.
 - **Missing article** ("house" for "a house") → counts as correct, with a reminder about the article.
 - **Short forms** ("I'm" and "I am", "I'd like" and "I would like") → both are correct.
@@ -156,6 +156,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 1.7.2 | A small typo is no longer a mistake: no penalty, the word comes back in the same round |
 | 1.7.1 | Daily review: "Next 20" continues with the remaining words instead of replaying the same 20 |
 | 1.7.0 | Keyboard: Tab stays inside the exercise, number keys for building phrases and flashcards |
 | 1.6.3 | Missing accents count as correct, with a reminder |
