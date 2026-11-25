@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- Everything is built into this file: nothing may load from or send to other websites. Lesson files come only from this site's own lessons folder. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src data:; img-src data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <title>English Notebook</title>
 <style>
 @font-face{font-family:'Onest';font-style:normal;font-display:swap;font-weight:100 900;src:url(data:font/woff2;base64,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) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
@@ -207,7 +209,15 @@ details.list summary{cursor:pointer;font-weight:600}
 .w.used{visibility:hidden}
 .bank .w .k{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-right:7px;padding:0 4px;border-radius:5px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;vertical-align:2px}
 .keyhint{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
-@media (hover:none){.bank .w .k,.keyhint{display:none}}
+.typed{text-align:center;font-size:17px;font-weight:600;color:var(--accent);min-height:24px;margin-top:4px;letter-spacing:.02em}
+.typed.empty{color:var(--muted);font-weight:400;font-size:14px}
+.typed.bad{animation:badflash .35s}
+@keyframes badflash{0%,100%{color:inherit}30%{color:var(--bad);transform:translateX(-3px)}60%{transform:translateX(3px)}}
+.bank .w.match{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.bank .w.dim{opacity:.4}
+.kbset{display:flex;flex-direction:column;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
+.kbset .courses{justify-content:flex-start}
+@media (hover:none){.bank .w .k,.keyhint,.typed{display:none}}
 
 /* finish */
 .done{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center}
@@ -309,7 +319,7 @@ input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.7.2";
+const APP_VERSION = "1.8.0";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -359,7 +369,7 @@ ru:{
   alt:"Так тоже можно, но в этом уроке учим:",
   artOk:"Засчитано. Не забудь артикль:", artExtra:"Засчитано. Здесь артикль не нужен:", regraded:"Оценка пересчитана после исправления проверки ответов.", typo:"Почти! Опечатка — не считается ошибкой.", accents:"Засчитано. Обрати внимание на знаки над буквами:", answerIs:"Правильный ответ:", notQuite:"Не совсем.",
   yours:x=>`Твой ответ: ${x}`, iWasRight:"Мой ответ верный",
-  buildIt:"Собери фразу", clear:"Сбросить",buildKeys:"Клавиши: 1–9, 0, Q–P — выбрать слово · Backspace — убрать · Enter — проверить",cardKeys:"Клавиши: пробел — перевернуть · 1 — ещё учу · 2 — знаю", wrongOrder:"Порядок другой:", pickForm:"Выбери правильную форму", shouldBe:"Правильно так:",
+  buildIt:"Собери фразу", clear:"Сбросить",buildKeys:"Клавиши: 1–9, 0, Q–P — выбрать слово · Backspace — убрать · Enter — проверить",cardKeys:"Клавиши: пробел — перевернуть · 1 — ещё учу · 2 — знаю",kbH:"Клавиатура",kbText:"Для компьютерной клавиатуры: как работают клавиши в каждом упражнении. На телефоне и планшете не используется.",kbBuild:"Собери фразу",kbChoice:"Выбор ответа и грамматика",kbCards:"Карточки",kbHints:"Показывать подсказки клавиш",kb_build_num:"У каждого слова своя клавиша: 1–9, 0, потом Q–P.",kb_build_qwerty:"У каждого слова своя буква: Q W E R T Y…, потом A S D F…, Z X C V… Без цифр.",kb_build_type:"Набери первые буквы слова: оно выбирается, как только подходит только одно слово, — сразу начинай следующее. Если одно слово — начало другого (la / las), пробел выбирает короткое.",kb_build_typeSpace:"Набери слово (или его начало) и нажми пробел — как при обычном наборе. Выбирается первое подсвеченное слово.",kb_choice_num:"Клавиши 1–4 выбирают ответ.",kb_choice_asdf:"Клавиши A S D F выбирают ответ.",kb_cards_num:"Пробел переворачивает карточку, 1 — ещё учу, 2 — знаю.",kb_cards_arrows:"Пробел переворачивает карточку, ← — ещё учу, → — знаю.",hint_build_qwerty:"Клавиши: буква на каждом слове · Backspace — убрать · Enter — проверить",hint_build_type:"Набери начало слова · пробел — выбрать · Backspace — убрать · Esc — стереть · Enter — проверить",hint_build_typeSpace:"Набери начало слова, пробел — выбрать · Backspace — убрать · Esc — стереть · Enter — проверить",hint_cards_arrows:"Клавиши: пробел — перевернуть · ← — ещё учу · → — знаю",typeWord:"набери слово…",kbl_type:"Набор",kbl_typeSpace:"Набор + пробел", wrongOrder:"Порядок другой:", pickForm:"Выбери правильную форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Идеально, без единой ошибки!", m80:"Очень хорошо!", m50:"Неплохо. Ещё круг, и будет лучше.", mLow:"Для начала это нормально. Повтори ошибки ещё раз.", mCards:"Все карточки пройдены.",
   firstTry:(a,b)=>`С первой попытки: ${a} из ${b}`, knewIt:(a,b)=>`Сразу знаешь: ${a} из ${b}`, newRec:"новый рекорд!", nextStep:n=>`Дальше: ${n}`,
   retry:n=>`Повторить ошибки (${n})`, again:"Ещё раз", toDay:n=>`К уроку ${n}`, toHome:"На главную", mistakesWhere:"Где были ошибки", mistakes:"Ошибки", dayReview:"Повтор урока",
@@ -375,7 +385,7 @@ ru:{
   copyCode:"Скопировать код прогресса", copied:"Код скопирован.", selected:"Код выделен, скопируй его вручную.", restoreSum:"Восстановить из кода", restorePh:"Вставь код прогресса", restore:"Восстановить", restored:"Прогресс восстановлен.", badCode:"Код не подошёл. Проверь, что он скопирован целиком.",
   resetH:"Сбросить прогресс", resetText:"Удалит все звёзды, рекорды, серию дней и статистику слов. Сами уроки и результаты тестов останутся. Сбросить только один урок можно внизу страницы урока.", resetAll:"Сбросить весь прогресс", resetQ:"Точно сбросить весь прогресс? Это нельзя отменить.", yesReset:"Да, сбросить",
   cards:["карточка","карточки","карточек"], revToday:"Повторение на сегодня", revCount:c=>`Сегодня: ${c}`, revAllDone:"На сегодня всё повторено",revNext:(n,left)=>`Следующие ${nw(n,"cards")} · осталось ${left}`, revTomorrow:c=>`Завтра: ${c}`, revNone:"Завтра будет что повторить", review:"Повторение", revHint:"Слова возвращаются через 1, 3, 7, 14 и 30 дней. Ошибка — минус две ступени, и слово снова завтра.",
-  questions:["вопрос","вопроса","вопросов"], min:"мин", testN:n=>`Тест ${n}`, testPill:"Тест", testCovers:x=>`По урокам ${x}`, notTaken:"Ещё не написан",
+  questions:["вопрос","вопроса","вопросов"], min:"мин", testN:n=>`Тест ${n}`, testPill:"Тест", testCovers:x=>`По урокам ${x}`,
   testRules:["Тест пишется один раз. Пересдать его нельзя.","Каждый вопрос задаётся один раз, без подсказок. Правильные ответы покажем в конце.","Таймер идёт без пауз. Когда время выйдет, тест закончится сам.","Если закрыть тест крестиком, он закончится и будет оценён."],
   codeLabel:"Код от учителя", startTest:"Начать тест", wrongCode:"Код не подходит.", needNewCode:"Этот тест уже написан. Пересдать его нельзя.", copyResult:"Скопировать результат для учителя", resultCopied:"Результат скопирован. Отправь его учителю.", resultSelected:"Результат выделен, скопируй его вручную.",
   missingLessons:x=>`Для теста не хватает уроков: ${x}. Сначала добавь их.`, resumeTest:x=>`Продолжить тест · осталось ${x}`, answerBtn:"Ответить", skip:"Пропустить",
@@ -415,7 +425,7 @@ uk:{
   alt:"Так теж можна, але в цьому уроці вчимо:",
   artOk:"Зараховано. Не забудь артикль:", artExtra:"Зараховано. Тут артикль не потрібен:", regraded:"Оцінку перераховано після виправлення перевірки відповідей.", typo:"Майже! Помилка в написанні — не рахується як помилка.", accents:"Зараховано. Зверни увагу на знаки над літерами:", answerIs:"Правильна відповідь:", notQuite:"Не зовсім.",
   yours:x=>`Твоя відповідь: ${x}`, iWasRight:"Моя відповідь правильна",
-  buildIt:"Склади фразу", clear:"Очистити",buildKeys:"Клавіші: 1–9, 0, Q–P — вибрати слово · Backspace — прибрати · Enter — перевірити",cardKeys:"Клавіші: пробіл — перевернути · 1 — ще вчу · 2 — знаю", wrongOrder:"Інший порядок:", pickForm:"Обери правильну форму", shouldBe:"Правильно так:",
+  buildIt:"Склади фразу", clear:"Очистити",buildKeys:"Клавіші: 1–9, 0, Q–P — вибрати слово · Backspace — прибрати · Enter — перевірити",cardKeys:"Клавіші: пробіл — перевернути · 1 — ще вчу · 2 — знаю",kbH:"Клавіатура",kbText:"Для комп'ютерної клавіатури: як працюють клавіші в кожній вправі. На телефоні й планшеті не використовується.",kbBuild:"Склади фразу",kbChoice:"Вибір відповіді та граматика",kbCards:"Картки",kbHints:"Показувати підказки клавіш",kb_build_num:"У кожного слова своя клавіша: 1–9, 0, потім Q–P.",kb_build_qwerty:"У кожного слова своя літера: Q W E R T Y…, потім A S D F…, Z X C V… Без цифр.",kb_build_type:"Набери перші літери слова: воно вибирається, щойно підходить лише одне слово, — одразу починай наступне. Якщо одне слово — початок іншого (la / las), пробіл вибирає коротше.",kb_build_typeSpace:"Набери слово (або його початок) і натисни пробіл — як при звичайному наборі. Вибирається перше підсвічене слово.",kb_choice_num:"Клавіші 1–4 вибирають відповідь.",kb_choice_asdf:"Клавіші A S D F вибирають відповідь.",kb_cards_num:"Пробіл перевертає картку, 1 — ще вчу, 2 — знаю.",kb_cards_arrows:"Пробіл перевертає картку, ← — ще вчу, → — знаю.",hint_build_qwerty:"Клавіші: літера на кожному слові · Backspace — прибрати · Enter — перевірити",hint_build_type:"Набери початок слова · пробіл — вибрати · Backspace — прибрати · Esc — стерти · Enter — перевірити",hint_build_typeSpace:"Набери початок слова, пробіл — вибрати · Backspace — прибрати · Esc — стерти · Enter — перевірити",hint_cards_arrows:"Клавіші: пробіл — перевернути · ← — ще вчу · → — знаю",typeWord:"набери слово…",kbl_type:"Набір",kbl_typeSpace:"Набір + пробіл", wrongOrder:"Інший порядок:", pickForm:"Обери правильну форму", shouldBe:"Правильно так:",
   done:"Готово", m100:"Ідеально, без жодної помилки!", m80:"Дуже добре!", m50:"Непогано. Ще одне коло, і буде краще.", mLow:"Для початку це нормально. Повтори помилки ще раз.", mCards:"Усі картки пройдено.",
   firstTry:(a,b)=>`З першої спроби: ${a} з ${b}`, knewIt:(a,b)=>`Одразу знаєш: ${a} з ${b}`, newRec:"новий рекорд!", nextStep:n=>`Далі: ${n}`,
   retry:n=>`Повторити помилки (${n})`, again:"Ще раз", toDay:n=>`До уроку ${n}`, toHome:"На головну", mistakesWhere:"Де були помилки", mistakes:"Помилки", dayReview:"Повтор уроку",
@@ -431,7 +441,7 @@ uk:{
   copyCode:"Скопіювати код прогресу", copied:"Код скопійовано.", selected:"Код виділено, скопіюй його вручну.", restoreSum:"Відновити з коду", restorePh:"Встав код прогресу", restore:"Відновити", restored:"Прогрес відновлено.", badCode:"Код не підійшов. Перевір, що його скопійовано повністю.",
   resetH:"Скинути прогрес", resetText:"Видалить усі зірки, рекорди, серію днів і статистику слів. Самі уроки й результати тестів залишаться. Скинути лише один урок можна внизу сторінки уроку.", resetAll:"Скинути весь прогрес", resetQ:"Точно скинути весь прогрес? Це не можна скасувати.", yesReset:"Так, скинути",
   cards:["картка","картки","карток"], revToday:"Повторення на сьогодні", revCount:c=>`Сьогодні: ${c}`, revAllDone:"На сьогодні все повторено",revNext:(n,left)=>`Наступні ${nw(n,"cards")} · залишилось ${left}`, revTomorrow:c=>`Завтра: ${c}`, revNone:"Завтра буде що повторити", review:"Повторення", revHint:"Слова повертаються через 1, 3, 7, 14 і 30 днів. Помилка — мінус два щаблі, і слово знову завтра.",
-  questions:["запитання","запитання","запитань"], min:"хв", testN:n=>`Тест ${n}`, testPill:"Тест", testCovers:x=>`За уроками ${x}`, notTaken:"Ще не написано",
+  questions:["запитання","запитання","запитань"], min:"хв", testN:n=>`Тест ${n}`, testPill:"Тест", testCovers:x=>`За уроками ${x}`,
   testRules:["Тест пишеться один раз. Перескласти його не можна.","Кожне запитання ставиться один раз, без підказок. Правильні відповіді покажемо наприкінці.","Таймер іде без пауз. Коли час вийде, тест закінчиться сам.","Якщо закрити тест хрестиком, він закінчиться й буде оцінений."],
   codeLabel:"Код від учителя", startTest:"Почати тест", wrongCode:"Код не підходить.", needNewCode:"Цей тест уже написано. Перескласти його не можна.", copyResult:"Скопіювати результат для вчителя", resultCopied:"Результат скопійовано. Надішли його вчителю.", resultSelected:"Результат виділено, скопіюй його вручну.",
   missingLessons:x=>`Для тесту бракує уроків: ${x}. Спочатку додай їх.`, resumeTest:x=>`Продовжити тест · залишилося ${x}`, answerBtn:"Відповісти", skip:"Пропустити",
@@ -471,7 +481,7 @@ en:{
   alt:"That works too, but this lesson teaches:",
   artOk:"Counted. Don't forget the article:", artExtra:"Counted. No article needed here:", regraded:"Regraded after a fix to how answers are checked.", typo:"Almost! Small typo — not counted as a mistake.", accents:"Counted. Mind the accents:", answerIs:"The answer is:", notQuite:"Not quite.",
   yours:x=>`You wrote: ${x}`, iWasRight:"I was right",
-  buildIt:"Build the phrase", clear:"Clear",buildKeys:"Keys: 1–9, 0, Q–P pick a word · Backspace undo · Enter check",cardKeys:"Keys: Space flip · 1 still learning · 2 I know", wrongOrder:"Different order:", pickForm:"Pick the right form", shouldBe:"It should be:",
+  buildIt:"Build the phrase", clear:"Clear",buildKeys:"Keys: 1–9, 0, Q–P pick a word · Backspace undo · Enter check",cardKeys:"Keys: Space flip · 1 still learning · 2 I know",kbH:"Keyboard",kbText:"For a computer keyboard: how keys work in each exercise. Phones and tablets don't use this.",kbBuild:"Build the phrase",kbChoice:"Multiple choice and grammar",kbCards:"Flashcards",kbHints:"Show key hints",kb_build_num:"Every word shows a key: 1–9, 0, then Q–P.",kb_build_qwerty:"Every word shows a letter key: Q W E R T Y…, then A S D F…, Z X C V… No numbers.",kb_build_type:"Type the first letters of a word: it's picked as soon as only one word fits, so just start the next one. When one word is the start of another (la / las), Space picks the shorter one.",kb_build_typeSpace:"Type a word (or its first letters), then press Space to pick it, like normal typing. The first highlighted word is picked.",kb_choice_num:"Keys 1–4 pick an option.",kb_choice_asdf:"Keys A S D F pick an option.",kb_cards_num:"Space flips the card, 1 = still learning, 2 = I know.",kb_cards_arrows:"Space flips the card, ← = still learning, → = I know.",hint_build_qwerty:"Keys: letter on each word · Backspace undo · Enter check",hint_build_type:"Type the start of a word · Space picks · Backspace undo · Esc clear · Enter check",hint_build_typeSpace:"Type the start of a word, Space picks it · Backspace undo · Esc clear · Enter check",hint_cards_arrows:"Keys: Space flip · ← still learning · → I know",typeWord:"type a word…",kbl_type:"Type",kbl_typeSpace:"Type + Space", wrongOrder:"Different order:", pickForm:"Pick the right form", shouldBe:"It should be:",
   done:"Done", m100:"Perfect, not a single mistake!", m80:"Very good!", m50:"Not bad. One more round and it'll be better.", mLow:"That's normal at the start. Go over the mistakes again.", mCards:"All cards done.",
   firstTry:(a,b)=>`First try: ${a} of ${b}`, knewIt:(a,b)=>`Known right away: ${a} of ${b}`, newRec:"new record!", nextStep:n=>`Next: ${n}`,
   retry:n=>`Retry mistakes (${n})`, again:"Again", toDay:n=>`Back to lesson ${n}`, toHome:"Home", mistakesWhere:"Mistakes", mistakes:"Mistakes", dayReview:"Lesson review",
@@ -487,7 +497,7 @@ en:{
   copyCode:"Copy progress code", copied:"Code copied.", selected:"The code is selected. Copy it by hand.", restoreSum:"Restore from code", restorePh:"Paste your progress code", restore:"Restore", restored:"Progress restored.", badCode:"That code didn't work. Check that you copied all of it.",
   resetH:"Reset progress", resetText:"Deletes all stars, records, the day streak and word stats. The lessons themselves and test results stay. To reset a single lesson, use the link at the bottom of that lesson's page.", resetAll:"Reset all progress", resetQ:"Reset all progress? This can't be undone.", yesReset:"Yes, reset",
   cards:["card","cards"], revToday:"Today's review", revCount:c=>`Today: ${c}`, revAllDone:"All reviewed for today",revNext:(n,left)=>`Next ${nw(n,"cards")} · ${left} left`, revTomorrow:c=>`Tomorrow: ${c}`, revNone:"More to review tomorrow", review:"Review", revHint:"Words come back after 1, 3, 7, 14 and 30 days. A mistake moves a word two steps back, and it comes back tomorrow.",
-  questions:["question","questions"], min:"min", testN:n=>`Test ${n}`, testPill:"Test", testCovers:x=>`Covers lessons ${x}`, notTaken:"Not taken yet",
+  questions:["question","questions"], min:"min", testN:n=>`Test ${n}`, testPill:"Test", testCovers:x=>`Covers lessons ${x}`,
   testRules:["The test is taken once. It can't be retaken.","Each question is asked once, with no hints. The right answers are shown at the end.","The timer doesn't pause. When time runs out, the test ends on its own.","Closing the test with the cross ends it, and it gets graded."],
   codeLabel:"Teacher's code", startTest:"Start the test", wrongCode:"That code doesn't match.", needNewCode:"This test has already been taken. It can't be retaken.", copyResult:"Copy the result for your teacher", resultCopied:"Result copied. Send it to your teacher.", resultSelected:"The result is selected. Copy it by hand.",
   missingLessons:x=>`This test needs lessons that aren't added yet: ${x}. Add them first.`, resumeTest:x=>`Continue the test · ${x} left`, answerBtn:"Answer", skip:"Skip",
@@ -532,7 +542,13 @@ function fix(o){
   o.streak = o.streak||{last:null,count:0}; o.imported = Array.isArray(o.imported)?o.imported:[];
   if(o.sound===undefined) o.sound = true;
   if(!o.ui) o.ui = "auto";
+  o.keys = (o.keys && typeof o.keys==="object") ? o.keys : {};
   o.srs = o.srs||{}; o.tests = o.tests||{};
+  // Numbers that are shown on screen must be numbers, even from a pasted backup code
+  const num = v => { v=Number(v); return Number.isFinite(v)?v:0 };
+  Object.keys(o.best).forEach(k=>{ o.best[k]=num(o.best[k]) });
+  o.streak = {last:typeof o.streak.last==="string"?o.streak.last:null, count:num(o.streak.count)};
+  Object.values(o.tests).forEach(x=>{ if(x && Array.isArray(x.results)) x.results.forEach(r=>{ if(r && typeof r==="object") ["at","grade","pct","correct","total","secs"].forEach(f=>{ if(f in r) r[f]=num(r[f]) }) }) });
   if(!o.courseV){   // v1.5: a course is now just the language being learned ("es-en:…" → "es:…", "en-uk:…" → "…")
     const mk2=k=>String(k).replace(/(^|:)([a-z]{2,3})-[a-z]{2,3}:/,(m,p,l)=>p+(l==="en"?"":l+":"));
     ["steps","items","srs","best","tests"].forEach(n=>{ const src=o[n]||{}, out={}; Object.keys(src).forEach(k=>{ const nk=mk2(k); if(!(nk in out) || nk===k) out[nk]=src[k] }); o[n]=out });
@@ -958,7 +974,7 @@ function qCard(q){
       <div class="face back"><span class="kind">${esc(langSelf(c.native))}</span><div class="q${it.ru.length>28?" long":""}">${esc(it.ru)}</div>${it.hint?`<div class="hint">(${esc(it.hint)})</div>`:""}</div>
     </div>
   </div>
-  <div class="row" id="cb" hidden><button class="btn sec" type="button" id="learn">${t("stillLearning")}</button><button class="btn" type="button" id="know">${t("know")}</button></div><div class="keyhint">${t("cardKeys")}</div>`;
+  <div class="row" id="cb" hidden><button class="btn sec" type="button" id="learn">${t("stillLearning")}</button><button class="btn" type="button" id="know">${t("know")}</button></div>${cardHint()}`;
   const cd=$("#card"), flip=()=>{ cd.classList.toggle("on"); $("#cb").hidden=false; sfx.tap() };
   cd.onclick=flip; cd.onkeydown=e=>{ if(e.key===" "||e.key==="Enter"){ e.preventDefault(); flip() } };
   $("#know").onclick=()=>{ answer(true,{silent:true}); nextQ() };
@@ -971,7 +987,7 @@ function qChoice(q){
   const others=[...new Set(shuffle(pool.filter(x=>x.key!==it.key && !related(x,it)).map(x=>toNative?x.ru:x.en)))].filter(v=>v!==ans).slice(0,3);
   const opts=shuffle([ans,...others]);
   $("#stage").innerHTML=promptHTML(toNative?t("pickTr"):t("pickIn",langSelf(Q.learn)), toNative?it.en:it.ru, toNative?"":it.hint)
-    +`<div class="opts">${opts.map((o,i)=>`<button class="opt" type="button"><span class="k">${i+1}</span><span>${esc(o)}</span></button>`).join("")}</div><div id="fb"></div>`;
+    +`${optsHTML(opts)}<div id="fb"></div>`;
   const btns=$$(".opt");
   btns.forEach((b,i)=>b.onclick=()=>{
     if(Q.answered) return; Q.answered=true;
@@ -1018,26 +1034,66 @@ function qType(q){
   inp.onkeydown=e=>{ if(e.key==="Enter"){ e.preventDefault(); if(!Q.answered) check(false); else nextQ() } };
 }
 
-const BUILD_KEYS = "1234567890qwertyuiop";   // keys for the word chips, in screen order
+/* ================= keyboard settings and shared exercise parts ================= */
+// Per-exercise key choices (Settings → Keyboard). The first value of each is the default.
+const KEY_OPTS = { build:["num","qwerty","type","typeSpace"], choice:["num","asdf"], cards:["num","arrows"] };
+const KEY_LABEL = { build:{num:"1 2 3",qwerty:"Q W E"}, choice:{num:"1 2 3 4",asdf:"A S D F"}, cards:{num:"1 / 2",arrows:"← / →"} };
+const keyPref = k => KEY_OPTS[k].includes(P.keys[k]) ? P.keys[k] : KEY_OPTS[k][0];
+const hintsOn = () => P.keys.hints!==false;
+const BUILD_KEYSETS = { num:"1234567890qwertyuiop", qwerty:"qwertyuiopasdfghjklzxcvbnm" };
+const buildKeys = () => BUILD_KEYSETS[keyPref("build")] || "";          // "" when words are typed
+const typingBuild = () => !buildKeys();
+const CHOICE_KEYSETS = { num:"123456789", asdf:"asdfghjkl" };
+const choiceKeys = () => CHOICE_KEYSETS[keyPref("choice")];
+const keyHint = text => hintsOn() ? `<div class="keyhint">${text}</div>` : "";
+const buildHint = () => keyHint(keyPref("build")==="num" ? t("buildKeys") : t("hint_build_"+keyPref("build")));
+const cardHint = () => keyHint(keyPref("cards")==="num" ? t("cardKeys") : t("hint_cards_arrows"));
+function optsHTML(opts,two){
+  const keys=choiceKeys();
+  return `<div class="opts${two?" two":""}">${opts.map((o,i)=>`<button class="opt" type="button"><span class="k">${esc((keys[i]||"").toUpperCase())}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+}
+// Build the phrase (lessons and tests)
+const phraseTokens = it => it.en.replace(/[.!?]$/,"").replace(/^[¿¡]/,"").split(/\s+/).map((w,i)=>i===0&&!PROPER.has(w)?w.toLowerCase():w);
+function shuffledOrder(n){ const order=[...Array(n).keys()]; if(n>1){ let k=0; do{ shuffle(order); k++ }while(order.every((v,i)=>v===i)&&k<10) } return order }
+const wordKey = w => deacc(String(w).toLowerCase()).replace(/[^\p{L}\p{N}]/gu,"");   // what you type to pick a word
+const TB = { bank:null, s:"", justPicked:false };   // typing modes: letters typed so far; whether a word was just picked by itself
+const buildAreaHTML = () => `<div class="slots" id="slots"></div><div class="bank" id="bank"></div>${typingBuild()?`<div class="typed" id="typed" aria-live="polite"></div>`:""}`;
+function drawBuild(tokens,order,picked,locked,redraw){
+  const keys=buildKeys();
+  $("#slots").innerHTML=picked.map((ti,k)=>`<button class="w" type="button" data-k="${k}">${esc(tokens[ti])}</button>`).join("");
+  $("#bank").innerHTML=order.map((ti,pos)=>{ const used=picked.includes(ti);
+    return `<button class="w${used?" used":""}" type="button" data-t="${ti}" data-m="${esc(wordKey(tokens[ti]))}" ${used?'tabindex="-1" aria-hidden="true"':""}>${pos<keys.length?`<span class="k" aria-hidden="true">${keys[pos].toUpperCase()}</span>`:""}${esc(tokens[ti])}</button>` }).join("");
+  showTyped();
+  if(locked) return;
+  $$("#slots .w").forEach(b=>b.onclick=()=>{ picked.splice(+b.dataset.k,1); redraw() });
+  $$("#bank .w").forEach(b=>b.onclick=()=>{ const x=+b.dataset.t; if(!picked.includes(x)){ picked.push(x); TB.s=""; sfx.tap(); redraw() } });
+}
+function showTyped(){
+  const el=$("#typed"); if(!el) return;
+  if(TB.bank!==$("#bank")){ TB.bank=$("#bank"); TB.s="" }
+  el.textContent = TB.s || t("typeWord"); el.classList.toggle("empty",!TB.s);
+  $$("#bank .w:not(.used)").forEach(b=>{ const on=!!TB.s && b.dataset.m.startsWith(TB.s); b.classList.toggle("match",on); b.classList.toggle("dim",!!TB.s && !on) });
+}
+const typeMatches = s => $$("#bank .w:not(.used)").filter(b=>b.dataset.m.startsWith(s));
+// Picks the word the typed letters point to. confirm = Space/Enter was pressed.
+function typePick(confirm){
+  const m=typeMatches(TB.s);
+  if(!TB.s){ const p=m.find(b=>!b.dataset.m); if(confirm && p) p.click(); return }   // Space with nothing typed: a lone "–" or similar
+  const kinds=new Set(m.map(b=>b.dataset.m)), exact=m.find(b=>b.dataset.m===TB.s);
+  const b = kinds.size===1 ? m[0] : confirm ? (keyPref("build")==="type" ? exact : exact||m[0]) : null;
+  if(!b){ showTyped(); return }
+  TB.justPicked = !confirm;
+  b.click();
+}
+
 function qBuild(q){
-  const it=q.it;
-  const tokens=it.en.replace(/[.!?]$/,"").replace(/^[¿¡]/,"").split(/\s+/).map((w,i)=>i===0&&!PROPER.has(w)?w.toLowerCase():w);
-  const order=tokens.map((_,i)=>i);
-  if(tokens.length>1){ let n=0; do{ shuffle(order); n++ }while(order.every((v,i)=>v===i)&&n<10) }
-  const picked=[];
+  const it=q.it, tokens=phraseTokens(it), order=shuffledOrder(tokens.length), picked=[];
   $("#stage").innerHTML=promptHTML(t("buildIt"), it.ru, "")
-   +`<div class="slots" id="slots"></div><div class="bank" id="bank"></div><div id="fb"></div>
-     <div class="row" id="bb"><button class="btn sec" type="button" id="clr">${t("clear")}</button><button class="btn" type="button" id="chk" disabled>${t("check")}</button></div><div class="keyhint">${t("buildKeys")}</div>`;
-  const draw=()=>{
-    $("#slots").innerHTML=picked.map((ti,k)=>`<button class="w" type="button" data-k="${k}">${esc(tokens[ti])}</button>`).join("");
-    $("#bank").innerHTML=order.map((ti,pos)=>`<button class="w${picked.includes(ti)?" used":""}" type="button" data-t="${ti}" ${picked.includes(ti)?'tabindex="-1" aria-hidden="true"':""}>${pos<BUILD_KEYS.length?`<span class="k" aria-hidden="true">${BUILD_KEYS[pos].toUpperCase()}</span>`:""}${esc(tokens[ti])}</button>`).join("");
-    $("#chk").disabled=picked.length!==tokens.length;
-    if(Q.answered) return;
-    $$("#slots .w").forEach(b=>b.onclick=()=>{ picked.splice(+b.dataset.k,1); draw() });
-    $$("#bank .w").forEach(b=>b.onclick=()=>{ const x=+b.dataset.t; if(!picked.includes(x)){ picked.push(x); sfx.tap(); draw() } });
-  };
+   +`${buildAreaHTML()}<div id="fb"></div>
+     <div class="row" id="bb"><button class="btn sec" type="button" id="clr">${t("clear")}</button><button class="btn" type="button" id="chk" disabled>${t("check")}</button></div>${buildHint()}`;
+  const draw=()=>{ drawBuild(tokens,order,picked,Q.answered,draw); $("#chk").disabled=picked.length!==tokens.length };
   draw();
-  $("#clr").onclick=()=>{ if(!Q.answered){ picked.length=0; draw() } };
+  $("#clr").onclick=()=>{ if(!Q.answered){ picked.length=0; TB.s=""; draw() } };
   $("#chk").onclick=()=>{
     if(Q.answered) return; Q.answered=true;
     const ok=norm(picked.map(i=>tokens[i]).join(" "))===norm(it.en);
@@ -1051,7 +1107,7 @@ function qGram(q){
   const g=q.g, opts=shuffle(g.opts.slice());
   const sentence=(fill,cls)=>`${esc(g.before)}<span class="gap ${cls||""}">${fill?esc(fill):"&nbsp;"}</span>${esc(g.after)}`;
   $("#stage").innerHTML=`<div class="prompt"><span class="kind">${t("pickForm")}</span><div class="q${g.full.length>28?" long":""}" id="gs">${sentence("")}</div></div>
-    <div class="opts two">${opts.map((o,i)=>`<button class="opt" type="button"><span class="k">${i+1}</span><span>${esc(o)}</span></button>`).join("")}</div><div id="fb"></div>`;
+    ${optsHTML(opts,true)}<div id="fb"></div>`;
   const btns=$$(".opt");
   btns.forEach((b,i)=>b.onclick=()=>{
     if(Q.answered) return; Q.answered=true;
@@ -1287,24 +1343,17 @@ function runTest(test){
     } else if(q.t==="choice"){
       const it=q.it, pool=coveredLessons(test).filter(Boolean).flatMap(d=>itemsOf(d,"w"));
       const others=[...new Set(shuffle(pool.filter(x=>x.key!==it.key&&!related(x,it)&&x.ru!==it.ru).map(x=>x.en)))].filter(v=>v!==it.en).slice(0,3), opts=shuffle([it.en,...others]);
-      stage.innerHTML=promptHTML(t("pickIn",langSelf(learn)),it.ru,it.hint)+`<div class="opts">${opts.map((o,i)=>`<button class="opt" type="button"><span class="k">${i+1}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+      stage.innerHTML=promptHTML(t("pickIn",langSelf(learn)),it.ru,it.hint)+optsHTML(opts);
       $$("#tstage .opt").forEach((b,i)=>b.onclick=()=>{ sfx.tap(); record(opts[i],opts[i]===it.en) });
     } else if(q.t==="gram"){
       const g=q.g, opts=shuffle(g.opts.slice());
-      stage.innerHTML=`<div class="prompt"><span class="kind">${t("pickForm")}</span><div class="q${g.full.length>28?" long":""}">${esc(g.before)}<span class="gap">&nbsp;</span>${esc(g.after)}</div></div><div class="opts two">${opts.map((o,i)=>`<button class="opt" type="button"><span class="k">${i+1}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+      stage.innerHTML=`<div class="prompt"><span class="kind">${t("pickForm")}</span><div class="q${g.full.length>28?" long":""}">${esc(g.before)}<span class="gap">&nbsp;</span>${esc(g.after)}</div></div>${optsHTML(opts,true)}`;
       $$("#tstage .opt").forEach((b,i)=>b.onclick=()=>{ sfx.tap(); record(opts[i],opts[i]===g.answer) });
     } else {
-      const it=q.it, tokens=it.en.replace(/[.!?]$/,"").replace(/^[¿¡]/,"").split(/\s+/).map((w,i)=>i===0&&!PROPER.has(w)?w.toLowerCase():w), order=tokens.map((_,i)=>i), picked=[];
-      if(tokens.length>1){ let n=0; do{ shuffle(order); n++ }while(order.every((v,i)=>v===i)&&n<10) }
-      stage.innerHTML=promptHTML(t("buildIt"),it.ru,"")+`<div class="slots" id="slots"></div><div class="bank" id="bank"></div>
-        <div class="row"><button class="btn sec" type="button" id="skip">${t("skip")}</button><button class="btn" type="button" id="send" disabled>${t("answerBtn")}</button></div><div class="keyhint">${t("buildKeys")}</div>`;
-      const draw=()=>{
-        $("#slots").innerHTML=picked.map((ti,k)=>`<button class="w" type="button" data-k="${k}">${esc(tokens[ti])}</button>`).join("");
-        $("#bank").innerHTML=order.map((ti,pos)=>`<button class="w${picked.includes(ti)?" used":""}" type="button" data-t="${ti}" ${picked.includes(ti)?'tabindex="-1" aria-hidden="true"':""}>${pos<BUILD_KEYS.length?`<span class="k" aria-hidden="true">${BUILD_KEYS[pos].toUpperCase()}</span>`:""}${esc(tokens[ti])}</button>`).join("");
-        $("#send").disabled=picked.length!==tokens.length;
-        $$("#slots .w").forEach(b=>b.onclick=()=>{ picked.splice(+b.dataset.k,1); draw() });
-        $$("#bank .w").forEach(b=>b.onclick=()=>{ const x=+b.dataset.t; if(!picked.includes(x)){ picked.push(x); sfx.tap(); draw() } });
-      };
+      const it=q.it, tokens=phraseTokens(it), order=shuffledOrder(tokens.length), picked=[];
+      stage.innerHTML=promptHTML(t("buildIt"),it.ru,"")+`${buildAreaHTML()}
+        <div class="row"><button class="btn sec" type="button" id="skip">${t("skip")}</button><button class="btn" type="button" id="send" disabled>${t("answerBtn")}</button></div>${buildHint()}`;
+      const draw=()=>{ drawBuild(tokens,order,picked,false,draw); $("#send").disabled=picked.length!==tokens.length };
       draw();
       $("#skip").onclick=()=>record("",false);
       $("#send").onclick=()=>{ const v=picked.map(i=>tokens[i]).join(" "); record(v,norm(v)===norm(it.en)) };
@@ -1580,6 +1629,16 @@ function renderSettings(){
     <div class="setrow"><span>${t("sounds")}</span><button class="switch" type="button" role="switch" id="snd" aria-checked="${P.sound}" aria-label="${t("sounds")}"></button></div>
   </div>
   <div class="card-sheet">
+    <h2>${t("kbH")}</h2>
+    <div class="muted small">${t("kbText")}</div>
+    ${[["build","kbBuild"],["choice","kbChoice"],["cards","kbCards"]].map(([k,lab])=>`<div class="kbset">
+      <span>${t(lab)}</span>
+      <div class="courses" role="group" aria-label="${t(lab)}">${KEY_OPTS[k].map(v=>`<button class="chip" type="button" data-kb="${k}" data-v="${v}" aria-pressed="${keyPref(k)===v}">${esc(KEY_LABEL[k][v]||t("kbl_"+v))}</button>`).join("")}</div>
+      <div class="muted small">${t(`kb_${k}_${keyPref(k)}`)}</div>
+    </div>`).join("")}
+    <div class="setrow"><span>${t("kbHints")}</span><button class="switch" type="button" role="switch" id="kbh" aria-checked="${hintsOn()}" aria-label="${t("kbHints")}"></button></div>
+  </div>
+  <div class="card-sheet">
     <h2>${t("backup")}</h2>
     <div class="muted small">${t("backupText")}</div>
     <button class="btn" type="button" id="copy">${t("copyCode")}</button>
@@ -1602,6 +1661,8 @@ function renderSettings(){
   <div class="foot">English Notebook v${APP_VERSION}</div>`;
   $("#back").onclick=()=>goBack("settings");
   $$("[data-ui]").forEach(b=>b.onclick=()=>{ P.ui=b.dataset.ui; save(); resolveUI(); renderSettings() });
+  $$("[data-kb]").forEach(b=>b.onclick=()=>{ P.keys[b.dataset.kb]=b.dataset.v; save(); renderSettings(); const f=$(`[data-kb="${b.dataset.kb}"][data-v="${b.dataset.v}"]`); if(f) f.focus() });
+  $("#kbh").onclick=e=>{ P.keys.hints=!hintsOn(); save(); e.currentTarget.setAttribute("aria-checked",hintsOn()) };
   $("#snd").onclick=e=>{ P.sound=!P.sound; save(); e.currentTarget.setAttribute("aria-checked",P.sound); if(P.sound) sfx.ok() };
   $("#copy").onclick=()=>{
     const code=encodeBackup(), ta=$("#code"); ta.value=code; ta.hidden=false;
@@ -1615,7 +1676,7 @@ function renderSettings(){
   $("#wipe").onclick=()=>{
     $("#wipeBox").innerHTML=`<div class="confirm"><span>${t("resetQ")}</span><div class="row"><button class="btn sec tiny" type="button" id="wNo">${t("cancel")}</button><button class="btn danger tiny" type="button" id="wYes">${t("yesReset")}</button></div></div>`;
     $("#wNo").onclick=()=>$("#wipeBox").innerHTML="";
-    $("#wYes").onclick=()=>{ P=fix({sound:P.sound,ui:P.ui,course:P.course,imported:P.imported,folderCache:P.folderCache,tests:P.tests}); save(); rebuild(); nav({v:"home"},true) };
+    $("#wYes").onclick=()=>{ P=fix({sound:P.sound,ui:P.ui,keys:P.keys,course:P.course,imported:P.imported,folderCache:P.folderCache,tests:P.tests}); save(); rebuild(); nav({v:"home"},true) };
   };
 }
 
@@ -1640,28 +1701,57 @@ document.addEventListener("keydown",e=>{
   }
   if(typingNow()) return;
   const lessonDone = st.id==="stage" && Q && Q.answered;
-  // choose an option: 1–9
+  // choose an option: 1–4 or A S D F (Settings → Keyboard)
   const opts=st.querySelectorAll(".opt");
-  if(opts.length && /^[1-9]$/.test(e.key)){ const b=opts[+e.key-1]; if(b && !b.disabled){ e.preventDefault(); b.click() } return }
-  // build a phrase: 1–9, 0, Q–P pick a word, Backspace takes the last one back, Enter checks / goes on
+  if(opts.length){
+    const i=e.key.length===1 ? choiceKeys().indexOf(e.key.toLowerCase()) : -1;
+    if(i>=0){ const b=opts[i]; if(b && !b.disabled){ e.preventDefault(); b.click() } }
+    return;
+  }
+  // build a phrase: a key on each word, or type the start of a word; Backspace takes the last one back, Enter checks / goes on
   const bank=st.querySelector("#bank");
   if(bank){
+    const typing=typingBuild();
+    if(TB.bank!==bank){ TB.bank=bank; TB.s=""; TB.justPicked=false }
     if(e.key==="Enter" && !inside(a,"button:not(.w)")){
+      e.preventDefault();
+      if(typing && TB.s && !lessonDone){ typePick(true); return }
       const go=$("#nx")||[$("#chk"),$("#send")].find(b=>b&&!b.disabled);
-      if(go){ e.preventDefault(); go.click() }
+      if(go) go.click();
       return;
     }
     if(lessonDone) return;
-    const i=e.key.length===1 ? BUILD_KEYS.indexOf(e.key.toLowerCase()) : -1;
-    if(i>=0){ const b=bank.querySelectorAll(".w")[i]; if(b && !b.classList.contains("used")){ e.preventDefault(); b.click() } return }
-    if(e.key==="Backspace"){ const s=st.querySelectorAll("#slots .w"); if(s.length){ e.preventDefault(); s[s.length-1].click() } return }
+    const undo=()=>{ const s=st.querySelectorAll("#slots .w"); if(s.length) s[s.length-1].click() };
+    if(e.key==="Backspace"){ e.preventDefault(); if(typing && TB.s){ TB.s=TB.s.slice(0,-1); showTyped() } else undo(); return }
+    if(typing){
+      if(e.key==="Escape"){ if(TB.s){ e.preventDefault(); TB.s=""; showTyped() } return }
+      if(e.key===" "){
+        if(inside(a,"button:not(.w)")) return;
+        e.preventDefault();
+        if(TB.justPicked && !TB.s){ TB.justPicked=false; return }   // a habit Space after a word that was already picked
+        typePick(true); return;
+      }
+      if("-–—".includes(e.key) && !TB.s){ const d=typeMatches("").find(b=>!b.dataset.m); if(d){ e.preventDefault(); d.click() } return }
+      const ch=e.key.length===1 ? wordKey(e.key) : "";
+      if(!ch) return;
+      e.preventDefault();
+      TB.justPicked=false;
+      if(!typeMatches(TB.s+ch).length){ const el=$("#typed"); if(el){ el.classList.remove("bad"); void el.offsetWidth; el.classList.add("bad") } return }   // no word starts like that: ignore the key, flash the box
+      TB.s+=ch;
+      if(keyPref("build")==="type") typePick(false); else showTyped();
+      return;
+    }
+    const i=e.key.length===1 ? buildKeys().indexOf(e.key.toLowerCase()) : -1;
+    if(i>=0){ const b=bank.querySelectorAll(".w")[i]; if(b && !b.classList.contains("used")){ e.preventDefault(); b.click() } }
     return;
   }
-  // flashcards: Space/Enter flip, then 1 = still learning, 2 = I know
+  // flashcards: Space/Enter flip, then 1 / 2 or ← / → (Settings → Keyboard)
   const card=st.querySelector("#card");
   if(card){
     if((e.key===" "||e.key==="Enter") && a!==card && !inside(a,"button")){ e.preventDefault(); card.click(); return }
-    if(!$("#cb").hidden){ if(e.key==="1"){ e.preventDefault(); $("#learn").click() } else if(e.key==="2"){ e.preventDefault(); $("#know").click() } }
+    if($("#cb").hidden) return;
+    const [learnKey,knowKey] = keyPref("cards")==="arrows" ? ["ArrowLeft","ArrowRight"] : ["1","2"];
+    if(e.key===learnKey){ e.preventDefault(); $("#learn").click() } else if(e.key===knowKey){ e.preventDefault(); $("#know").click() }
   }
 });
 

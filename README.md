@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 1.7.2**
+**Version 1.8.0**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -96,7 +96,7 @@ This is for discipline, not security: there's no server, so it can't stop someon
 
 The home screen shows your **streak** (days in a row you practised), **words learned** (words you've typed correctly) and your **stars**.
 
-Progress is saved **in your browser**, on your device. It stays after closing the browser or restarting the phone. It's lost only if you clear your browser data, use an incognito window, or switch to another browser or device.
+Progress is saved **in your browser**, on your device. Nothing is sent anywhere: the app has no accounts, no tracking, and it can't load anything from other websites (it only reads lesson files from its own lessons folder). It stays after closing the browser or restarting the phone. It's lost only if you clear your browser data, use an incognito window, or switch to another browser or device.
 
 In **Settings**:
 
@@ -142,9 +142,19 @@ Full rules and style conventions are written at the top of `lesson-01.yaml`. If 
 In lessons and tests the keyboard can do everything:
 
 - **Tab** moves only between the answer box and the buttons of the exercise, in a loop (it never jumps to the browser). After you check a typed answer the cursor stays in the box: **Enter** goes on, **Tab** goes to *I was right*, then *Next*, then back to the box.
-- **1–4** pick an option in multiple choice and grammar.
+- **Multiple choice and grammar:** **1–4** pick an option.
 - **Build the phrase:** every word shows its key. **1–9, 0, Q–P** pick a word, **Backspace** takes the last one back, **Enter** checks and then goes on.
 - **Flashcards:** **Space** flips the card, then **1** = still learning, **2** = I know.
+
+These are the defaults. **Settings → Keyboard** lets you choose, for each exercise:
+
+| Exercise | Choices |
+|---|---|
+| Build the phrase | **1 2 3** (as above) · **Q W E**: letter keys only, no numbers · **Type**: type the first letters of a word, it's picked as soon as only one word fits · **Type + Space**: type a word (or its start) and press Space, like normal typing |
+| Multiple choice and grammar | **1 2 3 4** · **A S D F** |
+| Flashcards | **1 / 2** · **← / →** |
+
+In the typing modes, **Backspace** removes a letter (or the last word), **Esc** clears what you typed, **-** picks a lone dash, and when one word is the start of another (*la / las*) **Space** picks the shorter one. You can also switch off the key hints once you know them.
 
 The key labels and hints are hidden on phones and tablets.
 
@@ -156,6 +166,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 1.8.0 | Settings → Keyboard: choose the keys for each exercise, including typing words in Build the phrase; key hints can be switched off. Safer handling of pasted backup codes |
 | 1.7.2 | A small typo is no longer a mistake: no penalty, the word comes back in the same round |
 | 1.7.1 | Daily review: "Next 20" continues with the remaining words instead of replaying the same 20 |
 | 1.7.0 | Keyboard: Tab stays inside the exercise, number keys for building phrases and flashcards |
