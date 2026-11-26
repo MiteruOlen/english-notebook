@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 1.9.0**
+**Version 2.0.0**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -48,7 +48,7 @@ A lesson only has the steps it has material for: no phrases means no phrase step
 
 When you type an answer, the app is strict but fair:
 
-- **Small typo** ("frend" for "friend") → *Almost!* You see the correct spelling. It isn't counted as a mistake: the word comes back later in the same round, and getting it right then counts. (In a test a typo is still wrong for the score, but it doesn't cost the word any review steps.)
+- **Small typo** ("frend" for "friend") → *Almost!* You see the correct spelling. It isn't counted as a mistake: the word comes back later in the same round, and getting it right then counts. (In a test a typo is still wrong for the score.)
 - **Missing accent** ("adios" for "adiós", "mas" for "más") → counts as correct, with a reminder about the accents.
 - **Missing article** ("house" for "a house") → counts as correct, with a reminder about the article.
 - **Short forms** ("I'm" and "I am", "I'd like" and "I would like") → both are correct.
@@ -57,7 +57,9 @@ When you type an answer, the app is strict but fair:
 
 ## Daily review
 
-Everything you've answered goes into your daily review. Words come back after **1 day**, then **3, 7, 14, 30 and 60 days**, as long as you keep getting them right. A mistake moves a word **two steps back** (for example from the 30-day stage to the 7-day stage), and it comes back tomorrow. A word only loses steps once a day, however often it's missed that day.
+Every word and phrase you go through in a lesson joins your daily review, at **0 stars**, and comes up the next day. **Only the daily review moves a word on:** each time you get it right on its day it gains a star and comes back later: after **1 day**, then **3, 7, 14, 30 and 60 days**. A mistake in the review costs **two stars** (for example from the 30-day stage to the 7-day stage), and the word comes back tomorrow. A word gains or loses stars at most once a day.
+
+Lessons, *Repeat lesson*, the games, *Tricky words*, *Practise these* and tests are practice: they never change a word's stars, its review date or its mistake count. A mistake in a lesson only lowers that step's stars. A second round of *Retry mistakes* after a review is practice too.
 
 The orange card on the home screen shows how many cards are waiting today. A session has up to 20; when it ends, **Next 20** carries on with the rest (there's no point replaying the same 20: they're done for today). Once you're done, it turns green and shows how many are waiting tomorrow. Ten minutes of review a day is the best way to not forget old words while learning new ones.
 
@@ -65,15 +67,15 @@ The orange card on the home screen shows how many cards are waiting today. A ses
 
 The **book icon** at the top of the home screen (and on lesson pages and in Settings) opens the vocabulary: every word and phrase of the course with its translation and **0 to 5 stars**.
 
-- A word gets 1 star after the first correct answer, then one more for each review it passes (after 1, 3, 7, 14 and 30 days). **5 stars means it's learned for the long run.**
-- A mistake costs **2 stars** (never below 0), and the word comes back in tomorrow's review.
-- Words marked *review today* are waiting in today's daily review; *not studied yet* means it hasn't come up yet.
+- A word starts at **0 stars** once you've gone through it in a lesson, then gets one more star for each daily review it passes on its day. **5 stars means it's learned for the long run.**
+- A mistake in the daily review costs **2 stars** (never below 0), and the word comes back tomorrow. Mistakes anywhere else don't count here.
+- Words marked *review today* are waiting in today's daily review; *not studied yet* (the **New** filter) means you haven't gone through it in a lesson yet.
 - There's a **search** (in either language) and a switch between words and phrases.
 - **Sort:** by lesson, weakest first, strongest first, next review, most mistakes, recently studied, A–Z or Z–A.
 - **Show:** all, new, learning, learned, review today, or words with mistakes. Each button shows how many words it has; the three tiles at the top work as the same filters.
 - **Lesson:** all lessons or just one. Search, lesson and *Show* work together (say, *lesson 8 · with mistakes*).
 - **Per page:** 20, 50, 100 or all, with page buttons above and below the list. Each row shows its lesson, when it's due next and how many mistakes it has had.
-- **Practise these** starts a round with up to 20 words from the list as it's filtered.
+- **Practise these** starts a round with up to 20 words from the list as it's filtered. It's practice only: stars don't change.
 - Sort, *Show*, lesson and page size are remembered.
 - It isn't available during tests or exercises.
 
@@ -172,6 +174,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 2.0.0 | Only the daily review changes a word's stars and mistakes; lessons, games, practice and tests just add new words at 0 stars |
 | 1.9.0 | Vocabulary: more sorts, filters by status and lesson, page size, page buttons on top, "Practise these" |
 | 1.8.0 | Settings → Keyboard: choose the keys for each exercise, including typing words in Build the phrase; key hints can be switched off. Safer handling of pasted backup codes |
 | 1.7.2 | A small typo is no longer a mistake: no penalty, the word comes back in the same round |

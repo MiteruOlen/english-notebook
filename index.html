@@ -330,7 +330,7 @@ button.stat[aria-pressed="true"]{border-color:var(--accent);background:var(--acc
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.9.0";
+const APP_VERSION = "2.0.0";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -406,7 +406,7 @@ ru:{
   delTest:"Удалить этот тест", delTestQ:n=>`Удалить тест ${n}? Результаты сохранятся.`,
   vocab:"Словарь", vWords:"Слова", vPhrases:"Фразы", vSearch:"Поиск на любом из двух языков",vAll:"Все",vStDue:"Повторить сегодня",vStMist:"С ошибками",vSortBy:"Сортировка",vLessonF:"Урок",vLessonAll:"Все уроки",vPer:"На странице",vPerAll:"Все",vSortStrong:"Сильные сначала",vSortNext:"Ближайшее повторение",vSortMist:"Больше ошибок",vSortRecent:"Недавние",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} из ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`ошибок: ${n}`,vPractise:n=>`Повторить эти · ${n}`,vStatus:"Показать", vSortLesson:"По урокам", vSortWeak:"Слабые сначала", vSortAZ:"А–Я",
   vNew:"ещё не учили", vNone:"Ничего не найдено.", vDue:"повторить сегодня", lessonShort:n=>`урок ${n}`, vLearned:"Выучено (5 ★)", vLearning:"Учатся (0–4 ★)", vNewCount:"Новые",
-  vHint:"Звёзды растут, когда слово проходит повторения через 1, 3, 7, 14 и 30 дней: пять звёзд — выучено надолго. Ошибка отнимает две звезды, и слово возвращается на завтра.",
+  vHint:"Слово из пройденного урока начинает с 0 звёзд. Звёзды меняются только в ежедневном повторении: каждое вовремя пройденное повторение добавляет звезду (промежутки растут: 1, 3, 7, 14, 30 дней), пять звёзд — выучено надолго. Ошибка в повторении отнимает две звезды, и слово возвращается завтра. Уроки, игры, тренировка и контрольные звёзды не меняют.",
   starsAria:(a,b)=>`${a} из ${b} звёзд`, codeAria:"Код прогресса", answerAria:"Ответ"
 },
 uk:{
@@ -462,7 +462,7 @@ uk:{
   delTest:"Видалити цей тест", delTestQ:n=>`Видалити тест ${n}? Результати збережуться.`,
   vocab:"Словник", vWords:"Слова", vPhrases:"Фрази", vSearch:"Пошук будь-якою з двох мов",vAll:"Усі",vStDue:"Повторити сьогодні",vStMist:"З помилками",vSortBy:"Сортування",vLessonF:"Урок",vLessonAll:"Усі уроки",vPer:"На сторінці",vPerAll:"Усі",vSortStrong:"Сильні спочатку",vSortNext:"Найближче повторення",vSortMist:"Більше помилок",vSortRecent:"Нещодавні",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} з ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`помилок: ${n}`,vPractise:n=>`Повторити ці · ${n}`,vStatus:"Показати", vSortLesson:"За уроками", vSortWeak:"Слабкі спочатку", vSortAZ:"А–Я",
   vNew:"ще не вчили", vNone:"Нічого не знайдено.", vDue:"повторити сьогодні", lessonShort:n=>`урок ${n}`, vLearned:"Вивчено (5 ★)", vLearning:"Вчаться (0–4 ★)", vNewCount:"Нові",
-  vHint:"Зірки ростуть, коли слово проходить повторення через 1, 3, 7, 14 і 30 днів: п'ять зірок — вивчено надовго. Помилка забирає дві зірки, і слово повертається на завтра.",
+  vHint:"Слово з пройденого уроку починає з 0 зірок. Зірки змінюються тільки в щоденному повторенні: кожне вчасно пройдене повторення додає зірку (проміжки ростуть: 1, 3, 7, 14, 30 днів), п'ять зірок — вивчено надовго. Помилка в повторенні забирає дві зірки, і слово повертається завтра. Уроки, ігри, тренування й контрольні зірок не змінюють.",
   starsAria:(a,b)=>`${a} з ${b} зірок`, codeAria:"Код прогресу", answerAria:"Відповідь"
 },
 en:{
@@ -518,7 +518,7 @@ en:{
   delTest:"Delete this test", delTestQ:n=>`Delete test ${n}? The results are kept.`,
   vocab:"Vocabulary", vWords:"Words", vPhrases:"Phrases", vSearch:"Search in either language",vAll:"All",vStDue:"Review today",vStMist:"With mistakes",vSortBy:"Sort",vLessonF:"Lesson",vLessonAll:"All lessons",vPer:"Per page",vPerAll:"All",vSortStrong:"Strongest first",vSortNext:"Next review",vSortMist:"Most mistakes",vSortRecent:"Recently studied",vSortZA:"Z–A",vRange:(a,b,n)=>`${a}–${b} of ${n}`,vInDays:n=>`in ${nw(n,"days")}`,vMistT:n=>`mistakes: ${n}`,vPractise:n=>`Practise these · ${n}`,vStatus:"Show", vSortLesson:"By lesson", vSortWeak:"Weakest first", vSortAZ:"A–Z",
   vNew:"not studied yet", vNone:"Nothing found.", vDue:"review today", lessonShort:n=>`lesson ${n}`, vLearned:"Learned (5 ★)", vLearning:"Learning (0–4 ★)", vNewCount:"New",
-  vHint:"Stars grow as a word passes its reviews after 1, 3, 7, 14 and 30 days: five stars means it's learned for the long run. A mistake costs two stars, and the word comes back tomorrow.",
+  vHint:"A word you've met in a lesson starts at 0 stars. Stars change only in the daily review: each review passed on time adds one (the gaps grow: 1, 3, 7, 14, 30 days), five stars means learned for the long run. A mistake in the review costs two stars, and the word comes back tomorrow. Lessons, games, practice and tests don't change stars.",
   starsAria:(a,b)=>`${a} of ${b} stars`, codeAria:"Progress code", answerAria:"Answer"
 }};
 const UI_LANGS = ["en","ru","uk"];
@@ -738,12 +738,22 @@ function recordStep(d,k,{stars=0,pct=null,time=null}={}){
   P.steps[key]=r; touchStreak(); save();
 }
 const starsFor = pct => pct>=95?3:pct>=80?2:pct>=50?1:0;
-function stat(item,ok,typed){
+// A word's record (stars, review date, right/wrong counts) changes only in the daily review.
+// Everywhere else (lessons, games, tricky words, practice, tests) a word is just marked as met:
+// it stops being "new" and gets 0 stars, with its first review tomorrow.
+function markSeen(item,ok,typed){
+  if(!item||!item.key) return;
+  if(!P.srs[item.key]) P.srs[item.key]={box:0,due:addDays(INTERVALS[0]),last:null};
+  P.srs[item.key].seen=todayStr();
+  if(ok&&typed){ const s=P.items[item.key]||{r:0,w:0}; s.typed=true; P.items[item.key]=s }   // can type it: the review may ask it typed
+  save();
+}
+function stat(item,ok,typed){   // daily review only
   if(!item||!item.key) return;
   const s=P.items[item.key]||{r:0,w:0};
   if(ok) s.r++; else s.w++;
   s.ok=ok; if(ok&&typed) s.typed=true;
-  P.items[item.key]=s; srsUpdate(item.key,ok); save();
+  P.items[item.key]=s; srsUpdate(item.key,ok); P.srs[item.key].seen=todayStr(); save();
 }
 const INTERVALS=[1,1,3,7,14,30,60];
 const addDays = n => todayStr(new Date(Date.now()+n*864e5));
@@ -959,7 +969,7 @@ function nextQ(){
 }
 function answer(ok,{typed=false,silent=false,soft=false}={}){
   const q=Q.cur;
-  if(q.t!=="card" && q.it && !soft) stat(q.it,ok,typed);
+  if(q.it){ if(Q.cfg.counts && q.t!=="card"){ if(!soft) stat(q.it,ok,typed) } else markSeen(q.it,ok,typed) }
   if(ok){ Q.done++; Q.streak++; if(!Q.wrong.has(qid(q))) Q.first++; if(!silent) sfx.ok() }
   else { Q.wrong.set(qid(q),q); Q.streak=0; const pos=Math.min(Q.queue.length,2+Math.floor(Math.random()*3)); Q.queue.splice(pos,0,q); if(!silent) sfx.no() }
   pbar();
@@ -967,7 +977,7 @@ function answer(ok,{typed=false,silent=false,soft=false}={}){
 function overrideRight(){
   const q=Q.cur; Q.wrong.delete(qid(q));
   const i=Q.queue.indexOf(q); if(i>=0) Q.queue.splice(i,1);
-  if(q.it){ const s=P.items[q.it.key]; if(s){ s.w=Math.max(0,s.w-1); s.r++; s.ok=true; s.typed=true } srsUpdate(q.it.key,true,true); save() }
+  if(q.it && Q.cfg.counts){ const s=P.items[q.it.key]; if(s){ s.w=Math.max(0,s.w-1); s.r++; s.ok=true; s.typed=true } srsUpdate(q.it.key,true,true); save() }
   Q.done++; Q.first++; Q.streak++; pbar(); sfx.ok();
 }
 function nextBtn(host,autoMs){
@@ -1160,7 +1170,7 @@ function finishQuiz(){
     ${wrong.length?`<div class="mist"><span class="kind">${t("mistakesWhere")}</span>${wrong.map(q=>q.it?`<div><span>${esc(q.it.en)}</span><span>${esc(q.it.ru)}</span></div>`:`<div><span>${esc(q.g.full)}</span><span></span></div>`).join("")}</div>`:""}
   </div>`;
   const d=cfg.day;
-  const rw=$("#rw"); if(rw) rw.onclick=()=>runQuiz({...cfg,stepKey:null,bestKey:null,title:t("mistakes"),qs:wrong},true);
+  const rw=$("#rw"); if(rw) rw.onclick=()=>runQuiz({...cfg,stepKey:null,bestKey:null,counts:false,title:t("mistakes"),qs:wrong},true);   // a second go is practice
   const ag=$("#again"); if(ag) ag.onclick=()=>runQuiz(cfg,true);
   const nr=$("#nxr"); if(nr){ nr.onclick=()=>startReview(true); nr.focus({preventScroll:true}) }
   $("#toDay").onclick=()=>leavePlay(d);
@@ -1381,8 +1391,7 @@ function finishTest(test,timeout,silent){
   run.qs.forEach((sq,i)=>{
     const q=resolveQ(sq), a=run.ans[i]; if(!q) return;
     const ok=!!(a&&a.ok); if(ok) correct++;
-    const typo = !ok && q.t==="type" && a && a.v && checkTyped(q.it,a.v,test.learn)==="typo";   // wrong for the score, but no review penalty
-    if(q.it && !typo) stat(q.it,ok,q.t==="type");
+    if(q.it) markSeen(q.it,ok,q.t==="type");   // a test changes only its score
     if(!ok) wrong.push(q.t==="gram"?{q:q.g.before+"___"+q.g.after,your:a?a.v:"",right:q.g.answer}:{q:q.it.ru,your:a?a.v:"",right:q.it.en});
   });
   const total=run.qs.length, pct=total?Math.round(correct/total*100):0;
@@ -1427,7 +1436,7 @@ function vocabFiltered(){
     strong: (a,b)=>stars(b)-stars(a),
     next:   (a,b)=>(r(a)?r(a).due:"9999").localeCompare(r(b)?r(b).due:"9999"),
     mist:   (a,b)=>vMistakes(b)-vMistakes(a),
-    recent: (a,b)=>((r(b)&&r(b).last)||"").localeCompare((r(a)&&r(a).last)||""),
+    recent: (a,b)=>((r(b)&&(r(b).seen||r(b).last))||"").localeCompare((r(a)&&(r(a).seen||r(a).last))||""),
     az:     (a,b)=>key(a).localeCompare(key(b)),
     za:     (a,b)=>key(b).localeCompare(key(a)),
   }[vSort()];
@@ -1500,7 +1509,7 @@ function startReview(replay){
   const qs=items.map(it=>{ const typed=P.items[it.key]&&P.items[it.key].typed;
     if(it.kind==="p") return typed&&Math.random()<.5?{t:"type",it}:{t:"build",it};
     return typed&&Math.random()<.6?{t:"type",it}:{t:"choice",it,dir:Math.random()<.5?"en":"ru"} });
-  runQuiz({title:t("review"),qs,review:true},replay);
+  runQuiz({title:t("review"),qs,review:true,counts:true},replay);
 }
 const practiceQ = it => it.kind==="p"?{t:"build",it}:(P.items[it.key]&&P.items[it.key].typed?{t:"type",it}:{t:"choice",it,dir:"ru"});
 function startHard(){
