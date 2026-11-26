@@ -330,7 +330,7 @@ button.stat[aria-pressed="true"]{border-color:var(--accent);background:var(--acc
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "2.0.0";
+const APP_VERSION = "2.0.1";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -764,7 +764,7 @@ function srsUpdate(key,ok,force){
   r.box=clampBox(r.box);
   if(ok){
     if(r.last===td && !force) { P.srs[key]=r; return }   // a word moves forward at most once a day
-    const from = force && r.prev!=null ? clampBox(r.prev) : r.box;
+    const from = force && r.pen===td && r.prev!=null ? clampBox(r.prev) : r.box;   // "I was right": undo today's drop, if there was one
     r.box=clampBox(from+1); r.due=addDays(INTERVALS[r.box]); r.pen=null;
   } else {
     if(r.pen!==td){ r.prev=r.box; r.box=clampBox(r.box-MISTAKE_DROP); r.pen=td }   // a mistake costs 2 levels, once a day

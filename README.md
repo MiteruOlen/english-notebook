@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 2.0.0**
+**Version 2.0.1**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -174,6 +174,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 2.0.1 | Fix: "I was right" after a small typo in the review could set a word to an old star count |
 | 2.0.0 | Only the daily review changes a word's stars and mistakes; lessons, games, practice and tests just add new words at 0 stars |
 | 1.9.0 | Vocabulary: more sorts, filters by status and lesson, page size, page buttons on top, "Practise these" |
 | 1.8.0 | Settings → Keyboard: choose the keys for each exercise, including typing words in Build the phrase; key hints can be switched off. Safer handling of pasted backup codes |
