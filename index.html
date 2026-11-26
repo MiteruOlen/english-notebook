@@ -313,6 +313,9 @@ button.stat{font:inherit;color:inherit;text-align:left;cursor:pointer}
 button.stat[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
 .vbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .vmist{color:var(--bad)}
+.vhide{border:0;background:none;color:var(--muted);width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex:none;cursor:pointer}
+.vhide:hover,.vhide:focus-visible{background:var(--accent-soft);color:var(--accent)}
+.vrow.off .vtext,.wl .off{opacity:.45;text-decoration:line-through}
 .vlist{background:var(--sheet);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .vrow{display:flex;gap:12px;align-items:center;padding:10px 14px}
 .vrow+.vrow{border-top:1px solid var(--line)}
@@ -330,7 +333,7 @@ button.stat[aria-pressed="true"]{border-color:var(--accent);background:var(--acc
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "2.0.1";
+const APP_VERSION = "2.1.0";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -404,7 +407,7 @@ ru:{
   noAnswer:"нет ответа", testMistakes:"Ошибки в тесте", history:"Прошлые попытки",
   e_testCovers:"В тесте не указано, по каким он урокам. Добавь строку вида «covers: [1, 2, 3]».", e_testCode:"В тесте нет кода. В файле должна быть строка «code: …».",
   delTest:"Удалить этот тест", delTestQ:n=>`Удалить тест ${n}? Результаты сохранятся.`,
-  vocab:"Словарь", vWords:"Слова", vPhrases:"Фразы", vSearch:"Поиск на любом из двух языков",vAll:"Все",vStDue:"Повторить сегодня",vStMist:"С ошибками",vSortBy:"Сортировка",vLessonF:"Урок",vLessonAll:"Все уроки",vPer:"На странице",vPerAll:"Все",vSortStrong:"Сильные сначала",vSortNext:"Ближайшее повторение",vSortMist:"Больше ошибок",vSortRecent:"Недавние",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} из ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`ошибок: ${n}`,vPractise:n=>`Повторить эти · ${n}`,vStatus:"Показать", vSortLesson:"По урокам", vSortWeak:"Слабые сначала", vSortAZ:"А–Я",
+  vocab:"Словарь", vWords:"Слова", vPhrases:"Фразы", vSearch:"Поиск на любом из двух языков",vAll:"Все",vStDue:"Повторить сегодня",vStMist:"С ошибками",vSortBy:"Сортировка",vLessonF:"Урок",vLessonAll:"Все уроки",vPer:"На странице",vPerAll:"Все",vSortStrong:"Сильные сначала",vSortNext:"Ближайшее повторение",vSortMist:"Больше ошибок",vSortRecent:"Недавние",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} из ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`ошибок: ${n}`,vPractise:n=>`Повторить эти · ${n}`,vStatus:"Показать",vStHidden:"Скрытые",vHide:"Скрыть слово: убрать из уроков, повторения и игр",vUnhide:"Вернуть",vHiddenT:"скрыто",vSecAll:x=>`Весь ${x}`,secH:"Раздел",secNone:"Другое", vSortLesson:"По урокам", vSortWeak:"Слабые сначала", vSortAZ:"А–Я",
   vNew:"ещё не учили", vNone:"Ничего не найдено.", vDue:"повторить сегодня", lessonShort:n=>`урок ${n}`, vLearned:"Выучено (5 ★)", vLearning:"Учатся (0–4 ★)", vNewCount:"Новые",
   vHint:"Слово из пройденного урока начинает с 0 звёзд. Звёзды меняются только в ежедневном повторении: каждое вовремя пройденное повторение добавляет звезду (промежутки растут: 1, 3, 7, 14, 30 дней), пять звёзд — выучено надолго. Ошибка в повторении отнимает две звезды, и слово возвращается завтра. Уроки, игры, тренировка и контрольные звёзды не меняют.",
   starsAria:(a,b)=>`${a} из ${b} звёзд`, codeAria:"Код прогресса", answerAria:"Ответ"
@@ -460,7 +463,7 @@ uk:{
   noAnswer:"немає відповіді", testMistakes:"Помилки в тесті", history:"Попередні спроби",
   e_testCovers:"У тесті не вказано, за якими він уроками. Додай рядок на кшталт «covers: [1, 2, 3]».", e_testCode:"У тесті немає коду. У файлі має бути рядок «code: …».",
   delTest:"Видалити цей тест", delTestQ:n=>`Видалити тест ${n}? Результати збережуться.`,
-  vocab:"Словник", vWords:"Слова", vPhrases:"Фрази", vSearch:"Пошук будь-якою з двох мов",vAll:"Усі",vStDue:"Повторити сьогодні",vStMist:"З помилками",vSortBy:"Сортування",vLessonF:"Урок",vLessonAll:"Усі уроки",vPer:"На сторінці",vPerAll:"Усі",vSortStrong:"Сильні спочатку",vSortNext:"Найближче повторення",vSortMist:"Більше помилок",vSortRecent:"Нещодавні",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} з ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`помилок: ${n}`,vPractise:n=>`Повторити ці · ${n}`,vStatus:"Показати", vSortLesson:"За уроками", vSortWeak:"Слабкі спочатку", vSortAZ:"А–Я",
+  vocab:"Словник", vWords:"Слова", vPhrases:"Фрази", vSearch:"Пошук будь-якою з двох мов",vAll:"Усі",vStDue:"Повторити сьогодні",vStMist:"З помилками",vSortBy:"Сортування",vLessonF:"Урок",vLessonAll:"Усі уроки",vPer:"На сторінці",vPerAll:"Усі",vSortStrong:"Сильні спочатку",vSortNext:"Найближче повторення",vSortMist:"Більше помилок",vSortRecent:"Нещодавні",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} з ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`помилок: ${n}`,vPractise:n=>`Повторити ці · ${n}`,vStatus:"Показати",vStHidden:"Приховані",vHide:"Приховати слово: прибрати з уроків, повторення та ігор",vUnhide:"Повернути",vHiddenT:"приховано",vSecAll:x=>`Увесь ${x}`,secH:"Розділ",secNone:"Інше", vSortLesson:"За уроками", vSortWeak:"Слабкі спочатку", vSortAZ:"А–Я",
   vNew:"ще не вчили", vNone:"Нічого не знайдено.", vDue:"повторити сьогодні", lessonShort:n=>`урок ${n}`, vLearned:"Вивчено (5 ★)", vLearning:"Вчаться (0–4 ★)", vNewCount:"Нові",
   vHint:"Слово з пройденого уроку починає з 0 зірок. Зірки змінюються тільки в щоденному повторенні: кожне вчасно пройдене повторення додає зірку (проміжки ростуть: 1, 3, 7, 14, 30 днів), п'ять зірок — вивчено надовго. Помилка в повторенні забирає дві зірки, і слово повертається завтра. Уроки, ігри, тренування й контрольні зірок не змінюють.",
   starsAria:(a,b)=>`${a} з ${b} зірок`, codeAria:"Код прогресу", answerAria:"Відповідь"
@@ -516,7 +519,7 @@ en:{
   noAnswer:"no answer", testMistakes:"Mistakes in the test", history:"Earlier attempts",
   e_testCovers:"The test doesn't say which lessons it covers. Add a line like “covers: [1, 2, 3]”.", e_testCode:"The test has no code. The file needs a line “code: …”.",
   delTest:"Delete this test", delTestQ:n=>`Delete test ${n}? The results are kept.`,
-  vocab:"Vocabulary", vWords:"Words", vPhrases:"Phrases", vSearch:"Search in either language",vAll:"All",vStDue:"Review today",vStMist:"With mistakes",vSortBy:"Sort",vLessonF:"Lesson",vLessonAll:"All lessons",vPer:"Per page",vPerAll:"All",vSortStrong:"Strongest first",vSortNext:"Next review",vSortMist:"Most mistakes",vSortRecent:"Recently studied",vSortZA:"Z–A",vRange:(a,b,n)=>`${a}–${b} of ${n}`,vInDays:n=>`in ${nw(n,"days")}`,vMistT:n=>`mistakes: ${n}`,vPractise:n=>`Practise these · ${n}`,vStatus:"Show", vSortLesson:"By lesson", vSortWeak:"Weakest first", vSortAZ:"A–Z",
+  vocab:"Vocabulary", vWords:"Words", vPhrases:"Phrases", vSearch:"Search in either language",vAll:"All",vStDue:"Review today",vStMist:"With mistakes",vSortBy:"Sort",vLessonF:"Lesson",vLessonAll:"All lessons",vPer:"Per page",vPerAll:"All",vSortStrong:"Strongest first",vSortNext:"Next review",vSortMist:"Most mistakes",vSortRecent:"Recently studied",vSortZA:"Z–A",vRange:(a,b,n)=>`${a}–${b} of ${n}`,vInDays:n=>`in ${nw(n,"days")}`,vMistT:n=>`mistakes: ${n}`,vPractise:n=>`Practise these · ${n}`,vStatus:"Show",vStHidden:"Hidden",vHide:"Hide this word: leave it out of lessons, review and games",vUnhide:"Unhide",vHiddenT:"hidden",vSecAll:x=>`All of ${x}`,secH:"Section",secNone:"Other", vSortLesson:"By lesson", vSortWeak:"Weakest first", vSortAZ:"A–Z",
   vNew:"not studied yet", vNone:"Nothing found.", vDue:"review today", lessonShort:n=>`lesson ${n}`, vLearned:"Learned (5 ★)", vLearning:"Learning (0–4 ★)", vNewCount:"New",
   vHint:"A word you've met in a lesson starts at 0 stars. Stars change only in the daily review: each review passed on time adds one (the gaps grow: 1, 3, 7, 14, 30 days), five stars means learned for the long run. A mistake in the review costs two stars, and the word comes back tomorrow. Lessons, games, practice and tests don't change stars.",
   starsAria:(a,b)=>`${a} of ${b} stars`, codeAria:"Progress code", answerAria:"Answer"
@@ -532,6 +535,8 @@ const langSelf = code => langName(code,code);
 const starsHTML = (n,max=3) => `<span class="stars" aria-label="${esc(t("starsAria",n,max))}">${"<b>★</b>".repeat(n)}${"★".repeat(Math.max(0,max-n))}</span>`;
 
 const ICON = {
+  eye:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+  eyeOff:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.2A10 10 0 0 1 12 4c6.4 0 10 8 10 8a17 17 0 0 1-2.6 3.7M6.6 6.6C3.7 8.5 2 12 2 12s3.6 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2M3 3l18 18"/></svg>',
   back:`<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>`,
   close:`<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>`,
   gear:`<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>`,
@@ -555,6 +560,8 @@ function fix(o){
   if(!o.ui) o.ui = "auto";
   o.keys = (o.keys && typeof o.keys==="object") ? o.keys : {};
   o.voc = (o.voc && typeof o.voc==="object") ? o.voc : {};   // dictionary: sort, filter, lesson, page size
+  o.hidden = (o.hidden && typeof o.hidden==="object") ? o.hidden : {};   // words and phrases the learner has hidden
+  o.sec = (o.sec && typeof o.sec==="object") ? o.sec : {};   // chosen section (level or topic) per course
   o.srs = o.srs||{}; o.tests = o.tests||{};
   // Numbers that are shown on screen must be numbers, even from a pasted backup code
   const num = v => { v=Number(v); return Number.isFinite(v)?v:0 };
@@ -642,12 +649,17 @@ function normalizeLesson(raw, source){
   const phrases=dedup(list(raw.phrases).map(toPair).filter(Boolean));
   const grammar=list(raw.grammar).map(parseGram).filter(Boolean);
   if(!words.length && !phrases.length) throw new Error(t("e_empty",day));
-  const c=courseOf(raw);
-  return {id:pre(c.course)+"d"+day, day, ...c, title:raw.title?String(raw.title):"",
+  const c=courseOf(raw), sec=sectionOf(raw);
+  return {id:pre(c.course)+secId(sec)+"d"+day, day, section:sec, ...c, title:raw.title?String(raw.title):"",
     video:(typeof raw.video==="string"&&/^https?:\/\//.test(raw.video.trim()))?raw.video.trim():"",
     rule:raw.rule?String(raw.rule):"", words, phrases, grammar, source};
 }
-let ALL=[], DAYS=[], COURSES=[], INDEX=new Map(), PHRASE_TR=new Map();
+// Sections: an optional "section:" in a lesson file (a level like A1/A2, or a topic). Lesson numbers start again in each section.
+const sectionOf = raw => (typeof raw.section==="string"||typeof raw.section==="number") ? String(raw.section).trim().slice(0,40) : "";
+const secId = sec => sec ? deacc(sec.toLowerCase()).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")+"/" : "";
+const secCmp = (a,b) => a===b ? 0 : !a ? -1 : !b ? 1 : a.localeCompare(b,undefined,{numeric:true,sensitivity:"base"});
+const secPre = d => d && d.section ? d.section+" · " : "";
+let ALL=[], DAYS=[], COURSES=[], SECTIONS=[], INDEX=new Map(), PHRASE_TR=new Map();
 let FOLDER={state:"loading",raws:[],errors:[],files:0};
 function resolveUI(){
   if(P.ui!=="auto" && L[P.ui]) UI=P.ui;
@@ -661,23 +673,27 @@ function rebuild(){
   const map=new Map();
   P.imported.forEach(r=>{ try{ const l=normalizeLesson(r,"file"); map.set(l.id,l) }catch(e){} });
   FOLDER.raws.forEach(r=>{ try{ const l=normalizeLesson(r,"folder"); map.set(l.id,l) }catch(e){} });   // the online lessons folder wins over hand-added copies
-  ALL=[...map.values()].sort((a,b)=>a.day-b.day||(a.type==="test")-(b.type==="test"));
+  ALL=[...map.values()].sort((a,b)=>secCmp(a.section,b.section)||a.day-b.day||(a.type==="test")-(b.type==="test"));
   const cs=new Map(); ALL.forEach(d=>cs.set(d.course,{course:d.course,learn:d.learn,native:d.native}));   // native = translation language of the course's newest lesson
   COURSES=[...cs.values()].sort((a,b)=>a.course.localeCompare(b.course));
   if(!COURSES.some(c=>c.course===P.course)) P.course = COURSES.length ? COURSES[0].course : null;
-  DAYS=ALL.filter(d=>d.course===P.course);
+  SECTIONS=[...new Set(ALL.filter(d=>d.course===P.course).map(d=>d.section))];
+  const sec = SECTIONS.includes(P.sec[P.course]) ? P.sec[P.course] : SECTIONS[0];
+  DAYS=ALL.filter(d=>d.course===P.course && d.section===sec);
   INDEX=new Map(); PHRASE_TR=new Map();
   ALL.forEach(d=>{
     const p=pre(d.course);
-    d.words.forEach(w=>{ const k=p+"w:"+stripArt(norm(w.en),d.learn); if(!INDEX.has(k)) INDEX.set(k,{...w,kind:"w",key:k,course:d.course,learn:d.learn,lesson:d.day}) });
-    d.phrases.forEach(x=>{ const k=p+"p:"+norm(x.en); if(!INDEX.has(k)) INDEX.set(k,{...x,kind:"p",key:k,course:d.course,learn:d.learn,lesson:d.day}); PHRASE_TR.set(p+norm(x.en),x.ru) });
+    d.words.forEach(w=>{ const k=p+"w:"+stripArt(norm(w.en),d.learn); if(!INDEX.has(k)) INDEX.set(k,{...w,kind:"w",key:k,course:d.course,learn:d.learn,lesson:d.day,lid:d.id,sec:d.section}) });
+    d.phrases.forEach(x=>{ const k=p+"p:"+norm(x.en); if(!INDEX.has(k)) INDEX.set(k,{...x,kind:"p",key:k,course:d.course,learn:d.learn,lesson:d.day,lid:d.id,sec:d.section}); PHRASE_TR.set(p+norm(x.en),x.ru) });
   });
   resolveUI(); regradeTests();
 }
 const cur = () => COURSES.find(c=>c.course===P.course) || {course:"en",learn:"en",native:"ru"};
 const dayById = id => ALL.find(d=>d.id===id);
-const itemsOf = (d,kind) => (kind==="w"?d.words:d.phrases).map(x=>{ const k=pre(d.course)+kind+":"+(kind==="w"?stripArt(norm(x.en),d.learn):norm(x.en)); return INDEX.get(k)||{...x,kind,key:k,course:d.course} });
-const allItems = kind => [...INDEX.values()].filter(x=>x.kind===kind && x.course===P.course);
+const isHidden = it => !!(it && P.hidden[it.key]);   // hidden words are left out of everything except the vocabulary page
+const itemsAll = (d,kind) => (kind==="w"?d.words:d.phrases).map(x=>{ const k=pre(d.course)+kind+":"+(kind==="w"?stripArt(norm(x.en),d.learn):norm(x.en)); return INDEX.get(k)||{...x,kind,key:k,course:d.course} });
+const itemsOf = (d,kind) => itemsAll(d,kind).filter(it=>!isHidden(it));
+const allItems = (kind,withHidden) => [...INDEX.values()].filter(x=>x.kind===kind && x.course===P.course && (withHidden||!isHidden(x)));
 const related = (a,b) => { const na=norm(a.en), nb=norm(b.en); return (a.also||[]).some(x=>norm(x)===nb) || (b.also||[]).some(x=>norm(x)===na) };
 const trOf = (d,s) => PHRASE_TR.get(pre(d.course)+norm(s));
 const ck = k => pre(P.course||"en")+k;
@@ -709,19 +725,19 @@ async function loadFolder(){
 
 /* ================= progress model ================= */
 function stepsFor(d){
-  const s=[], ln=langSelf(d.learn);
+  const s=[], ln=langSelf(d.learn), nW=itemsOf(d,"w").length, nP=itemsOf(d,"p").length;
   if(d.rule) s.push({k:"rule",name:t("s_rule"),desc:t("d_rule"),star:false});
-  if(d.words.length){
-    s.push({k:"cards",name:t("s_cards"),desc:t("d_cards",nw(d.words.length,"words")),star:false});
-    if(d.words.length>=2) s.push({k:"wchoice",name:t("s_wchoice"),desc:t("d_wchoice"),star:true});
+  if(nW){
+    s.push({k:"cards",name:t("s_cards"),desc:t("d_cards",nw(nW,"words")),star:false});
+    if(nW>=2) s.push({k:"wchoice",name:t("s_wchoice"),desc:t("d_wchoice"),star:true});
     s.push({k:"wtype",name:t("s_wtype"),desc:t("d_wtype",ln),star:true});
   }
-  if(d.phrases.length){
+  if(nP){
     s.push({k:"pbuild",name:t("s_pbuild"),desc:t("d_pbuild"),star:true});
     s.push({k:"ptype",name:t("s_ptype"),desc:t("d_ptype",ln),star:true});
   }
   if(d.grammar.length) s.push({k:"gram",name:t("s_gram"),desc:t("d_gram"),star:true});
-  if(d.words.length>=3) s.push({k:"match",name:t("s_match"),desc:t("d_match"),star:true});
+  if(nW>=3) s.push({k:"match",name:t("s_match"),desc:t("d_match"),star:true});
   return s;
 }
 const rec = (d,k) => P.steps[d.id+":"+k];
@@ -772,9 +788,9 @@ function srsUpdate(key,ok,force){
   }
   r.last=td; P.srs[key]=r;
 }
-const dueItems = (day=todayStr()) => [...INDEX.values()].filter(it=>it.course===P.course && P.srs[it.key] && P.srs[it.key].due<=day)
+const dueItems = (day=todayStr()) => [...INDEX.values()].filter(it=>it.course===P.course && !isHidden(it) && P.srs[it.key] && P.srs[it.key].due<=day)
   .sort((a,b)=>P.srs[a.key].due.localeCompare(P.srs[b.key].due)||P.srs[a.key].box-P.srs[b.key].box);
-const hardItems = () => [...INDEX.values()].filter(it=>{ if(it.course!==P.course) return false; const s=P.items[it.key]; return s && s.w>0 && (s.ok===false || s.w>s.r) });
+const hardItems = () => [...INDEX.values()].filter(it=>{ if(it.course!==P.course||isHidden(it)) return false; const s=P.items[it.key]; return s && s.w>0 && (s.ok===false || s.w>s.r) });
 const learnedCount = () => allItems("w").filter(it=>{ const s=P.items[it.key]; return s&&s.typed&&s.ok }).length;
 function nextUp(){ for(const d of DAYS){ for(const s of stepsFor(d)){ const r=rec(d,s.k); if(!r||!r.done) return {d,s} } } return null }
 
@@ -824,6 +840,7 @@ function renderHome(){
   ${!storageOk?`<div class="msg warn">${t("noStorage")}</div>`:""}
   ${FOLDER.errors.length?`<div class="msg warn"><b>${esc(t("badFiles",nw(FOLDER.errors.length,"files")))}</b>${FOLDER.errors.map(e=>`<div class="small">${esc(e.file)}: ${esc(e.msg)}</div>`).join("")}</div>`:""}
   ${COURSES.length>1?`<div class="courses" role="group" aria-label="${t("course")}">${COURSES.map(c=>`<button class="chip" type="button" data-course="${esc(c.course)}" aria-pressed="${c.course===P.course}">${esc(langSelf(c.learn))}</button>`).join("")}</div>`:""}
+  ${SECTIONS.length>1?`<div class="courses" role="group" aria-label="${t("secH")}">${SECTIONS.map(x=>`<button class="chip" type="button" data-sec="${esc(x)}" aria-pressed="${DAYS.length&&DAYS[0].section===x}">${esc(x||t("secNone"))}</button>`).join("")}</div>`:""}
   <div class="stats">
     <div class="stat fire"><b>${streak}</b><span>${pw(streak,"days")} ${t("inARow")}</span></div>
     <div class="stat"><b>${learned}<small class="muted" style="font-size:14px">/${words}</small></b><span>${t("learned")}</span></div>
@@ -833,7 +850,7 @@ function renderHome(){
   ${DAYS.length?(nu?`<button class="cont" type="button" id="cont"><span class="grow"><span class="kind">${esc(t("cont",nu.d.day))}</span><strong>${esc(nu.s.name)}</strong></span><span class="go">${ICON.arrow}</span></button>`
      :`<button class="cont" type="button" id="cont"><span class="grow"><span class="kind">${t("allDone")}</span><strong>${hard.length?t("goHard"):t("goSpeed")}</strong></span><span class="go">${ICON.arrow}</span></button>`):""}
   <div class="section">
-    <div class="section-head"><h2>${t("daysH")}${COURSES.length?` <span class="muted small" style="font-family:inherit;font-weight:500">· ${esc(langSelf(cur().learn))}</span>`:""}</h2><span class="muted small">${nw(DAYS.filter(d=>d.type!=="test").length,"lessons")}</span></div>
+    <div class="section-head"><h2>${t("daysH")}${COURSES.length?` <span class="muted small" style="font-family:inherit;font-weight:500">· ${esc(langSelf(cur().learn))}${DAYS.length&&DAYS[0].section?" · "+esc(DAYS[0].section):""}</span>`:""}</h2><span class="muted small">${nw(DAYS.filter(d=>d.type!=="test").length,"lessons")}</span></div>
     ${pageTabs}
     <div class="days">
       ${!DAYS.length?`<div class="card-sheet" style="text-align:center">${FOLDER.state==="loading"?`<span class="muted">${t("loading")}</span>`:`<strong>${t("noDays")}</strong><span class="muted small">${t("noDaysSub")}</span>`}</div>`:""}
@@ -863,6 +880,7 @@ function renderHome(){
   $("#set").onclick=()=>nav({v:"settings"});
   $("#add").onclick=()=>nav({v:"import"});
   $$("[data-course]").forEach(b=>b.onclick=()=>{ P.course=b.dataset.course; dayPage=null; save(); rebuild(); renderHome() });
+  $$("[data-sec]").forEach(b=>b.onclick=()=>{ P.sec[P.course]=b.dataset.sec; dayPage=null; save(); rebuild(); renderHome() });
   $$("[data-page]").forEach(b=>b.onclick=()=>{ dayPage=+b.dataset.page; renderHome(); const h=$(".pages"); if(h) h.scrollIntoView({block:"nearest"}) });
   $$("[data-day]").forEach(b=>b.onclick=()=>nav({v:"day",id:b.dataset.day}));
   if(!DAYS.length) return;
@@ -879,7 +897,7 @@ function renderDay(d){
   if(d.type==="test") return renderTest(d);
   const s=daySummary(d), nextK=(s.steps.find(x=>{const r=rec(d,x.k);return !r||!r.done})||{}).k, rep=P.best["rep:"+d.id];
   app().innerHTML = `
-  <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><span class="kind">${esc(t("dayN",d.day))}${d.source==="file"?" · "+t("byHand"):""}</span><h2>${esc(d.title||t("dayN",d.day))}</h2></div>${vocabBtn()}</div>
+  <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><span class="kind">${esc(secPre(d)+t("dayN",d.day))}${d.source==="file"?" · "+t("byHand"):""}</span><h2>${esc(d.title||t("dayN",d.day))}</h2></div>${vocabBtn()}</div>
   <div class="dmeta"><span class="bar"><i style="width:${Math.round(s.done/s.total*100)}%"></i></span><span>${t("stepsOf",s.done,s.total)}</span><span class="stars"><b>★</b></span><span>${s.stars}/${s.max}</span></div>
   ${d.video?`<a class="btn sec" href="${esc(d.video)}" target="_blank" rel="noopener">${ICON.play} ${t("video")}</a>`:""}
   <div class="steps">
@@ -889,12 +907,12 @@ function renderDay(d){
   </div>
   <div class="row">
     <button class="btn" type="button" id="rep">${ICON.redo} ${t("repeatDay")}</button>
-    ${d.words.length>=4?`<button class="btn sec" type="button" id="spd">${ICON.bolt} ${t("speed")}</button>`:""}
+    ${itemsOf(d,"w").length>=4?`<button class="btn sec" type="button" id="spd">${ICON.bolt} ${t("speed")}</button>`:""}
   </div>
   ${rep!=null?`<div class="muted small" style="text-align:center">${t("bestRep",rep)}</div>`:""}
   <details class="list"><summary>${t("dayList")}</summary>
-    <div class="wl">${d.words.map(w=>`<div><span>${esc(w.en)}</span><span>${esc(w.ru)}${w.hint?` (${esc(w.hint)})`:""}</span></div>`).join("")}</div>
-    ${d.phrases.length?`<div class="wl" style="margin-top:14px">${d.phrases.map(w=>`<div><span>${esc(w.en)}</span><span>${esc(w.ru)}</span></div>`).join("")}</div>`:""}
+    <div class="wl">${itemsAll(d,"w").map(w=>`<div${isHidden(w)?` class="off" title="${esc(t("vHiddenT"))}"`:""}><span>${esc(w.en)}</span><span>${esc(w.ru)}${w.hint?` (${esc(w.hint)})`:""}</span></div>`).join("")}</div>
+    ${d.phrases.length?`<div class="wl" style="margin-top:14px">${itemsAll(d,"p").map(w=>`<div${isHidden(w)?` class="off" title="${esc(t("vHiddenT"))}"`:""}><span>${esc(w.en)}</span><span>${esc(w.ru)}</span></div>`).join("")}</div>`:""}
   </details>
   <div id="confirmBox"></div>
   <div class="row" style="justify-content:center;gap:18px">
@@ -914,6 +932,11 @@ function renderDay(d){
     const inFolder=FOLDER.raws.some(r=>{ try{ return normalizeLesson(r,"folder").id===d.id }catch(e){ return false } });
     confirmBox(t("delDayQ",d.day)+(inFolder?t("folderStays"):""),t("del"),()=>{ removeImported(d.id); goBack("day") });
   };
+}
+function moveProgress(from,to){   // a lesson's id changed (it got a section): carry its step results, records and test results over
+  Object.keys(P.steps).forEach(k=>{ if(k.startsWith(from+":")){ const n=to+k.slice(from.length); if(!P.steps[n]) P.steps[n]=P.steps[k]; delete P.steps[k] } });
+  Object.keys(P.best).forEach(k=>{ if(k.endsWith(":"+from)){ const n=k.slice(0,-from.length)+to; if(P.best[n]==null) P.best[n]=P.best[k]; delete P.best[k] } });
+  if(P.tests[from] && !P.tests[to]){ P.tests[to]=P.tests[from]; delete P.tests[from] }
 }
 function removeImported(id){ P.imported=P.imported.filter(r=>{ try{ return normalizeLesson(r,"file").id!==id }catch(e){ return true } }); save(); rebuild() }
 
@@ -936,7 +959,7 @@ function renderRule(d){
   enterPlay(d);
   const ex=d.grammar[0], exTr=ex?trOf(d,ex.full):null;
   app().innerHTML = `
-  <div class="top"><button class="icon-btn" type="button" id="x" aria-label="${t("close")}">${ICON.close}</button><div class="grow"><span class="kind">${esc(t("dayN",d.day))} · ${t("ruleSmall")}</span></div></div>
+  <div class="top"><button class="icon-btn" type="button" id="x" aria-label="${t("close")}">${ICON.close}</button><div class="grow"><span class="kind">${esc(secPre(d)+t("dayN",d.day))} · ${t("ruleSmall")}</span></div></div>
   <div class="card-sheet"><h2>${esc(d.title||t("s_rule"))}</h2><div class="rule">${ruleHTML(d.rule)}</div>
   ${ex?`<div class="muted small">${t("example")}: ${esc(ex.full)}${exTr?` — ${esc(exTr)}`:""}</div>`:""}
   <button class="btn" type="button" id="ok">${t("gotIt")}</button></div>`;
@@ -953,7 +976,7 @@ function runQuiz(cfg, replay){
   const learn = cfg.day ? cfg.day.learn : cur().learn;
   Q={cfg, learn, queue:shuffle(qs.slice()), total:qs.length, done:0, first:0, wrong:new Map(), streak:0, cur:null, answered:false};
   app().innerHTML = `
-  <div class="top"><button class="icon-btn" type="button" id="x" aria-label="${t("close")}">${ICON.close}</button><div class="grow"><span class="kind">${cfg.day?esc(t("dayN",cfg.day.day))+" · ":""}${esc(cfg.title)}</span></div></div>
+  <div class="top"><button class="icon-btn" type="button" id="x" aria-label="${t("close")}">${ICON.close}</button><div class="grow"><span class="kind">${cfg.day?esc(secPre(cfg.day)+t("dayN",cfg.day.day))+" · ":""}${esc(cfg.title)}</span></div></div>
   <div class="playbar" id="pb"></div>
   <div class="stage" id="stage"></div>`;
   $("#x").onclick=()=>leavePlay(cfg.day);
@@ -1210,14 +1233,15 @@ function normalizeTest(raw, source){
   const clamp=(v,def,lo,hi)=>{ v=Number(v); return Number.isFinite(v)?Math.max(lo,Math.min(hi,Math.round(v))):def };
   const grades=Array.isArray(raw.grades)&&raw.grades.length===4&&raw.grades.every(x=>Number.isFinite(Number(x)))?raw.grades.map(Number):[90,75,50,25];
   const c=courseOf(raw);
-  return {type:"test", id:pre(c.course)+"t"+n, day:n, ...c, title:raw.title?String(raw.title):"", covers, minutes:clamp(raw.minutes,15,1,120), questions:clamp(raw.questions,30,5,100),
+  const sec=sectionOf(raw);
+  return {type:"test", id:pre(c.course)+secId(sec)+"t"+n, day:n, section:sec, ...c, title:raw.title?String(raw.title):"", covers, minutes:clamp(raw.minutes,15,1,120), questions:clamp(raw.questions,30,5,100),
     codeHash:hash, grades, words:[], phrases:[], grammar:[], rule:"", video:"", source};
 }
 const testRec = id => (P.tests[id] = P.tests[id] || {usedHash:null, run:null, results:[]});
 const lastResult = id => { const r=P.tests[id]; return r&&r.results.length?r.results[r.results.length-1]:null };
 const gradeFor = (test,pct) => { const i=test.grades.findIndex(x=>pct>=x); return i<0?1:5-i };
 const mmss = ms => { const s=Math.max(0,Math.ceil(ms/1000)); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0") };
-const coveredLessons = test => test.covers.map(n=>ALL.find(d=>d.type!=="test"&&d.course===test.course&&d.day===n));
+const coveredLessons = test => test.covers.map(n=>ALL.find(d=>d.type!=="test"&&d.course===test.course&&d.section===test.section&&d.day===n));
 const coversLabel = test => { const c=test.covers; return c.length>2&&c.every((x,i)=>i===0||x===c[i-1]+1)?c[0]+"–"+c[c.length-1]:c.join(", ") };
 
 const passes = k => k==="ok"||k==="art"||k==="artx"||k==="alt"||k==="accent";   // what counts as correct in a test
@@ -1287,7 +1311,7 @@ function renderTest(test){
       ${r.wrong&&r.wrong.length?`<div class="mist"><span class="kind">${t("testMistakes")}</span>${r.wrong.map(w=>`<div class="tw"><span class="twq">${esc(w.q)}</span><span class="twa"><s>${esc(w.your||t("noAnswer"))}</s> → <b>${esc(w.right)}</b></span></div>`).join("")}</div>`:`<div class="msg ok">${t("noErrs")}</div>`}
     </div>`;
   app().innerHTML=`
-  <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><span class="kind">${esc(t("testN",test.day))}${test.source==="file"?" · "+t("byHand"):""}</span><h2>${esc(test.title||t("testN",test.day))}</h2></div></div>
+  <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><span class="kind">${esc(secPre(test)+t("testN",test.day))}${test.source==="file"?" · "+t("byHand"):""}</span><h2>${esc(test.title||t("testN",test.day))}</h2></div></div>
   <div class="dmeta"><span class="pill test">${t("testPill")}</span><span>${esc(t("testCovers",coversLabel(test)))}</span><span>· ${nw(test.questions,"questions")} · ${test.minutes} ${t("min")}</span></div>
   ${running?`<button class="cont" type="button" id="resume"><span class="grow"><span class="kind">${esc(t("testN",test.day))}</span><strong>${esc(t("resumeTest",mmss(rec.run.endsAt-Date.now())))}</strong></span><span class="go">${ICON.arrow}</span></button>`:""}
   ${!running&&res&&!canStart?resultCard(res):""}
@@ -1408,24 +1432,27 @@ function finishTest(test,timeout,silent){
 // Saved between visits in P.voc (sort, status filter, lesson, page size); kind, search and page are per visit.
 const VOC={kind:"w",q:"",page:0};
 const VOC_SORTS = [["lesson","vSortLesson"],["weak","vSortWeak"],["strong","vSortStrong"],["next","vSortNext"],["mist","vSortMist"],["recent","vSortRecent"],["az","vSortAZ"],["za","vSortZA"]];
-const VOC_STATUS = [["all","vAll"],["new","vNewCount"],["learning","vLearning"],["learned","vLearned"],["due","vStDue"],["mist","vStMist"]];
+const VOC_STATUS = [["all","vAll"],["new","vNewCount"],["learning","vLearning"],["learned","vLearned"],["due","vStDue"],["mist","vStMist"],["hidden","vStHidden"]];
 const VOC_PER = [20,50,100,0];   // 0 = all
 const vocPref = (k,ok,def) => ok(P.voc[k]) ? P.voc[k] : def;
 const vSort = () => vocPref("sort", v=>VOC_SORTS.some(x=>x[0]===v), "lesson");
 const vStatus = () => vocPref("st", v=>VOC_STATUS.some(x=>x[0]===v), "all");
 const vPer = () => vocPref("per", v=>VOC_PER.includes(v), 20);
-const vLesson = () => vocPref("lesson", v=>Number.isInteger(v), 0);   // 0 = all lessons
+const vLesson = () => vocPref("lesson", v=>typeof v==="string" && (v==="" || (v.startsWith("s:")&&SECTIONS.includes(v.slice(2))) || (v.startsWith("d:")&&ALL.some(d=>d.id===v.slice(2)))), "");   // "" all · "s:<section>" · "d:<lesson id>"
+const vSections = () => SECTIONS.some(Boolean);   // show section names next to lesson numbers
+const vLessonLabel = it => (vSections()&&it.sec?it.sec+" · ":"")+t("lessonShort",it.lesson);
 const vocabBtn = () => `<button class="icon-btn" type="button" data-vocab aria-label="${t("vocab")}" title="${t("vocab")}">${ICON.book}</button>`;
 document.addEventListener("click",e=>{ if(e.target.closest("[data-vocab]")){ VOC.page=0; nav({v:"vocab"}) } });
 const srsStars = key => { const r=P.srs[key]; return r?Math.min(5,clampBox(r.box)):-1 };   // -1 = not studied yet
 const stars5 = n => `<span class="stars" aria-label="${esc(t("starsAria",Math.max(0,n),5))}">${"<b>★</b>".repeat(Math.max(0,n))}${"★".repeat(5-Math.max(0,n))}</span>`;
 const vMistakes = it => (P.items[it.key]&&P.items[it.key].w)||0;
 function vStatusOf(it){ const s=srsStars(it.key); return s<0?"new":s>=5?"learned":"learning" }
-const vMatches = (it,st,td) => st==="all" ? true : st==="due" ? (srsStars(it.key)>=0 && P.srs[it.key].due<=td) : st==="mist" ? vMistakes(it)>0 : vStatusOf(it)===st;
+const vMatches = (it,st,td) => st==="hidden" ? isHidden(it) : isHidden(it) ? false : st==="all" ? true : st==="due" ? (srsStars(it.key)>=0 && P.srs[it.key].due<=td) : st==="mist" ? vMistakes(it)>0 : vStatusOf(it)===st;
 function vocabFiltered(){
   const td=todayStr(), q=deacc(VOC.q.trim().toLowerCase()), L=vLesson();
-  let base=allItems(VOC.kind);
-  if(L) base=base.filter(it=>it.lesson===L);
+  let base=allItems(VOC.kind,true);
+  if(L.startsWith("s:")) base=base.filter(it=>it.sec===L.slice(2));
+  if(L.startsWith("d:")) base=base.filter(it=>it.lid===L.slice(2));
   if(q) base=base.filter(it=>deacc((it.en+" "+it.ru+" "+(it.hint||"")).toLowerCase()).includes(q));
   const counts=Object.fromEntries(VOC_STATUS.map(([k])=>[k,base.filter(it=>vMatches(it,k,td)).length]));
   let list=base.filter(it=>vMatches(it,vStatus(),td));
@@ -1446,7 +1473,10 @@ function vocabFiltered(){
 function renderVocab(){
   const tally=list=>{ let l=0,g=0,n=0; list.forEach(it=>{ const s=srsStars(it.key); if(s<0) n++; else if(s>=5) l++; else g++ }); return {l,g,n} };
   const W=allItems("w"), Ph=allItems("p"), c=tally(VOC.kind==="w"?W:Ph), st=vStatus();
-  const lessons=[...new Set(allItems(VOC.kind).map(it=>it.lesson))].filter(Number.isInteger).sort((a,b)=>a-b);
+  const lessons=ALL.filter(d=>d.course===P.course && d.type!=="test"), L=vLesson();
+  const opt=(v,label)=>`<option value="${esc(v)}"${L===v?" selected":""}>${esc(label)}</option>`;
+  const lessonOpts = !vSections() ? lessons.map(d=>opt("d:"+d.id,t("lessonShort",d.day))).join("")
+    : SECTIONS.map(x=>`<optgroup label="${esc(x||t("secNone"))}">${opt("s:"+x,t("vSecAll",x||t("secNone")))}${lessons.filter(d=>d.section===x).map(d=>opt("d:"+d.id,t("lessonShort",d.day))).join("")}</optgroup>`).join("");
   const tile=(k,n,label,cls)=>`<button class="stat${cls}" type="button" data-vst="${k}" aria-pressed="${st===k}"><b>${n}</b><span>${label}</span></button>`;
   app().innerHTML=`
   <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><span class="kind">${esc(langSelf(cur().learn))}</span><h2>${t("vocab")}</h2></div></div>
@@ -1455,7 +1485,7 @@ function renderVocab(){
   <input id="vq" class="plain vsearch" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${t("vSearch")}" aria-label="${t("vSearch")}" value="${esc(VOC.q)}">
   <div class="vtools">
     <label>${t("vSortBy")}<select class="vsel" id="vsort">${VOC_SORTS.map(([k,l])=>`<option value="${k}"${vSort()===k?" selected":""}>${t(l)}</option>`).join("")}</select></label>
-    <label>${t("vLessonF")}<select class="vsel" id="vlesson"><option value="0">${t("vLessonAll")}</option>${lessons.map(n=>`<option value="${n}"${vLesson()===n?" selected":""}>${esc(t("lessonShort",n))}</option>`).join("")}</select></label>
+    <label>${t("vLessonF")}<select class="vsel" id="vlesson">${opt("",t("vLessonAll"))}${lessonOpts}</select></label>
     <label>${t("vPer")}<select class="vsel" id="vper">${VOC_PER.map(n=>`<option value="${n}"${vPer()===n?" selected":""}>${n||t("vPerAll")}</option>`).join("")}</select></label>
   </div>
   <div class="vst" id="vst" role="group" aria-label="${t("vStatus")}"></div>
@@ -1466,7 +1496,7 @@ function renderVocab(){
   $$("[data-vk]").forEach(b=>b.onclick=()=>{ VOC.kind=b.dataset.vk; VOC.page=0; renderVocab() });
   $$("[data-vst]").forEach(b=>b.onclick=()=>{ setVoc("st", vStatus()===b.dataset.vst?"all":b.dataset.vst); renderVocab() });   // a tile again = back to all
   $("#vsort").onchange=e=>{ setVoc("sort",e.target.value); drawVocabList() };
-  $("#vlesson").onchange=e=>{ setVoc("lesson",+e.target.value); drawVocabList() };
+  $("#vlesson").onchange=e=>{ setVoc("lesson",e.target.value); drawVocabList() };
   $("#vper").onchange=e=>{ setVoc("per",+e.target.value); drawVocabList() };
   $("#vq").oninput=e=>{ VOC.q=e.target.value; VOC.page=0; drawVocabList() };
   drawVocabList();
@@ -1483,16 +1513,19 @@ function drawVocabList(){
     </div>`;
   const meta=it=>{ const s=srsStars(it.key), r=P.srs[it.key], m=vMistakes(it);
     const when = s<0 ? t("vNew") : r.due<=td ? `<i class="vdot"></i>${t("vDue")}` : esc(t("vInDays",Math.round((new Date(r.due)-new Date(td))/864e5)));
-    return `${esc(t("lessonShort",it.lesson))} · ${when}${m?` · <span class="vmist" title="${esc(t("vMistT",m))}">${m} ✗</span>`:""}` };
+    return `${esc(vLessonLabel(it))} · ${when}${m?` · <span class="vmist" title="${esc(t("vMistT",m))}">${m} ✗</span>`:""}` };
   $("#vlist").innerHTML = !list.length ? `<div class="card-sheet muted" style="text-align:center">${t("vNone")}</div>` : `
     ${pager()}
-    <div class="vlist">${shown.map(it=>`<div class="vrow"><div class="vtext"><div class="ven">${esc(it.en)}</div><div class="vru">${esc(it.ru)}${it.hint?` (${esc(it.hint)})`:""}</div></div>
-        <div class="vright">${stars5(srsStars(it.key))}<span class="vmeta">${meta(it)}</span></div></div>`).join("")}</div>
+    <div class="vlist">${shown.map(it=>{ const h=isHidden(it); return `<div class="vrow${h?" off":""}"><div class="vtext"><div class="ven">${esc(it.en)}</div><div class="vru">${esc(it.ru)}${it.hint?` (${esc(it.hint)})`:""}</div></div>
+        <div class="vright">${h?`<span class="vmeta">${esc(vLessonLabel(it))} · ${t("vHiddenT")}</span>`:`${stars5(srsStars(it.key))}<span class="vmeta">${meta(it)}</span>`}</div>
+        <button class="vhide" type="button" data-hide="${esc(it.key)}" aria-pressed="${h}" title="${t(h?"vUnhide":"vHide")}" aria-label="${esc(t(h?"vUnhide":"vHide"))}: ${esc(it.en)}">${h?ICON.eye:ICON.eyeOff}</button></div>` }).join("")}</div>
     ${pages>1?pager():""}
-    <button class="btn sec" type="button" id="vpractise" style="width:100%">${t("vPractise",Math.min(20,list.length))}</button>`;
+    ${st==="hidden"?"":`<button class="btn sec" type="button" id="vpractise" style="width:100%">${t("vPractise",Math.min(20,list.length))}</button>`}`;
   $$("[data-vs]").forEach(b=>b.onclick=()=>{ P.voc.st=b.dataset.vs; save(); VOC.page=0; drawVocabList() });
   $$("[data-vgo]").forEach(b=>b.onclick=()=>{ const top=b.closest(".vbar")===$$("#vlist .vbar")[0]; VOC.page+=+b.dataset.vgo; drawVocabList(); if(!top) $("#vlist").scrollIntoView({block:"start"}) });
   const pr=$("#vpractise"); if(pr) pr.onclick=()=>startPractice(list);
+  $$("[data-hide]").forEach(b=>b.onclick=()=>{ const k=b.dataset.hide; if(P.hidden[k]) delete P.hidden[k]; else P.hidden[k]=true; save(); renderVocab();
+    const f=$(`[data-hide="${CSS.escape(k)}"]`); if(f) f.focus({preventScroll:true}) });
 }
 
 /* ================= special sessions ================= */
@@ -1517,7 +1550,7 @@ function startHard(){
   runQuiz({title:t("hard"),qs:items.map(practiceQ)});
 }
 function startPractice(list){   // from the dictionary: up to 20 of the words on the list
-  const items=sample(list,20); if(!items.length) return;
+  const items=sample(list.filter(it=>!isHidden(it)),20); if(!items.length) return;
   runQuiz({title:t("vocab"),qs:items.map(practiceQ)});
 }
 
@@ -1641,7 +1674,7 @@ function parseLessonText(text){
 }
 const DIR_OK = ("webkitdirectory" in document.createElement("input")) && !/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
 function renderImport(){
-  const imported=P.imported.map(r=>{ try{ return normalizeLesson(r,"file") }catch(e){ return null } }).filter(Boolean).sort((a,b)=>a.course.localeCompare(b.course)||a.day-b.day);
+  const imported=P.imported.map(r=>{ try{ return normalizeLesson(r,"file") }catch(e){ return null } }).filter(Boolean).sort((a,b)=>a.course.localeCompare(b.course)||secCmp(a.section,b.section)||a.day-b.day);
   const multi=new Set(imported.map(l=>l.course)).size>1||COURSES.length>1;
   app().innerHTML=`
   <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><h2>${t("addDay")}</h2></div>${vocabBtn()}</div>
@@ -1663,9 +1696,15 @@ function renderImport(){
   const handle=text=>{
     try{
       const res=parseLessonText(text);
-      res.forEach(({raw,lesson})=>{ P.imported=P.imported.filter(r=>{ try{ return normalizeLesson(r,"file").id!==lesson.id }catch(e){ return true } }); P.imported.push(raw) });
+      res.forEach(({raw,lesson})=>{
+        P.imported=P.imported.filter(r=>{ try{ const o=normalizeLesson(r,"file");
+          if(o.id===lesson.id) return false;
+          // the same lesson without a section: the new file gives it one, so it replaces it and keeps its progress
+          if(lesson.section && !o.section && o.course===lesson.course && o.type===lesson.type && o.day===lesson.day){ moveProgress(o.id,lesson.id); return false }
+          return true }catch(e){ return true } });
+        P.imported.push(raw) });
       P.course=res[0].lesson.course; save(); rebuild();
-      msg("ok",esc(t("added",res.map(r=>r.lesson.type==="test"?t("testN",r.lesson.day):`${t("dayN",r.lesson.day)} (${nw(r.lesson.words.length,"words")}, ${nw(r.lesson.phrases.length,"phrases")})`).join(", "))));
+      msg("ok",esc(t("added",res.map(r=>r.lesson.type==="test"?secPre(r.lesson)+t("testN",r.lesson.day):`${secPre(r.lesson)}${t("dayN",r.lesson.day)} (${nw(r.lesson.words.length,"words")}, ${nw(r.lesson.phrases.length,"phrases")})`).join(", "))));
       $("#imsg").insertAdjacentHTML("beforeend",`<div class="row" style="margin-top:10px"><button class="btn" type="button" id="open">${esc(res[0].lesson.type==="test"?t("testN",res[0].lesson.day):t("openDay",res[0].lesson.day))}</button></div>`);
       $("#open").onclick=()=>nav({v:"day",id:res[0].lesson.id},true);
     }catch(e){ msg("no",esc(e.message||String(e))) }
@@ -1748,7 +1787,7 @@ function renderSettings(){
   $("#wipe").onclick=()=>{
     $("#wipeBox").innerHTML=`<div class="confirm"><span>${t("resetQ")}</span><div class="row"><button class="btn sec tiny" type="button" id="wNo">${t("cancel")}</button><button class="btn danger tiny" type="button" id="wYes">${t("yesReset")}</button></div></div>`;
     $("#wNo").onclick=()=>$("#wipeBox").innerHTML="";
-    $("#wYes").onclick=()=>{ P=fix({sound:P.sound,ui:P.ui,keys:P.keys,voc:P.voc,course:P.course,imported:P.imported,folderCache:P.folderCache,tests:P.tests}); save(); rebuild(); nav({v:"home"},true) };
+    $("#wYes").onclick=()=>{ P=fix({sound:P.sound,ui:P.ui,keys:P.keys,voc:P.voc,hidden:P.hidden,sec:P.sec,course:P.course,imported:P.imported,folderCache:P.folderCache,tests:P.tests}); save(); rebuild(); nav({v:"home"},true) };
   };
 }
 

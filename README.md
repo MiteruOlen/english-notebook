@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 2.0.1**
+**Version 2.1.0**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -22,6 +22,10 @@ Tap **Add a lesson** and pick one or more lesson files. They appear in the list,
 - Adding a file with the same lesson number again **updates** that lesson. Your progress is kept.
 - A lesson can be **deleted** at the bottom of its page. If you add it again later, its progress comes back.
 - Lessons are shown **10 per page**. The home screen always opens on the page with the lesson you're currently on.
+
+**Sections.** A course can be split into sections: levels (A1, A2…) or topics (food, travel…). A lesson file says which one with `section: A2`, and lesson numbers start again at 1 in each section. When a course has more than one section, buttons under the course choose which one the lesson list shows (lessons without a section are under *Other*). Tests belong to a section too: `covers: [1, 2]` means lessons 1 and 2 of the test's own section. The daily review, games and vocabulary cover the whole course.
+
+To move lessons you already have into a section, add `section:` to their files and add them again: each one replaces its copy without a section, and keeps its progress.
 
 ## Inside a lesson
 
@@ -76,6 +80,8 @@ The **book icon** at the top of the home screen (and on lesson pages and in Sett
 - **Lesson:** all lessons or just one. Search, lesson and *Show* work together (say, *lesson 8 · with mistakes*).
 - **Per page:** 20, 50, 100 or all, with page buttons above and below the list. Each row shows its lesson, when it's due next and how many mistakes it has had.
 - **Practise these** starts a round with up to 20 words from the list as it's filtered. It's practice only: stars don't change.
+- **Hide a word** with the ⊘ button on its row, for words you don't want to learn yet. A hidden word is left out of lessons, the daily review, games, *Tricky words* and tests; its stars and review date wait for it. **Show → Hidden** lists them, and the same button brings a word back. In a lesson's word list, hidden words are struck through.
+- With sections, the lesson filter is grouped by section, with *All of A1* and so on.
 - Sort, *Show*, lesson and page size are remembered.
 - It isn't available during tests or exercises.
 
@@ -123,6 +129,7 @@ A lesson file is plain text. A small example:
 ```yaml
 learn: en          # the language being learned
 native: uk         # the language of the translations
+section: A1         # optional: a level or a topic
 lesson: 5
 title: Present Simple
 rule: |
@@ -139,6 +146,7 @@ grammar:
 ```
 
 - `learn` and `native` are two-letter language codes. Without them, the app assumes English with Russian translations.
+- `section` is optional. Lessons with the same section are numbered together (see *Sections* above).
 - `words` and `phrases` are written as "word: translation". A hint can go in brackets at the end: `watch: дивитися (телевізор)`.
 - `also` lists other correct words that aren't what the lesson teaches.
 - In `grammar`, the **correct option goes first** inside the square brackets, and the whole line is wrapped in quotes.
@@ -174,6 +182,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 2.1.0 | Hide words (and bring them back) from the vocabulary page; sections for levels or topics, with lesson numbers per section |
 | 2.0.1 | Fix: "I was right" after a small typo in the review could set a word to an old star count |
 | 2.0.0 | Only the daily review changes a word's stars and mistakes; lessons, games, practice and tests just add new words at 0 stars |
 | 1.9.0 | Vocabulary: more sorts, filters by status and lesson, page size, page buttons on top, "Practise these" |
