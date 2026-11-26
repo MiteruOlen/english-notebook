@@ -302,6 +302,17 @@ textarea{width:100%;min-height:140px;font:14px/1.45 ui-monospace,"SFMono-Regular
 input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
 .topbtns{display:flex;gap:8px;flex:none}
 .vsearch{width:100%;font-size:16px;padding:11px 14px}
+.vtools{display:grid;grid-template-columns:2fr 1.4fr 1fr;gap:8px}
+.vtools label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);min-width:0}
+.vsel{font:inherit;font-size:15px;padding:9px 8px;border-radius:10px;border:1px solid var(--line);background:var(--sheet);color:var(--ink);width:100%}
+.vst{display:flex;flex-wrap:wrap;gap:6px}
+.vst .chip{font-size:13px;padding:6px 10px}
+.vst .chip i{font-style:normal;color:var(--muted);margin-left:4px}
+.vst .chip[aria-pressed="true"] i{color:inherit;opacity:.8}
+button.stat{font:inherit;color:inherit;text-align:left;cursor:pointer}
+button.stat[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.vbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.vmist{color:var(--bad)}
 .vlist{background:var(--sheet);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .vrow{display:flex;gap:12px;align-items:center;padding:10px 14px}
 .vrow+.vrow{border-top:1px solid var(--line)}
@@ -319,7 +330,7 @@ input.plain{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:12px;
 <div id="app"></div>
 
 <script>
-const APP_VERSION = "1.8.0";
+const APP_VERSION = "1.9.0";
 const PAGE_SIZE = 10;
 let dayPage = null;   // which page of days the home screen shows (null = the one with the current day)
 const DAYS_DIR = "lessons/";   // lesson files: lessons/lesson-01.yaml, lessons/lesson-02.yaml, ...
@@ -393,7 +404,7 @@ ru:{
   noAnswer:"нет ответа", testMistakes:"Ошибки в тесте", history:"Прошлые попытки",
   e_testCovers:"В тесте не указано, по каким он урокам. Добавь строку вида «covers: [1, 2, 3]».", e_testCode:"В тесте нет кода. В файле должна быть строка «code: …».",
   delTest:"Удалить этот тест", delTestQ:n=>`Удалить тест ${n}? Результаты сохранятся.`,
-  vocab:"Словарь", vWords:"Слова", vPhrases:"Фразы", vSearch:"Поиск по-английски или по-русски", vSortLesson:"По урокам", vSortWeak:"Слабые сначала", vSortAZ:"А–Я",
+  vocab:"Словарь", vWords:"Слова", vPhrases:"Фразы", vSearch:"Поиск на любом из двух языков",vAll:"Все",vStDue:"Повторить сегодня",vStMist:"С ошибками",vSortBy:"Сортировка",vLessonF:"Урок",vLessonAll:"Все уроки",vPer:"На странице",vPerAll:"Все",vSortStrong:"Сильные сначала",vSortNext:"Ближайшее повторение",vSortMist:"Больше ошибок",vSortRecent:"Недавние",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} из ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`ошибок: ${n}`,vPractise:n=>`Повторить эти · ${n}`,vStatus:"Показать", vSortLesson:"По урокам", vSortWeak:"Слабые сначала", vSortAZ:"А–Я",
   vNew:"ещё не учили", vNone:"Ничего не найдено.", vDue:"повторить сегодня", lessonShort:n=>`урок ${n}`, vLearned:"Выучено (5 ★)", vLearning:"Учатся (0–4 ★)", vNewCount:"Новые",
   vHint:"Звёзды растут, когда слово проходит повторения через 1, 3, 7, 14 и 30 дней: пять звёзд — выучено надолго. Ошибка отнимает две звезды, и слово возвращается на завтра.",
   starsAria:(a,b)=>`${a} из ${b} звёзд`, codeAria:"Код прогресса", answerAria:"Ответ"
@@ -449,7 +460,7 @@ uk:{
   noAnswer:"немає відповіді", testMistakes:"Помилки в тесті", history:"Попередні спроби",
   e_testCovers:"У тесті не вказано, за якими він уроками. Додай рядок на кшталт «covers: [1, 2, 3]».", e_testCode:"У тесті немає коду. У файлі має бути рядок «code: …».",
   delTest:"Видалити цей тест", delTestQ:n=>`Видалити тест ${n}? Результати збережуться.`,
-  vocab:"Словник", vWords:"Слова", vPhrases:"Фрази", vSearch:"Пошук англійською або українською", vSortLesson:"За уроками", vSortWeak:"Слабкі спочатку", vSortAZ:"А–Я",
+  vocab:"Словник", vWords:"Слова", vPhrases:"Фрази", vSearch:"Пошук будь-якою з двох мов",vAll:"Усі",vStDue:"Повторити сьогодні",vStMist:"З помилками",vSortBy:"Сортування",vLessonF:"Урок",vLessonAll:"Усі уроки",vPer:"На сторінці",vPerAll:"Усі",vSortStrong:"Сильні спочатку",vSortNext:"Найближче повторення",vSortMist:"Більше помилок",vSortRecent:"Нещодавні",vSortZA:"Я–А",vRange:(a,b,n)=>`${a}–${b} з ${n}`,vInDays:n=>`через ${nw(n,"days")}`,vMistT:n=>`помилок: ${n}`,vPractise:n=>`Повторити ці · ${n}`,vStatus:"Показати", vSortLesson:"За уроками", vSortWeak:"Слабкі спочатку", vSortAZ:"А–Я",
   vNew:"ще не вчили", vNone:"Нічого не знайдено.", vDue:"повторити сьогодні", lessonShort:n=>`урок ${n}`, vLearned:"Вивчено (5 ★)", vLearning:"Вчаться (0–4 ★)", vNewCount:"Нові",
   vHint:"Зірки ростуть, коли слово проходить повторення через 1, 3, 7, 14 і 30 днів: п'ять зірок — вивчено надовго. Помилка забирає дві зірки, і слово повертається на завтра.",
   starsAria:(a,b)=>`${a} з ${b} зірок`, codeAria:"Код прогресу", answerAria:"Відповідь"
@@ -505,7 +516,7 @@ en:{
   noAnswer:"no answer", testMistakes:"Mistakes in the test", history:"Earlier attempts",
   e_testCovers:"The test doesn't say which lessons it covers. Add a line like “covers: [1, 2, 3]”.", e_testCode:"The test has no code. The file needs a line “code: …”.",
   delTest:"Delete this test", delTestQ:n=>`Delete test ${n}? The results are kept.`,
-  vocab:"Vocabulary", vWords:"Words", vPhrases:"Phrases", vSearch:"Search in either language", vSortLesson:"By lesson", vSortWeak:"Weakest first", vSortAZ:"A–Z",
+  vocab:"Vocabulary", vWords:"Words", vPhrases:"Phrases", vSearch:"Search in either language",vAll:"All",vStDue:"Review today",vStMist:"With mistakes",vSortBy:"Sort",vLessonF:"Lesson",vLessonAll:"All lessons",vPer:"Per page",vPerAll:"All",vSortStrong:"Strongest first",vSortNext:"Next review",vSortMist:"Most mistakes",vSortRecent:"Recently studied",vSortZA:"Z–A",vRange:(a,b,n)=>`${a}–${b} of ${n}`,vInDays:n=>`in ${nw(n,"days")}`,vMistT:n=>`mistakes: ${n}`,vPractise:n=>`Practise these · ${n}`,vStatus:"Show", vSortLesson:"By lesson", vSortWeak:"Weakest first", vSortAZ:"A–Z",
   vNew:"not studied yet", vNone:"Nothing found.", vDue:"review today", lessonShort:n=>`lesson ${n}`, vLearned:"Learned (5 ★)", vLearning:"Learning (0–4 ★)", vNewCount:"New",
   vHint:"Stars grow as a word passes its reviews after 1, 3, 7, 14 and 30 days: five stars means it's learned for the long run. A mistake costs two stars, and the word comes back tomorrow.",
   starsAria:(a,b)=>`${a} of ${b} stars`, codeAria:"Progress code", answerAria:"Answer"
@@ -543,6 +554,7 @@ function fix(o){
   if(o.sound===undefined) o.sound = true;
   if(!o.ui) o.ui = "auto";
   o.keys = (o.keys && typeof o.keys==="object") ? o.keys : {};
+  o.voc = (o.voc && typeof o.voc==="object") ? o.voc : {};   // dictionary: sort, filter, lesson, page size
   o.srs = o.srs||{}; o.tests = o.tests||{};
   // Numbers that are shown on screen must be numbers, even from a pasted backup code
   const num = v => { v=Number(v); return Number.isFinite(v)?v:0 };
@@ -1384,48 +1396,94 @@ function finishTest(test,timeout,silent){
 }
 
 /* ================= vocabulary ================= */
-const VOC={kind:"w",q:"",sort:"lesson",page:0}, VOC_PAGE=20;
+// Saved between visits in P.voc (sort, status filter, lesson, page size); kind, search and page are per visit.
+const VOC={kind:"w",q:"",page:0};
+const VOC_SORTS = [["lesson","vSortLesson"],["weak","vSortWeak"],["strong","vSortStrong"],["next","vSortNext"],["mist","vSortMist"],["recent","vSortRecent"],["az","vSortAZ"],["za","vSortZA"]];
+const VOC_STATUS = [["all","vAll"],["new","vNewCount"],["learning","vLearning"],["learned","vLearned"],["due","vStDue"],["mist","vStMist"]];
+const VOC_PER = [20,50,100,0];   // 0 = all
+const vocPref = (k,ok,def) => ok(P.voc[k]) ? P.voc[k] : def;
+const vSort = () => vocPref("sort", v=>VOC_SORTS.some(x=>x[0]===v), "lesson");
+const vStatus = () => vocPref("st", v=>VOC_STATUS.some(x=>x[0]===v), "all");
+const vPer = () => vocPref("per", v=>VOC_PER.includes(v), 20);
+const vLesson = () => vocPref("lesson", v=>Number.isInteger(v), 0);   // 0 = all lessons
 const vocabBtn = () => `<button class="icon-btn" type="button" data-vocab aria-label="${t("vocab")}" title="${t("vocab")}">${ICON.book}</button>`;
 document.addEventListener("click",e=>{ if(e.target.closest("[data-vocab]")){ VOC.page=0; nav({v:"vocab"}) } });
 const srsStars = key => { const r=P.srs[key]; return r?Math.min(5,clampBox(r.box)):-1 };   // -1 = not studied yet
 const stars5 = n => `<span class="stars" aria-label="${esc(t("starsAria",Math.max(0,n),5))}">${"<b>★</b>".repeat(Math.max(0,n))}${"★".repeat(5-Math.max(0,n))}</span>`;
+const vMistakes = it => (P.items[it.key]&&P.items[it.key].w)||0;
+function vStatusOf(it){ const s=srsStars(it.key); return s<0?"new":s>=5?"learned":"learning" }
+const vMatches = (it,st,td) => st==="all" ? true : st==="due" ? (srsStars(it.key)>=0 && P.srs[it.key].due<=td) : st==="mist" ? vMistakes(it)>0 : vStatusOf(it)===st;
+function vocabFiltered(){
+  const td=todayStr(), q=deacc(VOC.q.trim().toLowerCase()), L=vLesson();
+  let base=allItems(VOC.kind);
+  if(L) base=base.filter(it=>it.lesson===L);
+  if(q) base=base.filter(it=>deacc((it.en+" "+it.ru+" "+(it.hint||"")).toLowerCase()).includes(q));
+  const counts=Object.fromEntries(VOC_STATUS.map(([k])=>[k,base.filter(it=>vMatches(it,k,td)).length]));
+  let list=base.filter(it=>vMatches(it,vStatus(),td));
+  const key=it=>stripArt(norm(it.en),it.learn), stars=it=>srsStars(it.key), r=it=>P.srs[it.key];
+  const by = {
+    lesson: null,
+    weak:   (a,b)=>(stars(a)<0?99:stars(a))-(stars(b)<0?99:stars(b)),
+    strong: (a,b)=>stars(b)-stars(a),
+    next:   (a,b)=>(r(a)?r(a).due:"9999").localeCompare(r(b)?r(b).due:"9999"),
+    mist:   (a,b)=>vMistakes(b)-vMistakes(a),
+    recent: (a,b)=>((r(b)&&r(b).last)||"").localeCompare((r(a)&&r(a).last)||""),
+    az:     (a,b)=>key(a).localeCompare(key(b)),
+    za:     (a,b)=>key(b).localeCompare(key(a)),
+  }[vSort()];
+  if(by) list=list.slice().sort(by);   // sort is stable: ties keep lesson order
+  return {list,counts,td};
+}
 function renderVocab(){
   const tally=list=>{ let l=0,g=0,n=0; list.forEach(it=>{ const s=srsStars(it.key); if(s<0) n++; else if(s>=5) l++; else g++ }); return {l,g,n} };
-  const W=allItems("w"), Ph=allItems("p"), c=tally(VOC.kind==="w"?W:Ph);
+  const W=allItems("w"), Ph=allItems("p"), c=tally(VOC.kind==="w"?W:Ph), st=vStatus();
+  const lessons=[...new Set(allItems(VOC.kind).map(it=>it.lesson))].filter(Number.isInteger).sort((a,b)=>a-b);
+  const tile=(k,n,label,cls)=>`<button class="stat${cls}" type="button" data-vst="${k}" aria-pressed="${st===k}"><b>${n}</b><span>${label}</span></button>`;
   app().innerHTML=`
   <div class="top"><button class="icon-btn" type="button" id="back" aria-label="${t("back")}">${ICON.back}</button><div class="grow"><span class="kind">${esc(langSelf(cur().learn))}</span><h2>${t("vocab")}</h2></div></div>
-  <div class="stats">
-    <div class="stat star"><b>${c.l}</b><span>${t("vLearned")}</span></div>
-    <div class="stat"><b>${c.g}</b><span>${t("vLearning")}</span></div>
-    <div class="stat"><b>${c.n}</b><span>${t("vNewCount")}</span></div>
-  </div>
+  <div class="stats">${tile("learned",c.l,t("vLearned")," star")}${tile("learning",c.g,t("vLearning"),"")}${tile("new",c.n,t("vNewCount"),"")}</div>
   <div class="courses" role="group"><button class="chip" type="button" data-vk="w" aria-pressed="${VOC.kind==="w"}">${t("vWords")} · ${W.length}</button><button class="chip" type="button" data-vk="p" aria-pressed="${VOC.kind==="p"}">${t("vPhrases")} · ${Ph.length}</button></div>
   <input id="vq" class="plain vsearch" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${t("vSearch")}" aria-label="${t("vSearch")}" value="${esc(VOC.q)}">
-  <div class="courses" role="group">${[["lesson","vSortLesson"],["weak","vSortWeak"],["az","vSortAZ"]].map(([k,s])=>`<button class="chip" type="button" data-vs="${k}" aria-pressed="${VOC.sort===k}">${t(s)}</button>`).join("")}</div>
+  <div class="vtools">
+    <label>${t("vSortBy")}<select class="vsel" id="vsort">${VOC_SORTS.map(([k,l])=>`<option value="${k}"${vSort()===k?" selected":""}>${t(l)}</option>`).join("")}</select></label>
+    <label>${t("vLessonF")}<select class="vsel" id="vlesson"><option value="0">${t("vLessonAll")}</option>${lessons.map(n=>`<option value="${n}"${vLesson()===n?" selected":""}>${esc(t("lessonShort",n))}</option>`).join("")}</select></label>
+    <label>${t("vPer")}<select class="vsel" id="vper">${VOC_PER.map(n=>`<option value="${n}"${vPer()===n?" selected":""}>${n||t("vPerAll")}</option>`).join("")}</select></label>
+  </div>
+  <div class="vst" id="vst" role="group" aria-label="${t("vStatus")}"></div>
   <div id="vlist"></div>
   <div class="muted small">${t("vHint")}</div>`;
   $("#back").onclick=()=>goBack("vocab");
+  const setVoc=(k,v)=>{ P.voc[k]=v; save(); VOC.page=0 };
   $$("[data-vk]").forEach(b=>b.onclick=()=>{ VOC.kind=b.dataset.vk; VOC.page=0; renderVocab() });
-  $$("[data-vs]").forEach(b=>b.onclick=()=>{ VOC.sort=b.dataset.vs; VOC.page=0; renderVocab() });
+  $$("[data-vst]").forEach(b=>b.onclick=()=>{ setVoc("st", vStatus()===b.dataset.vst?"all":b.dataset.vst); renderVocab() });   // a tile again = back to all
+  $("#vsort").onchange=e=>{ setVoc("sort",e.target.value); drawVocabList() };
+  $("#vlesson").onchange=e=>{ setVoc("lesson",+e.target.value); drawVocabList() };
+  $("#vper").onchange=e=>{ setVoc("per",+e.target.value); drawVocabList() };
   $("#vq").oninput=e=>{ VOC.q=e.target.value; VOC.page=0; drawVocabList() };
   drawVocabList();
 }
 function drawVocabList(){
-  let list=allItems(VOC.kind);
-  const q=deacc(VOC.q.trim().toLowerCase());
-  if(q) list=list.filter(it=>deacc((it.en+" "+it.ru+" "+(it.hint||"")).toLowerCase()).includes(q));
-  const rank=it=>{ const s=srsStars(it.key); return s<0?99:s };
-  if(VOC.sort==="weak") list=list.slice().sort((a,b)=>rank(a)-rank(b));
-  if(VOC.sort==="az") list=list.slice().sort((a,b)=>stripArt(norm(a.en),a.learn).localeCompare(stripArt(norm(b.en),b.learn)));
-  const pages=Math.max(1,Math.ceil(list.length/VOC_PAGE)); VOC.page=Math.min(VOC.page,pages-1);
-  const shown=list.slice(VOC.page*VOC_PAGE,(VOC.page+1)*VOC_PAGE), td=todayStr();
+  const {list,counts,td}=vocabFiltered(), st=vStatus(), per=vPer()||Math.max(1,list.length);
+  $("#vst").innerHTML=VOC_STATUS.map(([k,l])=>`<button class="chip" type="button" data-vs="${k}" aria-pressed="${st===k}">${esc(t(l).replace(/\s*\(.*\)$/,""))}<i>${counts[k]}</i></button>`).join("");
+  $$("[data-vst]").forEach(b=>b.setAttribute("aria-pressed",st===b.dataset.vst));
+  const pages=Math.max(1,Math.ceil(list.length/per)); VOC.page=Math.min(VOC.page,pages-1);
+  const from=VOC.page*per, shown=list.slice(from,from+per);
+  const pager=()=>`<div class="vbar">
+      ${list.length?`<span class="muted small">${t("vRange",from+1,from+shown.length,list.length)}</span>`:"<span></span>"}
+      ${pages>1?`<div class="pager"><button class="icon-btn" type="button" data-vgo="-1" ${VOC.page===0?"disabled":""} aria-label="${t("back")}">${ICON.back}</button><span class="plabel"><b>${VOC.page+1} / ${pages}</b></span><button class="icon-btn" type="button" data-vgo="1" ${VOC.page===pages-1?"disabled":""} aria-label="${t("next")}"><span style="display:inline-block;transform:scaleX(-1)">${ICON.back}</span></button></div>`:""}
+    </div>`;
+  const meta=it=>{ const s=srsStars(it.key), r=P.srs[it.key], m=vMistakes(it);
+    const when = s<0 ? t("vNew") : r.due<=td ? `<i class="vdot"></i>${t("vDue")}` : esc(t("vInDays",Math.round((new Date(r.due)-new Date(td))/864e5)));
+    return `${esc(t("lessonShort",it.lesson))} · ${when}${m?` · <span class="vmist" title="${esc(t("vMistT",m))}">${m} ✗</span>`:""}` };
   $("#vlist").innerHTML = !list.length ? `<div class="card-sheet muted" style="text-align:center">${t("vNone")}</div>` : `
-    <div class="vlist">${shown.map(it=>{ const s=srsStars(it.key), due=s>=0&&P.srs[it.key].due<=td;
-      return `<div class="vrow"><div class="vtext"><div class="ven">${esc(it.en)}</div><div class="vru">${esc(it.ru)}${it.hint?` (${esc(it.hint)})`:""}</div></div>
-        <div class="vright">${stars5(s)}<span class="vmeta">${s<0?t("vNew"):due?`<i class="vdot"></i>${t("vDue")}`:esc(t("lessonShort",it.lesson))}</span></div></div>` }).join("")}</div>
-    ${pages>1?`<div class="pager"><button class="icon-btn" type="button" id="vprev" ${VOC.page===0?"disabled":""} aria-label="${t("back")}">${ICON.back}</button><span class="plabel"><b>${VOC.page+1} / ${pages}</b><span class="muted small">${list.length}</span></span><button class="icon-btn" type="button" id="vnext" ${VOC.page===pages-1?"disabled":""} aria-label="${t("next")}"><span style="display:inline-block;transform:scaleX(-1)">${ICON.back}</span></button></div>`:""}`;
-  const go=d=>{ VOC.page+=d; drawVocabList(); $("#vlist").scrollIntoView({block:"start"}) };
-  const pv=$("#vprev"), nx=$("#vnext"); if(pv) pv.onclick=()=>go(-1); if(nx) nx.onclick=()=>go(1);
+    ${pager()}
+    <div class="vlist">${shown.map(it=>`<div class="vrow"><div class="vtext"><div class="ven">${esc(it.en)}</div><div class="vru">${esc(it.ru)}${it.hint?` (${esc(it.hint)})`:""}</div></div>
+        <div class="vright">${stars5(srsStars(it.key))}<span class="vmeta">${meta(it)}</span></div></div>`).join("")}</div>
+    ${pages>1?pager():""}
+    <button class="btn sec" type="button" id="vpractise" style="width:100%">${t("vPractise",Math.min(20,list.length))}</button>`;
+  $$("[data-vs]").forEach(b=>b.onclick=()=>{ P.voc.st=b.dataset.vs; save(); VOC.page=0; drawVocabList() });
+  $$("[data-vgo]").forEach(b=>b.onclick=()=>{ const top=b.closest(".vbar")===$$("#vlist .vbar")[0]; VOC.page+=+b.dataset.vgo; drawVocabList(); if(!top) $("#vlist").scrollIntoView({block:"start"}) });
+  const pr=$("#vpractise"); if(pr) pr.onclick=()=>startPractice(list);
 }
 
 /* ================= special sessions ================= */
@@ -1444,9 +1502,14 @@ function startReview(replay){
     return typed&&Math.random()<.6?{t:"type",it}:{t:"choice",it,dir:Math.random()<.5?"en":"ru"} });
   runQuiz({title:t("review"),qs,review:true},replay);
 }
+const practiceQ = it => it.kind==="p"?{t:"build",it}:(P.items[it.key]&&P.items[it.key].typed?{t:"type",it}:{t:"choice",it,dir:"ru"});
 function startHard(){
   const items=sample(hardItems(),15); if(!items.length) return;
-  runQuiz({title:t("hard"),qs:items.map(it=>it.kind==="p"?{t:"build",it}:(P.items[it.key]&&P.items[it.key].typed?{t:"type",it}:{t:"choice",it,dir:"ru"}))});
+  runQuiz({title:t("hard"),qs:items.map(practiceQ)});
+}
+function startPractice(list){   // from the dictionary: up to 20 of the words on the list
+  const items=sample(list,20); if(!items.length) return;
+  runQuiz({title:t("vocab"),qs:items.map(practiceQ)});
 }
 
 /* ================= game: pairs ================= */
@@ -1676,7 +1739,7 @@ function renderSettings(){
   $("#wipe").onclick=()=>{
     $("#wipeBox").innerHTML=`<div class="confirm"><span>${t("resetQ")}</span><div class="row"><button class="btn sec tiny" type="button" id="wNo">${t("cancel")}</button><button class="btn danger tiny" type="button" id="wYes">${t("yesReset")}</button></div></div>`;
     $("#wNo").onclick=()=>$("#wipeBox").innerHTML="";
-    $("#wYes").onclick=()=>{ P=fix({sound:P.sound,ui:P.ui,keys:P.keys,course:P.course,imported:P.imported,folderCache:P.folderCache,tests:P.tests}); save(); rebuild(); nav({v:"home"},true) };
+    $("#wYes").onclick=()=>{ P=fix({sound:P.sound,ui:P.ui,keys:P.keys,voc:P.voc,course:P.course,imported:P.imported,folderCache:P.folderCache,tests:P.tests}); save(); rebuild(); nav({v:"home"},true) };
   };
 }
 

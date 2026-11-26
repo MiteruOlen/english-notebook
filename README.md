@@ -1,6 +1,6 @@
 # English Notebook
 
-**Version 1.8.0**
+**Version 1.9.0**
 
 English Notebook is a small app for learning words, phrases and grammar from your own lessons. It started as a way to practise the lessons from a YouTube English course, but it works for any language: you can learn English with Russian or Ukrainian translations, Spanish with English translations, and so on.
 
@@ -68,7 +68,13 @@ The **book icon** at the top of the home screen (and on lesson pages and in Sett
 - A word gets 1 star after the first correct answer, then one more for each review it passes (after 1, 3, 7, 14 and 30 days). **5 stars means it's learned for the long run.**
 - A mistake costs **2 stars** (never below 0), and the word comes back in tomorrow's review.
 - Words marked *review today* are waiting in today's daily review; *not studied yet* means it hasn't come up yet.
-- There's a **search** (in either language), a switch between words and phrases, sorting **by lesson**, **weakest first** or **A–Z**, and 20 entries per page.
+- There's a **search** (in either language) and a switch between words and phrases.
+- **Sort:** by lesson, weakest first, strongest first, next review, most mistakes, recently studied, A–Z or Z–A.
+- **Show:** all, new, learning, learned, review today, or words with mistakes. Each button shows how many words it has; the three tiles at the top work as the same filters.
+- **Lesson:** all lessons or just one. Search, lesson and *Show* work together (say, *lesson 8 · with mistakes*).
+- **Per page:** 20, 50, 100 or all, with page buttons above and below the list. Each row shows its lesson, when it's due next and how many mistakes it has had.
+- **Practise these** starts a round with up to 20 words from the list as it's filtered.
+- Sort, *Show*, lesson and page size are remembered.
 - It isn't available during tests or exercises.
 
 ## Games and practice
@@ -166,6 +172,7 @@ Version numbers follow three rules: the last number goes up for fixes, renames a
 
 | Version | What changed |
 |---|---|
+| 1.9.0 | Vocabulary: more sorts, filters by status and lesson, page size, page buttons on top, "Practise these" |
 | 1.8.0 | Settings → Keyboard: choose the keys for each exercise, including typing words in Build the phrase; key hints can be switched off. Safer handling of pasted backup codes |
 | 1.7.2 | A small typo is no longer a mistake: no penalty, the word comes back in the same round |
 | 1.7.1 | Daily review: "Next 20" continues with the remaining words instead of replaying the same 20 |
